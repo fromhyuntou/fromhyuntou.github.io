@@ -99,13 +99,16 @@
   .nav-toggle { position: absolute; opacity: 0; pointer-events: none; }
   .nav-toggle-label { display: none; }
 
+  /* Mobile footer hidden on desktop */
+  .mobile-foot { display: none; }
+
   .side-foot {
     margin-top: auto;
     color: var(--muted);
     font-size: 12.5px;
     line-height: 1.7;
   }
-  .side-foot a { color: var(--fg); }
+  .side-foot a { color: var(--fg); text-decoration: underline; text-underline-offset: 3px; text-decoration-thickness: 1px; }
   .side-foot .row { display: block; }
 
   /* ---- Content ---- */
@@ -411,10 +414,10 @@
     .nav-toggle-label::before { content: "☰"; }
     .nav-toggle:checked ~ .nav-toggle-label::before { content: "✕"; font-size: 18px; }
 
-    /* Hide menu and footer by default; show when toggled */
-    nav.menu, .side-foot { display: none; }
-    .nav-toggle:checked ~ nav.menu,
-    .nav-toggle:checked ~ .side-foot {
+    /* Hide menu by default; show when toggled. Hide side-foot completely on mobile (moved to page bottom) */
+    nav.menu { display: none; }
+    aside.sidebar .side-foot { display: none !important; }
+    .nav-toggle:checked ~ nav.menu {
       display: block;
     }
 
@@ -422,7 +425,18 @@
       flex-direction: column;
       gap: 10px;
     }
-    .side-foot { margin-top: 0; }
+
+    /* Mobile-only footer at the very bottom of the page */
+    .mobile-foot {
+      display: block !important;
+      padding: 56px 24px 64px;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.9;
+    }
+    .mobile-foot a { color: var(--fg); text-decoration: underline; text-underline-offset: 3px; text-decoration-thickness: 1px; }
+    .mobile-foot .row { display: block; }
     main.content {
       padding: 32px 24px 64px;
     }
@@ -482,20 +496,9 @@
         <span class="ko">소개</span>
       </div>
       <p>
-        정다현 (丁多賢 · JUNG DAHYEON). 연극학을 전공하며 무대 위에서 온전히
-        재현되지 못한 몸들과 그들의 언어를 연구해 왔습니다.
-      </p>
-      <p>
-        ‘언어(성)’에 관심이 많으며, 주목하는 언어는 완성된 문장이나 고정된
-        의미가 아닙니다. 말해지기 직전의 상태, 번역 과정에서 어긋나는 뉘앙스,
-        규칙과 규칙 사이에 남는 여백처럼 아직 고정되지 않은 순간을 들여다봅니다.
-        이러한 불완전한 언어와, 그 언어를 통해 소통하고자 하는 사람들 — 잠재태를
-        사랑합니다.
-      </p>
-      <p>
-        거대 서사가 무너지고 모든 것이 불확실한 동시대에서 어떤 언어가 여전히
-        유효할 수 있는지, 혹은 어떤 새로운 아름다움이 우리에게 유효한지 탐구하고
-        있습니다.
+        정다현 (丁多賢 · JUNG DAHYEON). 거대 서사가 무너지고 모든 것이 불확실한
+        동시대에서 어떤 언어가 여전히 유효할 수 있는지, 혹은 어떤 새로운
+        아름다움이 우리에게 유효한지 탐구하고 있습니다.
       </p>
 
       <div class="cv" style="margin-top: 48px;">
@@ -1036,7 +1039,7 @@
           <p>Atopos Project는 특정 장르나 매체에 귀속되지 않는 예술적 실천을 지향한다. 무대는 완결된 서사를 재현하는 장소라기보다, 서로 다른 감각과 언어가 충돌하고 번역되며 다시 어긋나는 임시적 장소로 기능한다. 이 프로젝트는 기존의 규범과 형식을 넘어, 아직 이름 붙여지지 않은 감각과 관계의 가능성을 함께 만들어갈 창작자들과의 협업을 모색한다.</p>
           <p>2025년 3월 트라이아웃이자 프로토타입인 《atopos project: 시적 언어의 미분》을 거쳐, 첫 번째 프로젝트 《atopos project: 시적 언어》를 상연했다.</p>
           <a href="https://youtu.be/dt_EwJPsU9s" target="_blank" rel="noopener" style="position:relative; display:block; width:100%; padding-top:56.25%; background:#000; overflow:hidden; margin-bottom:20px; text-decoration:none;">
-            <img src="images/theatre/yt-시적언어.jpg" alt="atopos project: 시적 언어 하이라이트" loading="lazy" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover;" />
+            <img src="images/theatre/yt-poetic.jpg" alt="atopos project: 시적 언어 하이라이트" loading="lazy" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover;" />
             <span style="position:absolute; inset:0; display:flex; align-items:center; justify-content:center;">
               <span style="display:flex; align-items:center; justify-content:center; width:72px; height:72px; border-radius:50%; background:rgba(0,0,0,0.65); color:#fff; font-size:28px; line-height:1; padding-left:6px;">▶</span>
             </span>
@@ -1153,7 +1156,7 @@
         </summary>
         <div class="body">
           <figure style="margin:0 0 20px;">
-            <img src="images/theatre/03-애써보기.jpg" alt="애써-보기 포스터" loading="lazy" style="display:block; max-width:100%; height:auto; max-height:560px; margin:0 auto;" />
+            <img src="images/theatre/03-aesseo.jpg" alt="애써-보기 포스터" loading="lazy" style="display:block; max-width:100%; height:auto; max-height:560px; margin:0 auto;" />
           </figure>
           <p><b>공연 개요</b><br>
             제목 | 〈애써-보기〉<br>
@@ -1185,7 +1188,14 @@
         </summary>
         <div class="body">
           <figure style="margin:0 0 20px;">
-            <img src="images/theatre/04-있었던자리.jpg" alt="_ 있었던 자리 포스터" loading="lazy" style="display:block; max-width:100%; height:auto; max-height:560px; margin:0 auto;" />
+            <img src="images/theatre/04-place.jpg" alt="_ 있었던 자리 포스터" loading="lazy" style="display:block; max-width:100%; height:auto; max-height:560px; margin:0 auto;" />
+          </figure>
+          <p><b>공연 사진</b></p>
+          <figure style="margin:0 0 12px;">
+            <img src="images/theatre/photos/place-p1.jpg" alt="_ 있었던 자리 공연 사진 1" loading="lazy" style="display:block; max-width:100%; height:auto; margin:0 auto;" />
+          </figure>
+          <figure style="margin:0 0 24px;">
+            <img src="images/theatre/photos/place-p2.jpg" alt="_ 있었던 자리 공연 사진 2" loading="lazy" style="display:block; max-width:100%; height:auto; margin:0 auto;" />
           </figure>
           <p><b>공연 개요</b><br>
             제목 | 〈_ 있었던 자리〉<br>
@@ -1235,7 +1245,7 @@
         </summary>
         <div class="body">
           <figure style="margin:0 0 20px;">
-            <img src="images/theatre/05-목자의고백.jpg" alt="목자의 고백 포스터" loading="lazy" style="display:block; max-width:100%; height:auto; max-height:560px; margin:0 auto;" />
+            <img src="images/theatre/05-mokja.jpg" alt="목자의 고백 포스터" loading="lazy" style="display:block; max-width:100%; height:auto; max-height:560px; margin:0 auto;" />
           </figure>
           <p><b>공연 개요</b><br>
             제목 | 〈목자의 고백〉<br>
@@ -1277,7 +1287,23 @@
         </summary>
         <div class="body">
           <figure style="margin:0 0 20px;">
-            <img src="images/theatre/06-무언극.jpg" alt="무언극 포스터" loading="lazy" style="display:block; max-width:100%; height:auto; max-height:560px; margin:0 auto;" />
+            <img src="images/theatre/06-mute.jpg" alt="무언극 포스터" loading="lazy" style="display:block; max-width:100%; height:auto; max-height:560px; margin:0 auto;" />
+          </figure>
+          <p><b>공연 사진</b></p>
+          <figure style="margin:0 0 12px;">
+            <img src="images/theatre/photos/mute-p1.jpg" alt="무언극 공연 사진 1" loading="lazy" style="display:block; max-width:100%; height:auto; margin:0 auto;" />
+          </figure>
+          <figure style="margin:0 0 12px;">
+            <img src="images/theatre/photos/mute-p2.jpg" alt="무언극 공연 사진 2" loading="lazy" style="display:block; max-width:100%; height:auto; margin:0 auto;" />
+          </figure>
+          <figure style="margin:0 0 12px;">
+            <img src="images/theatre/photos/mute-p3.jpg" alt="무언극 공연 사진 3" loading="lazy" style="display:block; max-width:100%; height:auto; margin:0 auto;" />
+          </figure>
+          <figure style="margin:0 0 12px;">
+            <img src="images/theatre/photos/mute-p4.jpg" alt="무언극 공연 사진 4" loading="lazy" style="display:block; max-width:100%; height:auto; margin:0 auto;" />
+          </figure>
+          <figure style="margin:0 0 24px;">
+            <img src="images/theatre/photos/mute-p5.jpg" alt="무언극 공연 사진 5" loading="lazy" style="display:block; max-width:100%; height:auto; margin:0 auto;" />
           </figure>
           <p><b>공연 개요</b><br>
             제목 | 〈무언극: 말하는 법은 던져진 곳에서 나가는 데에 도움이 되지 않았〉<br>
@@ -1329,7 +1355,23 @@
         </summary>
         <div class="body">
           <figure style="margin:0 0 20px;">
-            <img src="images/theatre/07-잃어버린영혼.jpg" alt="잃어버린 영혼" loading="lazy" style="display:block; max-width:100%; height:auto; max-height:560px; margin:0 auto;" />
+            <img src="images/theatre/07-soul.jpg" alt="잃어버린 영혼" loading="lazy" style="display:block; max-width:100%; height:auto; max-height:560px; margin:0 auto;" />
+          </figure>
+          <p><b>공연 사진</b></p>
+          <figure style="margin:0 0 12px;">
+            <img src="images/theatre/photos/soul-p1.jpg" alt="잃어버린 영혼 공연 사진 1" loading="lazy" style="display:block; max-width:100%; height:auto; margin:0 auto;" />
+          </figure>
+          <figure style="margin:0 0 12px;">
+            <img src="images/theatre/photos/soul-p2.jpg" alt="잃어버린 영혼 공연 사진 2" loading="lazy" style="display:block; max-width:100%; height:auto; margin:0 auto;" />
+          </figure>
+          <figure style="margin:0 0 12px;">
+            <img src="images/theatre/photos/soul-p3.jpg" alt="잃어버린 영혼 공연 사진 3" loading="lazy" style="display:block; max-width:100%; height:auto; margin:0 auto;" />
+          </figure>
+          <figure style="margin:0 0 12px;">
+            <img src="images/theatre/photos/soul-p4.jpg" alt="잃어버린 영혼 공연 사진 4" loading="lazy" style="display:block; max-width:100%; height:auto; margin:0 auto;" />
+          </figure>
+          <figure style="margin:0 0 24px;">
+            <img src="images/theatre/photos/soul-p5.jpg" alt="잃어버린 영혼 공연 사진 5" loading="lazy" style="display:block; max-width:100%; height:auto; margin:0 auto;" />
           </figure>
           <p><b>공연 개요</b><br>
             제목 | 〈잃어버린 영혼〉<br>
@@ -1375,6 +1417,22 @@
           <figure style="margin:0 0 20px;">
             <img src="images/theatre/08-8rounds.jpg" alt="8ROUNDS" loading="lazy" style="display:block; max-width:100%; height:auto; max-height:560px; margin:0 auto;" />
           </figure>
+          <p><b>공연 사진</b></p>
+          <figure style="margin:0 0 12px;">
+            <img src="images/theatre/photos/8r-p1.jpg" alt="8ROUNDS 공연 사진 1" loading="lazy" style="display:block; max-width:100%; height:auto; margin:0 auto;" />
+          </figure>
+          <figure style="margin:0 0 12px;">
+            <img src="images/theatre/photos/8r-p2.jpg" alt="8ROUNDS 공연 사진 2" loading="lazy" style="display:block; max-width:100%; height:auto; margin:0 auto;" />
+          </figure>
+          <figure style="margin:0 0 12px;">
+            <img src="images/theatre/photos/8r-p3.jpg" alt="8ROUNDS 공연 사진 3" loading="lazy" style="display:block; max-width:100%; height:auto; margin:0 auto;" />
+          </figure>
+          <figure style="margin:0 0 12px;">
+            <img src="images/theatre/photos/8r-p4.jpg" alt="8ROUNDS 공연 사진 4" loading="lazy" style="display:block; max-width:100%; height:auto; margin:0 auto;" />
+          </figure>
+          <figure style="margin:0 0 24px;">
+            <img src="images/theatre/photos/8r-p5.jpg" alt="8ROUNDS 공연 사진 5" loading="lazy" style="display:block; max-width:100%; height:auto; margin:0 auto;" />
+          </figure>
           <p><b>공연 개요</b><br>
             제목 | 〈8ROUNDS: 김명순에 관한 고찰〉<br>
             일시 | 2020년 10월 28일(수) ~ 30일(금) 19시<br>
@@ -1417,6 +1475,13 @@
         <div class="body">
           <figure style="margin:0 0 20px;">
             <img src="images/theatre/09-speakingintongues.jpg" alt="Speaking in Tongues" loading="lazy" style="display:block; max-width:100%; height:auto; max-height:560px; margin:0 auto;" />
+          </figure>
+          <p><b>공연 사진</b></p>
+          <figure style="margin:0 0 12px;">
+            <img src="images/theatre/photos/sit-p1.jpg" alt="Speaking in Tongues 공연 사진 1" loading="lazy" style="display:block; max-width:100%; height:auto; margin:0 auto;" />
+          </figure>
+          <figure style="margin:0 0 24px;">
+            <img src="images/theatre/photos/sit-p2.jpg" alt="Speaking in Tongues 공연 사진 2" loading="lazy" style="display:block; max-width:100%; height:auto; margin:0 auto;" />
           </figure>
           <p><b>공연 개요</b><br>
             제목 | 〈스피킹 인 텅스 / Speaking in Tongues〉<br>
@@ -1463,7 +1528,7 @@
         </summary>
         <div class="body">
           <a href="https://youtu.be/-P_SycNzCKY" target="_blank" rel="noopener" style="position:relative; display:block; width:100%; padding-top:56.25%; background:#000; overflow:hidden; margin-bottom:20px; text-decoration:none;">
-            <img src="images/theatre/yt-잔인한낙관.jpg" alt="잔인한 낙관 트레일러" loading="lazy" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover;" />
+            <img src="images/theatre/yt-cruel.jpg" alt="잔인한 낙관 트레일러" loading="lazy" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover;" />
             <span style="position:absolute; inset:0; display:flex; align-items:center; justify-content:center;">
               <span style="display:flex; align-items:center; justify-content:center; width:72px; height:72px; border-radius:50%; background:rgba(0,0,0,0.65); color:#fff; font-size:28px; line-height:1; padding-left:6px;">▶</span>
             </span>
@@ -1493,10 +1558,55 @@
 
       <div class="grid">
         <figure>
-          <img src="images/notion/busan-01.jpg" alt="" loading="lazy" />
+          <img src="images/notion/may21-01.jpg" alt="" loading="lazy" />
         </figure>
         <figure>
-          <img src="images/notion/busan-02.jpg" alt="" loading="lazy" />
+          <img src="images/notion/may21-02.jpg" alt="" loading="lazy" />
+        </figure>
+        <figure>
+          <img src="images/notion/may21-03.jpg" alt="" loading="lazy" />
+        </figure>
+        <figure>
+          <img src="images/notion/may21-04.jpg" alt="" loading="lazy" />
+        </figure>
+        <figure>
+          <img src="images/notion/may21-05.jpg" alt="" loading="lazy" />
+        </figure>
+        <figure>
+          <img src="images/notion/may21-06.jpg" alt="" loading="lazy" />
+        </figure>
+        <figure>
+          <img src="images/notion/may21-07.jpg" alt="" loading="lazy" />
+        </figure>
+        <figure>
+          <img src="images/notion/may21-08.jpg" alt="" loading="lazy" />
+        </figure>
+        <figure>
+          <img src="images/notion/may21-09.jpg" alt="" loading="lazy" />
+        </figure>
+        <figure>
+          <img src="images/notion/may21-10.jpg" alt="" loading="lazy" />
+        </figure>
+        <figure>
+          <img src="images/notion/may21-11.jpg" alt="" loading="lazy" />
+        </figure>
+        <figure>
+          <img src="images/notion/may21-12.jpg" alt="" loading="lazy" />
+        </figure>
+        <figure>
+          <img src="images/notion/may21-13.jpg" alt="" loading="lazy" />
+        </figure>
+        <figure>
+          <img src="images/notion/may21-14.jpg" alt="" loading="lazy" />
+        </figure>
+        <figure>
+          <img src="images/notion/may21-15.jpg" alt="" loading="lazy" />
+        </figure>
+        <figure>
+          <img src="images/notion/may21-16.jpg" alt="" loading="lazy" />
+        </figure>
+        <figure>
+          <img src="images/notion/may21-17.jpg" alt="" loading="lazy" />
         </figure>
         <figure>
           <img src="images/notion/jeju-01.jpg" alt="" loading="lazy" />
@@ -1513,6 +1623,13 @@
       </div>
       </div><!-- end #photos -->
     </section><!-- end #works -->
+
+    <div class="mobile-foot">
+      <span class="row" style="color:var(--fg); font-weight:500;">contact to DAHYEON</span>
+      <span class="row"><a href="mailto:snowy.evergreen2569@gmail.com">snowy.evergreen2569@gmail.com</a></span>
+      <span class="row"><a href="https://instagram.com/from_hyun_to_u" target="_blank" rel="noopener">@from_hyun_to_u</a></span>
+      <span class="row" style="margin-top:14px">© 2026 JUNG DAHYEON. All rights reserved.</span>
+    </div>
 
   </main>
 
