@@ -1,0 +1,1522 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>JUNG DAHYEON — 정다현 (FHTY)</title>
+<meta name="description" content="정다현 (JUNG DAHYEON) — 연극학, 드라마터그, 아토포스 프로젝트 대표 / 연출. From Hyun To U." />
+<style>
+  :root {
+    --fg: #111;
+    --muted: #888;
+    --line: #e5e5e5;
+    --bg: #fff;
+    --sidebar-w: 260px;
+  }
+
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--fg);
+    font-family: "Pretendard", "Apple SD Gothic Neo", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
+    font-size: 15px;
+    line-height: 1.75;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    word-break: keep-all;
+  }
+
+  a { color: inherit; text-decoration: none; }
+  a:hover { text-decoration: underline; }
+
+  /* ---- Layout ---- */
+  .layout {
+    display: grid;
+    grid-template-columns: var(--sidebar-w) 1fr;
+    min-height: 100vh;
+  }
+
+  /* ---- Sidebar ---- */
+  aside.sidebar {
+    border-right: 1px solid var(--line);
+    padding: 48px 28px;
+    position: sticky;
+    top: 0;
+    align-self: start;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+    overflow-y: auto;
+  }
+
+  .brand .logo {
+    display: block;
+    font-family: "Iowan Old Style", "Apple Garamond", "Georgia", "Times New Roman", serif;
+    font-style: italic;
+    font-weight: 600;
+    font-size: 30px;
+    letter-spacing: 0.02em;
+    line-height: 1.05;
+  }
+  .brand .sub {
+    display: block;
+    color: var(--muted);
+    font-size: 12.5px;
+    margin-top: 10px;
+  }
+
+  nav.menu ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  nav.menu a {
+    display: inline-block;
+    font-size: 14px;
+  }
+  nav.menu ul.sub-menu {
+    list-style: none;
+    margin: 6px 0 0 0;
+    padding: 0 0 0 14px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  }
+  nav.menu ul.sub-menu a {
+    font-size: 13px;
+    color: var(--muted);
+  }
+  nav.menu ul.sub-menu a:hover { color: var(--fg); text-decoration: underline; }
+
+  /* Hamburger toggle (mobile only) */
+  .nav-toggle { position: absolute; opacity: 0; pointer-events: none; }
+  .nav-toggle-label { display: none; }
+
+  .side-foot {
+    margin-top: auto;
+    color: var(--muted);
+    font-size: 12.5px;
+    line-height: 1.7;
+  }
+  .side-foot a { color: var(--fg); }
+  .side-foot .row { display: block; }
+
+  /* ---- Content ---- */
+  main.content {
+    padding: 48px 56px 96px;
+    max-width: 880px;
+  }
+
+  .hero {
+    padding-bottom: 24px;
+    border-bottom: 1px solid var(--line);
+    margin-bottom: 40px;
+    max-width: 680px;
+  }
+  .hero p {
+    font-size: 18px;
+    line-height: 1.65;
+    margin: 0;
+  }
+  .hero .tags {
+    margin-top: 16px;
+    color: var(--muted);
+    font-size: 13px;
+  }
+
+  section {
+    padding: 56px 0 72px;
+    border-top: 1px solid var(--line);
+  }
+  section:first-of-type { border-top: 0; padding-top: 0; }
+
+  .section-head {
+    display: flex;
+    align-items: baseline;
+    gap: 14px;
+    margin-bottom: 28px;
+  }
+  .section-head h2 {
+    font-size: 18px;
+    font-weight: 600;
+    margin: 0;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+  .section-head .ko { color: var(--muted); font-size: 15px; }
+
+  /* Sub-section under Works (hierarchical h3) */
+  .sub-section {
+    padding-top: 64px;
+    margin-top: 24px;
+    border-top: 1px solid var(--line);
+  }
+  .sub-section:first-of-type {
+    padding-top: 16px;
+    border-top: 0;
+    margin-top: 0;
+  }
+  .sub-head {
+    display: flex;
+    align-items: baseline;
+    gap: 14px;
+    margin-bottom: 28px;
+  }
+  .sub-head h3 {
+    font-size: 12.5px;
+    font-weight: 600;
+    margin: 0;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+  .sub-head .ko {
+    color: var(--muted);
+    font-size: 13px;
+  }
+
+  /* About */
+  .about p {
+    max-width: 680px;
+    margin: 0 0 1em;
+    font-size: 15.5px;
+  }
+
+  /* Timeline (CV / Theatre credits) */
+  .cv .group { margin-bottom: 36px; }
+  .cv .group:last-child { margin-bottom: 0; }
+  .cv .group h3 {
+    font-size: 12.5px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin: 0 0 14px;
+    color: var(--muted);
+  }
+  .cv ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    border-top: 1px solid var(--line);
+  }
+  .cv li {
+    display: grid;
+    grid-template-columns: 170px 1fr;
+    gap: 16px;
+    padding: 13px 0;
+    border-bottom: 1px solid var(--line);
+    font-size: 14.5px;
+  }
+  .cv li .when {
+    color: var(--muted);
+    font-variant-numeric: tabular-nums;
+  }
+  .cv li .what b { font-weight: 500; }
+  .cv li .what .role { color: var(--muted); margin-left: 6px; }
+
+  /* Writings */
+  .writings article {
+    max-width: 680px;
+    margin: 0 0 48px;
+  }
+  .writings article:last-child { margin-bottom: 0; }
+  .writings h3 {
+    font-size: 17px;
+    font-weight: 500;
+    margin: 0 0 4px;
+  }
+  .writings .meta {
+    color: var(--muted);
+    margin-bottom: 14px;
+    font-size: 13px;
+  }
+  .writings p { margin: 0 0 1em; }
+
+  /* Theatre — videos */
+  .videos {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 32px;
+    margin-bottom: 48px;
+  }
+  .videos .item .embed {
+    position: relative;
+    width: 100%;
+    padding-top: 56.25%;
+    background: #f4f4f4;
+    overflow: hidden;
+  }
+  .videos .item .embed iframe {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+  }
+  .videos .caption {
+    margin-top: 10px;
+    display: flex;
+    justify-content: space-between;
+    gap: 16px;
+    color: var(--muted);
+    font-size: 13.5px;
+  }
+  .videos .caption .title { color: var(--fg); }
+
+  /* Disclosure (Entry per writing) */
+  details.entry {
+    border-top: 1px solid var(--line);
+  }
+  details.entry:last-of-type {
+    border-bottom: 1px solid var(--line);
+  }
+  details.entry > summary {
+    list-style: none;
+    cursor: pointer;
+    padding: 16px 0;
+    display: grid;
+    grid-template-columns: 140px 1fr 28px;
+    gap: 16px;
+    align-items: baseline;
+  }
+  details.entry > summary::-webkit-details-marker { display: none; }
+  details.entry > summary::after {
+    content: "+";
+    color: var(--muted);
+    text-align: right;
+    font-size: 14px;
+  }
+  details.entry[open] > summary::after { content: "−"; }
+  details.entry > summary .meta {
+    color: var(--muted);
+    font-size: 13px;
+    font-variant-numeric: tabular-nums;
+  }
+  details.entry > summary .title {
+    font-size: 14.5px;
+    font-weight: 500;
+  }
+  details.entry > summary:hover .title { color: var(--muted); }
+  details.entry > .body {
+    padding: 4px 30px 28px;
+    max-width: 720px;
+  }
+  details.entry > .body p {
+    margin: 0 0 1em;
+    font-size: 15px;
+    line-height: 1.75;
+  }
+  details.entry > .body .source {
+    margin-top: 4px;
+    color: var(--muted);
+    font-size: 13px;
+  }
+  details.entry > .body .ext-embed {
+    display: block;
+    border: 1px solid var(--line);
+    padding: 14px 16px;
+    margin: 0 0 24px;
+    text-decoration: none;
+    color: var(--fg);
+    transition: background 0.15s;
+  }
+  details.entry > .body .ext-embed:hover {
+    background: #fafafa;
+    text-decoration: none;
+  }
+  details.entry > .body .ext-embed .ext-label {
+    display: block;
+    font-size: 13px;
+    color: var(--muted);
+    margin-bottom: 4px;
+  }
+  details.entry > .body .ext-embed .ext-url {
+    display: block;
+    font-size: 13.5px;
+    color: var(--fg);
+    word-break: break-all;
+  }
+  details.entry > .body .ext-embed .ext-url::after {
+    content: " ↗";
+    color: var(--muted);
+  }
+  @media (max-width: 768px) {
+    details.entry > summary {
+      grid-template-columns: 1fr 24px;
+      grid-template-areas: "title arrow" "meta arrow";
+      gap: 4px 8px;
+    }
+    details.entry > summary .title { grid-area: title; }
+    details.entry > summary .meta { grid-area: meta; }
+    details.entry > summary::after { grid-area: arrow; align-self: start; }
+    details.entry > .body { padding: 4px 0 24px; }
+  }
+
+  /* Photos */
+  .photos .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 20px;
+  }
+  .photos figure { margin: 0; }
+  .photos img {
+    display: block;
+    width: 100%;
+    height: auto;
+    background: #f4f4f4;
+  }
+  .photos figcaption {
+    margin-top: 8px;
+    color: var(--muted);
+    font-size: 13px;
+  }
+
+  /* ---- Responsive: sidebar → top bar with hamburger ---- */
+  @media (max-width: 900px) {
+    .layout {
+      grid-template-columns: 1fr;
+    }
+    aside.sidebar {
+      position: relative;
+      height: auto;
+      border-right: 0;
+      border-bottom: 1px solid var(--line);
+      padding: 28px 24px;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    /* Hamburger button — top right of bar */
+    .nav-toggle-label {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: absolute;
+      top: 22px;
+      right: 18px;
+      width: 36px;
+      height: 36px;
+      cursor: pointer;
+      font-size: 22px;
+      line-height: 1;
+      color: var(--fg);
+      user-select: none;
+    }
+    .nav-toggle-label::before { content: "☰"; }
+    .nav-toggle:checked ~ .nav-toggle-label::before { content: "✕"; font-size: 18px; }
+
+    /* Hide menu and footer by default; show when toggled */
+    nav.menu, .side-foot { display: none; }
+    .nav-toggle:checked ~ nav.menu,
+    .nav-toggle:checked ~ .side-foot {
+      display: block;
+    }
+
+    nav.menu ul {
+      flex-direction: column;
+      gap: 10px;
+    }
+    .side-foot { margin-top: 0; }
+    main.content {
+      padding: 32px 24px 64px;
+    }
+    .cv li {
+      grid-template-columns: 1fr;
+      gap: 4px;
+      padding: 12px 0;
+    }
+    .photos .grid {
+      grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+      gap: 14px;
+    }
+    .hero p { font-size: 16px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="layout">
+
+  <aside class="sidebar">
+    <input type="checkbox" id="nav-toggle" class="nav-toggle" aria-hidden="true">
+    <label for="nav-toggle" class="nav-toggle-label" aria-label="메뉴 열기/닫기"></label>
+
+    <div class="brand">
+      <span class="logo">JUNG<br>DAHYEON</span>
+      <span class="sub">From Hyun To U</span>
+    </div>
+
+    <nav class="menu" aria-label="주 메뉴">
+      <ul>
+        <li><a href="#about">About</a></li>
+        <li>
+          <a href="#works">Works</a>
+          <ul class="sub-menu">
+            <li><a href="#writings">Writings</a></li>
+            <li><a href="#theatre">Theatre</a></li>
+            <li><a href="#photos">Photos</a></li>
+          </ul>
+        </li>
+      </ul>
+    </nav>
+
+    <div class="side-foot">
+      <span class="row" style="color:var(--fg); font-weight:500;">contact to DAHYEON</span>
+      <span class="row"><a href="mailto:snowy.evergreen2569@gmail.com">snowy.evergreen2569@gmail.com</a></span>
+      <span class="row"><a href="https://instagram.com/from_hyun_to_u" target="_blank" rel="noopener">@from_hyun_to_u</a></span>
+      <span class="row" style="margin-top:14px">© 2026 JUNG DAHYEON. All rights reserved.</span>
+    </div>
+  </aside>
+
+  <main class="content">
+
+    <section id="about" class="about">
+      <div class="section-head">
+        <h2>About</h2>
+        <span class="ko">소개</span>
+      </div>
+      <p>
+        정다현 (丁多賢 · JUNG DAHYEON). 연극학을 전공하며 무대 위에서 온전히
+        재현되지 못한 몸들과 그들의 언어를 연구해 왔습니다.
+      </p>
+      <p>
+        ‘언어(성)’에 관심이 많으며, 주목하는 언어는 완성된 문장이나 고정된
+        의미가 아닙니다. 말해지기 직전의 상태, 번역 과정에서 어긋나는 뉘앙스,
+        규칙과 규칙 사이에 남는 여백처럼 아직 고정되지 않은 순간을 들여다봅니다.
+        이러한 불완전한 언어와, 그 언어를 통해 소통하고자 하는 사람들 — 잠재태를
+        사랑합니다.
+      </p>
+      <p>
+        거대 서사가 무너지고 모든 것이 불확실한 동시대에서 어떤 언어가 여전히
+        유효할 수 있는지, 혹은 어떤 새로운 아름다움이 우리에게 유효한지 탐구하고
+        있습니다.
+      </p>
+
+      <div class="cv" style="margin-top: 48px;">
+        <div class="group">
+          <h3>Education 학력</h3>
+          <ul>
+            <li>
+              <span class="when">2024.03 – 휴학</span>
+              <span class="what"><b>한국예술종합학교 연극원 연극학과</b><span class="role">전문예술사 (석사) · 휴학</span></span>
+            </li>
+            <li>
+              <span class="when">2018.03 – 2023.02</span>
+              <span class="what"><b>한국예술종합학교 연극원 연극학과</b><span class="role">예술사 (학사) · 졸업</span></span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="group">
+          <h3>Career 경력</h3>
+          <ul>
+            <li>
+              <span class="when">2025.01 – 현재</span>
+              <span class="what"><b>주식회사 노벨라스튜디오</b><span class="role">마케터 · 제작 프로듀서</span></span>
+            </li>
+            <li>
+              <span class="when">2024.11 – 2025.03</span>
+              <span class="what"><b>국립극단 창작트랙 180° 정세영 편 〈소실점의 후퇴〉</b><span class="role">파트너 예술가</span></span>
+            </li>
+            <li>
+              <span class="when">2023.03 – 2023.12</span>
+              <span class="what"><b>국립극단 작품개발팀</b><span class="role">산학협력 및 연수단원 (인턴)</span></span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="works">
+      <div class="section-head">
+        <h2>Works</h2>
+        <span class="ko">작업</span>
+      </div>
+
+      <div id="writings" class="sub-section">
+        <div class="sub-head">
+          <h3>Writings</h3>
+          <span class="ko">글 — 제목을 클릭하면 본문이 펼쳐집니다</span>
+        </div>
+
+      <p style="max-width:680px; margin:0 0 32px; color:var(--muted); font-size:14px;">
+        연극, 예술, 그리고 삶에 대한 비평 그 어딘가.
+      </p>
+
+      <details class="entry">
+        <summary>
+          <span class="meta">논문</span>
+          <span class="title">Exploring Sign Language in Disability Theatre: Insights from Kaite O’Reilly’s <i>Peeling</i> and Kim Miran’s <i>This May Be a Failure Story</i></span>
+        </summary>
+        <div class="body">
+          <figure style="margin:0 0 24px;">
+            <img src="images/conference-poster.jpg" alt="제12회 국제 아시아 연극학 학술대회 포스터" loading="lazy" style="display:block; max-width:100%; height:auto; max-height:600px; margin:0 auto;" />
+            <figcaption style="margin-top:8px; color:var(--muted); font-size:13px; text-align:center;">제12회 국제 아시아 연극학 학술대회(The 12th International Asian Theatre Studies Conference) 포스터</figcaption>
+          </figure>
+          <p><b>I. Research Objectives and Significance</b></p>
+          <p>This paper explores how contemporary disability theatre expands its linguistic boundaries with multimodal languages. It focuses on two plays that reflect diverse linguistic forms: <i>Peeling</i> by Kaite O’Reilly and <i>This May Be a Failure Story</i> (the original title is <i>Into the Unknown</i> / Mi-ji-e-se-gye-ro, No Elsa). They were produced by National Theater Company of Korea and directed by Kim Miran. These plays go beyond the mere use of sign language on stage; rather, they integrate both spoken language and Deaf actors, fully revealing the polyphonic and multi-layered nature of language.</p>
+          <p>Disability theatre refers to theatre that is created by, about, and for people with disabilities. It began as a movement influenced by the disability rights movements and disability studies that flourished in the UK and the US in the 1960s and 1970s. The term commonly used to refer to theatre involving people with disabilities includes both “barrier-free theatre” and “disability theatre.” Barrier-free theatre focuses on removing barriers in all aspects of theatre, including the physical and technical aspects, to ensure accessibility. However, this paper is grounded in the social model of disability, as discussed in disability studies, which posits that disability is not an individual issue but one arising from social structures and barriers. This model challenges the notion of disability as merely a “deficit” or “imperfection” and instead considers it as a concept constructed by societal and structural factors.</p>
+          <p>Sign language is a form used in disability theatre, recognized for possessing its own independent linguistic system and theatrical framework. Initially, the use of sign language in disability theatre developed in the UK and the US theatre to enhance cultural accessibility for the deaf community and to make theatre more inclusive for a broader audience. In the UK, the enactment of the Disability Discrimination Act in 1995 raised awareness about the need to provide reasonable accommodations for people with disabilities, leading many theatres to offer sign language-interpreted performances for the deaf.</p>
+          <p>In disability theatre, people with disabilities are recognized as a “new generation of artists” who challenge traditional views of disability, creating new works and expressing their unique “voices.” Disability theatre can also be described as a form of “theatre-making” that challenges the traditional conventions of theatre by confronting the ideology of “ableism” within disability culture. Moreover, sign language in disability theatre, which has developed independently within the Deaf community, has not been the subject of significant research in Korea, even though many plays using sign language have been created in contemporary Korean theatre.</p>
+          <p>The first example, <i>Peeling</i> is a play by contemporary Irish playwright Kaite O’Reilly, who is based in the UK. O’Reilly, a playwright, dramaturg, and artist with a disability, wrote <i>Peeling</i> commissioned by Graeae Theatre Company, one of the UK’s leading disability theatre companies. The play premiered on February 14, 2002, at Birmingham Repertory Theatre. In <i>Peeling</i>, three disabled women appear as the chorus of a modern and “postmodern” adaptation of Euripides’ <i>The Trojan Women</i>, titled <i>The Trojan Women: Then and Now</i>, which takes place offstage, invisible to the audience. The dialogue shifts between British Sign Language (BSL), Sign Supported English (SSE), audio description, and spoken English, exposing the violence disabled individuals have historically experienced in both theatrical production environments and their daily lives.</p>
+          <p>The second case, <i>This May Be a Failure Story</i>, is a production of National Theater Company of Korea, composed and directed by Kim Miran of the theater group “Sogu.” Kim participated in the 2021 [Changzak Gonggam: Directors] program, which focused on the theme of “Disability and Art.” The play is a documentary theatre that portrays the communication process between Park Ji-young, a Deaf actor from the Deaf arts group “Hand Speak,” and hearing actor Lee Won-jun as they collaborate on creating a play. <i>This May Be a Failure Story</i> challenges the objectification of disability and its associated language in the history of theatre, using humor to subvert reality and invite reflection on the subjectivity of theatre. Through this play, Park Ji-young became the first Deaf actor to be nominated for the Best Acting Award in Theater at the 58th Baeksang Arts Awards, while Kim Miran won the Young Theater Award in the Theater category.</p>
+          <p>Both plays, as analyzed in this paper, expose the dissonance of incommunicable languages, prompting reconsideration of sociopolitical discord. This dissonance aligns with the ‘social model’ of disability studies, which views disability as constructed by a society designed primarily for non-disabled individuals. In other words, it is societal discrimination that defines and constructs disability. Ultimately, these two plays speak to “the power of agency — the ability for those labeled as problems to redefine the problem themselves” — and highlight the importance of “solidarity,” which transcends the dichotomy between interdependence and dependence, an aspect that cannot be fully understood through the capitalist concepts of “self-reliance” or “self-sufficiency” through languages.</p>
+          <p class="source">📌 제12회 국제 아시아 연극학 학술대회(The 12th International Asian Theatre Studies Conference) 발표 논문</p>
+        </div>
+      </details>
+
+      <details class="entry">
+        <summary>
+          <span class="meta">아티클·리뷰</span>
+          <span class="title">역사의 시간을 몸소 감각하는 경험</span>
+        </summary>
+        <div class="body">
+          <p style="color:var(--muted); font-size:14px;">아트선재센터 《호추니엔: 시간과 클라우드(Ho Tzu Nyen: Time &amp; the Cloud)》</p>
+          <p>중고등학생 때 나는 ‘역사’라는 과목을 그다지 좋아하지 않았다. 시험 직전 교과서를 몽땅 외워버려 성적은 나쁘지 않았지만, 나는 역사를 공부할 때마다 공허함을 느끼곤 했다. 중요한 역사적 사건들을 한두 문장들로써 단편적으로 바라보는 것이 이상하다고 생각했다. 역사 또한 사람(들)의 이야기니까. 역사는 ‘지나간’ 시간일 뿐인가? 지나간 시간의 기록인 역사가 오늘날 유효한 이유는 무엇일까? 예술로 역사를 어떻게 표현할까?</p>
+          <p>2024년 6월 4일부터 8월 4일까지 아트선재센터에서 개최된 전시 《호추니엔: 시간과 클라우드(Ho Tzu Nyen: Time &amp; the Cloud)》은 역사와 시간, 정체성 등의 키워드들을 중심으로 천착해왔던 작가 호추니엔이 설계한 “비판적 사유 실험”들을 응축해놓은 듯한 전시였다. 호추니엔은 싱가포르 출신의 현대 미술가로, 비디오 아트와 설치 미술을 주로 작업하는 아티스트다.</p>
+          <p>내가 처음 접했던 호추니엔의 작품은 2018년 국립현대미술관 다원예술 프로그램 ‘아시아포커스’ 〈의문의 라이텍〉이었다. 이 작품은 1939년부터 1946년까지 말레이 공산당 총서기이자 삼국(프랑스, 영국, 일본)의 스파이로 활동했던 라이텍에 관한 작품으로, 내게 개인사를 넘어 역사는 누군가에 의해 선택되고, 편집되고, 재서술될 수 있음을 알려주며 그러한 세계에서의 기억에 대한 문제의식을 남겼다.</p>
+          <p>이번 전시는 총 세 작품으로 구성되어 있지만, 이 글에서는 〈시간(타임)의 티〉와 〈타임피스〉에 대해 살핀다. 두 작품은 아시아의 근대성과 시간성에 대한 작품으로 〈시간(타임)의 티(T for Time)〉는 호추니엔이 2012년부터 지속해오고 있는 〈동남아시아 비평사전(The Critical Dictionary of Southeast Asia)〉의 일환인 작업이다. 이는 동남아시아의 역사, 문화, 정치, 정체성에 대한 깊이 있는 탐구를 A부터 Z까지 26개의 알파벳을 통해 구조화한 작품이다.</p>
+          <p>비평사전의 신작 〈시간(타임)의 티〉는 아트선재센터 3층 스페이스1에 들어서면 좌측 거대한 스크린에서, 전시실 우측엔 다양한 크기의 43개 평면 스크린들에서 〈타임피스〉가 각각 상영되고 있었다. 〈타임피스〉의 영상들은 시간에 관련된 영상들로 조각조각 재생되고 있었다. 파편화되어있던 시간의 조각들(Timepieces)의 영상들이 〈시간(타임)의 티〉 영상으로 수렴되었다. 〈시간(타임)의 티〉는 시간과 근대성이 모두 서구에 의해 발명되었음을 구명해내는 일종의 도큐멘트 같았다.</p>
+          <p>이 전시가 내게 특별하게 다가왔던 점은 역사적인 사건들을 다층적으로 감각하게 한다는 것이었다. 화이트 큐브에 그저 작품을 전시해놓는 게 아니라 두 겹의 스크린 — 애니메이션이 투사되는 전면 스크린과 실사 이미지들이 투사되는 후면 스크린 — 을 병치하여 시좌(視座)를 선택해 작품의 세계에 능동적으로 개입하라는 것 같았다. 프리재즈 솔로 색소폰의 트랙 위로 영상의 스크립트가 발화되고 흩어지는 청각적인 경험은 눈뿐만 아니라 오래 우리 마음에 남게 했다.</p>
+          <p>이러한 감각적 전략들은 묻는다. 역사에서 이면과 표면의 현실(혹은 진실)은 무엇인가? 그리고 켜켜이 쌓여온 역사의 시간들을 겪으며 나는 현재 무얼, 어떻게 볼 것인가? 전시실을 나올 때쯤 호추니엔이 설계해놓은 레이어(layer)와 공명(resonance)을 곱씹으며, 예술(미학)과 정치에 대해 말했던 철학자 자크 랑시에르의 전언이 떠올랐다. “중요한 것은 거짓말하지 않기, 눈을 감고 있었으면서도 보았다고 말하지 않기, 본 것과 다른 것을 이야기하지 않기, 그저 이름만 붙여놓고는 그것을 설명했다고 믿지 않기이다.”</p>
+          <p class="source"><a href="http://www.cultura.co.kr/news/articleView.html?idxno=4095" target="_blank" rel="noopener" style="color:inherit;">📌 문화전문지 ‘쿨투라’ 2024년 9월호 기고 ↗</a></p>
+        </div>
+      </details>
+
+      <details class="entry">
+        <summary>
+          <span class="meta">평론</span>
+          <span class="title">거북이는 의외로 빨리 헤엄친다</span>
+        </summary>
+        <div class="body">
+          <a class="ext-embed" href="https://www.sfac.or.kr/theater/WZ020400/webzine_view.do?wtIdx=13665" target="_blank" rel="noopener">
+            <span class="ext-label">서울문화재단 웹진 ‘연극in’ 기고</span>
+            <span class="ext-url">https://www.sfac.or.kr/theater/WZ020400/webzine_view.do?wtIdx=13665</span>
+          </a>
+          <p style="color:var(--muted); font-size:14px;">서울프린지페스티벌2024 창작집단 푸른수염 〈나는 일종의 ITA 같은 것을 하고 싶은 위대한 연극인이 될 계획인데 말이지〉</p>
+          <p>글의 제목은 2005년에 개봉한 미키 사토시 감독의 일본 영화 제목을 인용하였다.</p>
+          <p>얼마 전 우연히 바다 거북이의 삶에 대해 듣게 되었다. 아기 바다거북이는 스스로 알을 깨고 나오자마자 상대적으로 안전한 바다로 향한다. 가는 길에 독수리에게 잡아먹히거나 사람들이 켜놓은 불빛을 바다로 착각하여 바다행이 좌절되기도 하지만, 살아남은 거북이들은 육지에서보다 바다에서 더 빨리 자신의 발길질로 헤엄치며 살게 된다. 육지에서의 인고의 시간을 경유하여 바다에서 자신만의 속도대로 살 수 있게 되는 것이다.</p>
+          <p>서울프린지페스티벌2024 자유참가작인 〈나는 일종의 ITA 같은 것을 하고 싶은 위대한 연극인이 될 계획인데 말이지〉(이하 〈일종의 ITA〉)는 아기 거북이의 이미지가 떠오르는 공연이었다. 이 작품은 창작집단 푸른수염의 신입단원들이 리서치 및 공동창작하고, 이 집단을 이끄는 안정민이 쓰고 구성한 작품이다. 연극의 중심에는 ‘위대한 연극인’이 되겠다는 포부를 가진 신입단원들이 있다. 이 연극은 바다로 향하는 아기 거북이처럼, 막 연극인으로서 발돋움한 신입단원들에 대한 작품이다.</p>
+          <p><b>인정투쟁 없이 예술가-되기</b></p>
+          <p>공연 시작 전 연남동 끝에 위치한 복합문화공간 뉴페이즈(New Phase)에 걸그룹 뉴진스의 곡들이 크게 울려 퍼진다. 공연 시간에 이르자 뉴진스의 노래 ‘ETA’가 배경음악으로 삽입된 오프닝 영상이 한쪽 벽면에 투사된다. ‘What’s your ETA’라는 후렴구가 ‘What’s your ITA’라고 들려 웃음이 나오고 만다. 이러한 의외성에 의한 웃음이 이 연극을 이끄는 동력이다. 기존의 질서를 신입단원들만의 질서로 재구성함으로써, 이들만의 규칙을 만드는 것이다.</p>
+          <p>이내 이예진 배우가 관객들에게 자기소개를 하고, 극단 입단 계기와 이보 반 호프(Ivo van Hove)를 알게 된 경위에 대해 설명한다. 국제적인 연출가 이보 반 호프가 예술감독으로 재직 중인 서양 유명 극단, 일명 ITA(International Theatre of Amsterdam)에 대해서 벽 한 면에 시각자료를 투사하여 설명한다. 옆에서 정고운 배우는 우리나라 국립극장에서 분기마다 상영되는 공연 영상 프로그램 ‘ITA Live’를 통해 봤던 ITA 작품들에 대해 말하며 상기된 모습을 보인다.</p>
+          <p>예진은 이보 반 호프를 ‘천재’라고 칭하며 그들처럼 규모가 크고, 대단한 예술적 수준의 연극을 만들고 싶어 한다. 하지만 유럽 유학생 출신인 안정민 연출은 우리나라에서는 그런 연극은 할 수 없다고 한다. 예진은 ITA로 대표되는 유럽 연극과 한국 연극에 대해 고찰한다. 유럽연극은 68혁명 이후 ‘표현을 표현 그 자체로 받아들이는 태도’와 ‘실패 가능한 작업 환경’을 갖추고, 연극에 대한 지원금이 우리나라의 약 100배 정도 되기 때문에, 한국의 연극 제작 환경과 다르다는 사실을 알게 된다.</p>
+          <p>하지만 신입단원들은 포기하지 않고 계속해서 연극에 대해 탐구해간다. 다각도로 현상에 접근하여 다양한 방식으로 상상하고 표현해낸다. 가령 천재 연출가 이보 반 호프를 만나는 브이로그(vlog)를 찍기도 하고, ‘천재론’을 살피기 위해 관객을 학생 삼아 극적 공간을 교실로 탈바꿈하고, 때로는 연극의 원형 그리스 비극의 코러스로 변신해 연극의 신과 대화를 시도한다. 이러한 상상은 극단에 치달아 디스토피아적인 미래까지 뻗어 나간다. ‘마법의 돌’을 통해 자신의 타고난 예술적 재능을 진단받고, 그 결과에 따라 예술 지원 여부가 결정되는 미래에 대해 상상하기도 한다.</p>
+          <p>신입단원들은 고정된 서사나 전통적인 연극 양식에서 벗어나, 자신들의 솔직한 이야기를 담아내는 방식으로 연극을 해나간다. 이를 통해 이들은 주변부(fringe)에서 시작해, 자신들만의 연극 언어와 세계를 구축해나가며 예술가가 되어간다(becoming).</p>
+          <p><b>천재가 아니기에(아니어도) 될(할) 수 있는 것</b></p>
+          <p>연극은 천재에 대해서 고찰하지만, 결국 천재적인 예술가가 아니라, 평범한 사람들이 어떻게 예술가로서 성장할 수 있는지를 말한다. 신입단원들은 천재가 아니기에 오히려 여러 시행착오를 겪으며 자신들만의 방식으로 예술을 창작할 수 있게 되었다. 그들 스스로의 방식으로 연극을 만들어가야 함을, 기존의 틀을 깨고 자신들만의 표현방식을 알게 된 것이다.</p>
+          <p>연극의 마지막에서 성민경 배우는 처음으로 자신의 언어와 목소리로 관객에게 이야기한다. 비록 연극을 통해 아무것도 변한 게 없을지라도 연극은 그저 ‘간단한 걸 발견한 뒤 흩어져가는 과정’임을 말한다. 그동안 연극에서 어떠한 인물을 연기하며, 연극을 통해 위대한 연극인이 되기 위해 달려왔지만, 결국 자신이 진정으로 되어야 했던 것은 바로 자기 자신임을 깨달았던 걸까? 더 이상 무언가가 되려 하지 않고, 자신으로서 페이스를 찾게 된 모습 같았다.</p>
+          <p>극장을 빠져나오며 “반짝반짝”이라는 부사와 “예쁘다”라는 형용사가 먼저 떠올랐다. 마지막 장면에서 성민경 배우의 대사로 무수히 많은 장면들이 떠올랐다. 연극에 관해 뜨겁게 토론했던 그 많고 많았던 밤과, 가장 좋아하는 연극에 대해 묘사하다가 동기가 내 눈이 반짝이고 있음을 말해줬던 날, 시적인 대사가 흩어지다가 내 맘속에 각인되었던 공연의 무대를 하염없이 바라보던 날 등이 한꺼번에 생각났다. 이렇게 하루를 진심으로 겪어내다가, 우리가 천재가 아니어도, 아기 거북이 같은 의연함을 어느새 가지게 될 수 있지 않을까. 우리는 진즉 알에서 깨어나 찬란한 바다로 가고 있는 중일 지도 모른다.</p>
+          <p class="source">📌 서울문화재단 웹진 ‘연극in’ 기고</p>
+        </div>
+      </details>
+
+      <details class="entry">
+        <summary>
+          <span class="meta">아티클</span>
+          <span class="title">2010–2023 서계동을 기억하며</span>
+        </summary>
+        <div class="body">
+          <a class="ext-embed" href="https://archive.ntck.or.kr/front/service/3dvrList" target="_blank" rel="noopener">
+            <span class="ext-label">국립극단 디지털 아카이브</span>
+            <span class="ext-url">https://archive.ntck.or.kr/front/service/3dvrList</span>
+          </a>
+          <p style="color:var(--muted); font-size:14px;">연극, 만남, 그리고 기억</p>
+          <p style="font-style:italic; color:var(--muted);">“기억은 삶이고, 영원히 진화되어 간다” — 피에르 노라 『기억의 장소』 중</p>
+          <p>국립극단은 2010년 재단법인 출범과 함께, 옛 기무사령부 수송대 건물이었던 공간을 개조하여 서울역 뒤편 서계동에 새 둥지를 틀었습니다. 군부대가 사용하던 차고, 정비고, 막사, 내무반 건물이 극장, 연습실, 무대 및 소품 창고, 사무공간으로 탈바꿈했습니다.</p>
+          <p>2011년 3월에는 국립극단에서 오랜 기간 활동한 故 백성희, 장민호 두 배우의 이름을 딴 ‘백성희장민호극장’의 개관 기념공연 〈3월의 눈〉을 시작으로 관객들을 만나기 시작했습니다. 그리고 2023년 6월 〈보존과학자〉, 〈영지〉를 끝으로 서계동 빨간 지붕에서의 국립극단 무대는 막을 내렸습니다.</p>
+          <p>서계동에는 다양한 공간이 있었습니다. 다채로운 공연을 만날 수 있던 백성희장민호극장과 소극장판, 공연의 세계로 입장하기 전 관객을 처음 맞이하던 매표소, 설레는 마음으로 공연을 준비하던 분장실, 땀과 열정으로 작품을 빚어낸 연습실 스튜디오 하나, 그리고 둘. 무대와 의상, 그리고 소품들이 탄생하는 무대제작소와 의상소품실. 포스터와 전단, 대본과 출판물 등 70년이 넘은 국립극단의 시간을 간직하고 있는 서고. 좋은 작품을 만들기 위해 한 마음으로 일하던 사무실. 동네 고양이부터 시민들까지 모두의 놀이터가 되기도, 공연의 일부분이 되기도, 축제의 장이 되기도 하였던 넓은 마당.</p>
+          <p>국립극단은 연극인 여러분, 관객 여러분 그리고 국립극단 직원들의 손때가 묻은 곳곳을 디지털 아카이브로 공간을 기록했습니다. 이곳에서 두 편의 영상과 3D VR 기술로 촬영된 서계동을 만나보실 수 있습니다. 서계동의 풍경과 더불어 여러 질감의 소리를 담은 영상 ‘소리편’부터, 서계동과 얽힌 사람들의 기억이 담긴 영상 ‘기억편’, 원하는 곳을 마음껏 둘러보시면서 서계동을 추억하실 수 있도록 준비한 3D 공간 스캐닝까지.</p>
+          <p>우리의 삶과 기억이 차곡차곡 모인 서계동을 함께 추억할 수 있는 시간이 되기를 바랍니다. 다시 만나요, 서계동.</p>
+        </div>
+      </details>
+
+      <details class="entry">
+        <summary>
+          <span class="meta">평론</span>
+          <span class="title">단지 더 잘살고 싶었던 여성을 기억하며</span>
+        </summary>
+        <div class="body">
+          <a class="ext-embed" href="https://www.sfac.or.kr/theater/WZ020400/webzine_view.do?wtIdx=13327" target="_blank" rel="noopener">
+            <span class="ext-label">서울문화재단 웹진 ‘연극in’ 기고</span>
+            <span class="ext-url">https://www.sfac.or.kr/theater/WZ020400/webzine_view.do?wtIdx=13327</span>
+          </a>
+          <p style="color:var(--muted); font-size:14px;">문화다방 이상한 앨리스 〈의붓자식: 100년 만의 초대〉</p>
+          <p>“나는 단지 더 잘살기 위하여 나의 이상을 찾을 뿐입니다.”</p>
+          <p>김명순의 문장 중에서 가장 좋아하는 문장이다. 드라마터그 작업을 계기로 김명순과 처음 조우했던 2020년에 이 문장을 읽고는 울고 싶은 기분이었다. 드라마터그의 글에도 이 문장을 인용하면서 울고 싶었던 이유가 뭔지 정확히는 몰라도, “그저 지금 자신이 처한 상황보다 더 잘 살고 싶었던 한 여성이 보였다”라고 적었다. 3년이 지난 지금도 여전히 그 기분의 이유를 잘 모르겠지만, 이를 계기로 나는 김명순과 신여성에 꽂혀 졸업 논문을 썼다.</p>
+          <p>한 해에 걸쳐 완성한 논문은 동시대 한국연극에서 신여성을 소재로 한 연극의 재현 양상에 관한 내용이었다. 조선에서 신여성은 소설, 희곡, 신문, 잡지 등 다양한 매체에서 소재로 전락하여 부정적으로 형상화되었지만, 동시대 한국연극에서 신여성을 새롭게 재조명함에 주목한 논문이었다. 말미에 사회적 죽음으로 내몰렸던 신여성들을 대상화하지 않고 각기 다른 전략으로 그들을 재현한 것이 유의미하다고 보았다. 그리고 논문의 결론에서 오늘날 여전히 신여성이 무대로 소환되는 이유는 “(중략) 여전히 여성들의 목소리가 다른 방식으로 지워지고 있기 때문”이라고 썼다. 급한 갈무리를 한 이 논문은 3년 전 울고 싶었던 기분의 단초를 찾기 위한 여정 중 하나였다.</p>
+          <p>문화다방 이상한 앨리스의 연극 〈의붓자식: 100년 만의 초대〉(이하 〈의붓자식〉)은 부제목에서도 드러나듯 100년 동안 수면 위로 올라오지 않았던 — 혹은 못했던 — 작가 김명순의 희곡을 무대화한 작품이다. 김명순의 첫 번째 희곡 〈의붓자식〉(1923)을 커다란 골자로 가지고 각색하였는데, “세상의 의붓자식”이었던 김명순 자신이 내면과 삶을 드러냈던 글들을 작품 곳곳에 인용하였다. 가령 원작 〈의붓자식〉에는 없는 극중극 장면이 추가되었다. 주인공 성실은 원작과 크게 다르지 않은 인물로, 일본 유학까지 다녀와 고등교육을 받은 신여성이며 예술가이다. 극중 성실이 쓴 희곡을 연습하는 극중극 장면은 실제 김명순의 두 번째 희곡 〈두 애인〉(1927-1930년 추정)의 내용을 빌려온 것이다.</p>
+          <p>연극 속에 김명순의 다른 작품들의 문장들이 녹아있는 건 김명순이 썼던 서사의 원천이 김명순의 생애사와 관련이 있기 때문일 것이다. 그에 대해 짧게 들여다보자면, 김명순은 1920년대 호기심과 동경, 질투와 경멸의 대상으로 여겨졌던 1세대 신여성이다. 동시에 그는 근대 최초의 여성 작가다. 허나 그는 기생의 딸이라는 이유로, 데이트 폭력의 피해자라서 ‘탕녀’로 낙인찍힌 채 몇 십 년 동안 줄곧 비난 받았다. 하지만 그는 자신에게 가해진 부당한 비난에 대항하는 자전적인 글들을 썼다. 타인이 자신에게 부여한 얼룩을 자신의 언어로 지우고자 한 것이다.</p>
+          <p>그래서인지 객석 같은 경우, 무대 공간과 함께 아르코예술극장 대극장의 무대 위에 올라와 객석과 무대의 경계가 지워져있다. 공연 시작 전 배우들은 객석을 오가며 자유롭게 몸을 풀거나 대사를 외운다. 원형으로 무대 공간을 둘러싸고 있는 객석 공간의 형태에 극중에서도 배우들은 관객들 사이에서 폴리사운드를 내거나 그들을 가로질러 간다. 이러한 연출은 이를 2023년에 올리는 연극임을 전면적으로 보여주는 장치로 관객들로 하여금 1923년과 2023년 100년의 시차를 극복하고 적극적으로 극에 개입하게 하려는 의도인 듯 하였다. 무대 중앙에 놓인 관 모양의 침대와 무대 위에 걸린 관 모양의 벽은 감옥과도 같았던 성실의 상황을 상징적으로 보여주기도 한다.</p>
+          <p>한정된 지면상에서 다 논할 수는 없다만 극의 말미에 영호가 포도주에 가루약을 타주어 성실이 죽음을 향해 가는 장면은 재고해봐야 한다. 표면적인 층위에서 이를 읽어낸다면 성실 자신이 사랑하던 영호의 도움을 받아 죽음을 선택하는 것으로 보인다. 하지만 당대 김기진, 방정환, 김동인과 같은 남성 문인들에 의해 사회에서 철저히 배제되고 멸시당한 그 시대를 생각해본다면, 이 죽음은 결코 단순한 죽음일 수 없다. 마치 입센의 〈헤다 가블러〉에서 헤다의 손에 쥐어있던 권총처럼, 성실에게 죽음은 주체로서의 선택이 될 수 있지 않을까.</p>
+          <p>연극 〈의붓자식〉을 보고 나와서의 감상도 3년 전 처음 김명순의 글을 읽고나서의 관점과 크게 달라지지 않았다. 여전히 연극 속 주인공 성실은 그저 잘살기 위하여 이상을 찾는 한 여성이었다. 장 쟈크 루빈이 인용한 크롬웰의 서문처럼 “연극은 렌즈의 초점이다. 세계와 역사 삶, 인간 속에 존재하는 모든 것은 여기에서 굴절되어야” 한다고 말한 것처럼, 신여성에 대한 이야기는 여전히 만연한 사회적 인식을 굴절시키고 전복한다. “무엇이든 말로 바꾸어 놓았을 때 그것은 온전한 것이 되었다”는 버지니아 울프의 말처럼 (신)여성의 서사는 계속 쓰여야 한다.</p>
+          <p class="source">📌 서울문화재단 웹진 ‘연극in’ 기고</p>
+        </div>
+      </details>
+
+      <details class="entry">
+        <summary>
+          <span class="meta">학위논문</span>
+          <span class="title">동시대 한국 연극의 신여성 재현 방식</span>
+        </summary>
+        <div class="body">
+          <a class="ext-embed" href="https://lib.karts.ac.kr/search/detail/CATTOT000000338751" target="_blank" rel="noopener">
+            <span class="ext-label">한국예술종합학교 전자도서관 소장</span>
+            <span class="ext-url">https://lib.karts.ac.kr/search/detail/CATTOT000000338751</span>
+          </a>
+          <p style="color:var(--muted); font-size:14px;">나혜석·김명순 소재 연극을 중심으로 / 한국예술종합학교 연극원 연극학과 정다현 예술사 학위논문 (지도교수: 우수진)</p>
+          <p><b>국문초록</b></p>
+          <p>미투 운동 이후 한국 연극계에서는 여성주의 연극이 증가하였으며, 그 영향으로 근대 초기에 등장했던 신여성을 소재로 한 연극도 창작되었다. 본 논문은 신여성이 근대 문학과 희곡 등에서 주로 부정적으로 형상화되었던 데 반해 최근에는 동시대적인 문제의식을 토대로 연극에서 신여성이 어떻게 재현되었는지를 고찰한다.</p>
+          <p>우선 신여성 소재 연극을 살펴보기에 앞서 신여성에 대해 상세히 서술했다. 신여성은 19세기 말 20세기 초 세계 전역에서 나타난 사회적 현상이자 문화적 상징이었다. 신여성은 여성 고등교육의 혜택을 받은 첫 세대로, 이전에는 볼 수 없었던 새로운 가치와 태도를 추구하고 자신의 의지를 적극적으로 표명하는 일군의 집단을 뜻하였다. 본문Ⅰ에서 서구와 동아시아에서의 신여성의 개념과 양상에 대해 살펴보면서, 한국에서의 신여성 등장과 양상, 그리고 그들이 담지했던 이념과 담론들까지 정리하였다.</p>
+          <p>본문Ⅱ에서는 신여성들에 대한 왜곡된 과거 재현물들을 살펴보았다. 신여성들은 남성 중심적인 공공의 장에서 철저히 타자화된 역사를 지닌다.</p>
+          <p>본문Ⅲ에서 우리나라 제1세대 신여성인 나혜석과 김명순에 관한 동시대 한국 연극 작품들을 선정하여 다양한 연극적 형식과 표현으로 두 신여성을 재현한 사례로 〈원치 않은, 나혜석〉(2012), 〈나, 혜석: 나로 살고저〉(2020), 〈백 년 만의 초대 — 〈의붓자식〉, 〈두 애인〉〉(2020), 〈8Rounds: 김명순에 관한 고찰〉(2020) 총 네 편의 연극을 분석하였다. 이 네 작품은 공통적으로 포스트드라마적인 연극 공연이라고 할 수 있다. 신여성을 소재로 한 동시대 연극은 각각 렉처 퍼포먼스, 토론의 연극화, 서사극적 기법 등 ‘재현 중심의 드라마 연극’에서 벗어난 반(反)드라마적 기법을 통해 신여성들의 삶과 현실을 재조명했다. 최근 연극 사례들은 모두 과거 재현 양상의 한계에 묶여 있지 않고 다양한 연극적인 표현들을 활용하면서 실재적인 신여성의 삶 그 자체에 집중하고 있다. 이러한 연극들은 기존에 위계적이고 가부장적인 문화로부터 벗어나 반성적인 태도와 동시대적인 관점을 투사함으로써 왜곡되었던 여성을 재맥락화한다.</p>
+          <p>이처럼 본 연구는 과거와 다른 방식으로 무대 위로 호명된 신여성 재현 방식을 살펴보고 이 연극 작품들이 가지는 동시대성에 대해서 탐구해보고자 하였다.</p>
+          <p><b>목차</b></p>
+          <p style="font-family:monospace; font-size:13px; color:var(--muted); white-space:pre-line; line-height:1.8;">Ⅰ. 서론
+Ⅱ. 신여성의 개념과 역사
+  1. 서구에서 신여성의 등장과 그 양상
+  2. 동아시아에서 신여성의 등장과 그 양상
+  3. 한국에서 신여성의 등장과 그 양상
+Ⅲ. 신여성의 재현 양상과 왜곡
+  1. 신문·잡지 : 일반 여성들의 모범 또는 스캔들의 대상
+  2. 소설 : 성적 방종의 형상화
+  3. 희곡 : 조롱과 희화화의 대상
+Ⅳ. 신여성 소재 연극 사례 분석
+  1. 몸의 수행성을 통한 노라-되기: 〈원치 않은, 나혜석〉
+  2. (신)여성 주체의 서사적 재현: 〈나, 혜석: 나로 살고저〉
+  3. 렉처 낭독을 통한 전경화: 〈백 년 만의 초대 — 〈의붓자식〉, 〈두 애인〉〉
+  4. 디베이트의 연극화: 〈8ROUNDS: 김명순에 관한 고찰〉
+Ⅴ. 결론</p>
+        </div>
+      </details>
+
+      <details class="entry">
+        <summary>
+          <span class="meta">평론</span>
+          <span class="title">그때의 나를 떠올리는, 안온한 햇살 같은 연극</span>
+        </summary>
+        <div class="body">
+          <p style="color:var(--muted); font-size:14px;">국립극단 어린이청소년극 연구소 첫 단막극 연작 〈트랙터〉</p>
+          <p>나의 청소년기를 떠올려본다면, 무언가 결핍되어 있는 기분을 항상 느꼈다. 흔히들 말하는 ‘사춘기’에 도달해, 신체와 정신 모두 성숙해져가는 과정이었다. 그런 걸 성장통이라고 해야 하는 걸까. 내외부적 자극을 받아 쉽게 동요하고, 흔들리고, 부딪히고, 흥분하는 과정이었으니. 그렇게 우리는 급하게 변하면서 지금 여기를 위해 달려왔다. 자신이 어떤 땅을 딛고, 어디에 서있는지 명확히 아는 사람이 과연 있을까. 청소년기엔 더더욱 그게 어려웠던 듯 하다.</p>
+          <p>국립극단 어린이청소년극 연구소의 첫 단막극 연작 기획 연극 〈트랙터〉는 그러한 청소년기의 과도기를 따뜻한 시선으로 그려냈다. 마치 안온한 햇살이 언젠가 날 비춰주길 기다리는 순간들을 말이다. 〈트랙터〉는 청소년극으로 ‘뜻밖의 만남’이라는 테마를 가지고 세 명의 작가들이 쓴 작품들을 모아 놓은 작품이다. 한현주 작가의 〈7906 버스〉, 허선혜 작가의 〈빵과 텐트〉, 나수민 작가의 〈하얗고 작은 점〉의 세 작품이 다양한 모양과 색의 기억들을 만들어냈다.</p>
+          <p><b>상상력으로 똘똘 뭉쳐있는 순간들</b></p>
+          <p>청소년극이 청소년만을 위한 연극이 아님은 자명하다. 어른들은 청소년극을 통해 현재는 잃어버렸던 그 무언가를 기억해낼 수도 있다. 그렇기에 청소년극은 특수하면서도 보편적인 감정을 건들인다. 청소년기 때만 느낄 수 있고 경험할 수 있는 순간들을 그려내지만, 누구나 한번쯤 겪어봤을만한 상황들을 그려내는 것이다.</p>
+          <p>객석에 착석하기 위해선 무대의 일부인 흰 바닥을 밟으며 통과해야 한다. 딱딱하고 무채색의 소극장판 바닥을 밟는 것이 아니라 흰색의 인공 구조물을 밟는다. 마치 관객이 〈트랙터〉가 구축해놓은 상상 세계 안에 입성하는 듯한 느낌을 준다. 온통 하얀 벽과 뭉게구름처럼 둥실 바닥에 떠있는 흰 무대 세트는 어린 시절로 돌아간 듯 향수를 불러일으킨다.</p>
+          <p>한현주 작가의 〈7906 버스〉는 사고 이후의 일상을 영위해나가야 하는 사람들의 모습을 그린다. 이야기는 한여름 밤 막차 버스가 갑자기 차고지 전에서 멈추는 데서 시작된다. 늘상 타있던 두 고등학생 세영과 은호만 버스에 타있었고, 그들은 버스기사인 자은과 함께 내린다. 자은은 몇 년 전 죽은 딸의 교통사고를 경험했기 때문이었다. 후에 셋은 대화를 하다가 3일 전 똑같은 장소에서 있었던 공사장 구조물이 버스로 떨어진 사고를 회상한다.</p>
+          <p>허선혜 작가의 〈빵과 텐트〉는 기아체험 24시 행사에서 만난 배우와 그의 팬의 기행기 같은 작품이다. 우연히 들어간 배우의 텐트에서 둘은 잡담을 하게 된다. 이내 배우의 팬은 함께 잃어버린 자신의 ‘몸’을 찾아 달라고 부탁한다. 음향 소리와 배우의 몸짓 하나에 텐트의 지퍼를 여니 시칠리아 해변, 무너진 성당의 돌무덤, 연필 속 나무와 흑연 사이, 앞으로 쓰일 일기의 맨 첫 단어 ‘오늘’의 ‘ㅇ’ 속 세계가 둘 앞에 펼쳐졌다.</p>
+          <p>나수민 작가의 〈하얗고 작은 점〉은 너무 빠르게 가는 시간 앞에 선 아이들에 대한 얘기다. 유방을 키워드로 이야기가 전개되는데, 엄마가 유방암 의심 진단을 받아 병원에 간 강준과 엄마가 유방암 절제 수술을 받아 한쪽 가슴이 없는 지오의 이야기다. 세상은 너무 빠르게 돌아가고 지오와 강준에겐 쉼의 시간이 필요하다.</p>
+          <p><b>그때의 나에게 다가가면서</b></p>
+          <p>세 작품은 아주 느슨하게 연결되지만, 그 틈으로 하여금 관객에게 여러 사유의 시간을 준다. 세 작품 모두 ‘전진’하는 이미지를 담고 있다. 현재가 지난하고, 현재와 미래가 불분명할지라도 일단 앞으로 나아가는 것이다. 우리가 겪었던 성장통처럼 말이다.</p>
+          <p>제목의 ‘트랙터’는 가동 속도는 느리지만 자신의 땅을 일굴 수 있다. 이는 결국 새로운 씨앗을 위한 자리를 만들어낼 수 있는 중요한 기반이 된다. 그러하기에 혹자들은 청소년기에 겪는 통증을 ‘성장통’이라고 일컫는 게 아닐까. 이 연극은 조금 느리게 가도 괜찮다고, 자신이 왔던 길을 잘 일구면 되는 것이라고 말해주는 듯 했다. 그때의 나를 추억할 수 있는 현재에 감사하면서, 그때의 순간으로 현재를 살아가면서.</p>
+        </div>
+      </details>
+
+      <details class="entry">
+        <summary>
+          <span class="meta">평론</span>
+          <span class="title">다각형의 중심으로 가기 위하여</span>
+        </summary>
+        <div class="body">
+          <p style="color:var(--muted); font-size:14px;">연극 〈그을린 사랑〉 (제56회 백상예술대상 백상연극상 수상작)</p>
+          <p>우리는 삶에서 많은 진실들과 맞닥뜨린다. 때론 그 진실의 무게가 감당할 수 없을 만큼 너무 무거워서 회피하기도 한다. 그렇다면 당신은 ‘오이디푸스’에 대해 들어본 적이 있는가. 고대 그리스 비극 작가 소포클레스의 작품 〈오이디푸스 왕〉은 ‘오이디푸스’의 모습으로 운명의 불확실성과 인간의 존엄함에 대해 이야기 한다.</p>
+          <p>대략 스토리는 이렇다. 오이디푸스가 왕인 테베에 역병이 돌고, 오이디푸스는 그 역병의 원인을 찾고자 한다. 사건을 파헤칠수록 오이디푸스는 자신의 출생과 얽힌 진실을 알게 된다. 부친살해, 근친상간이라는 유쾌하지 않은 소재를 다루고 있는 〈오이디푸스 왕〉이 오랜 세월 명작으로 불리는 이유는 뭘까? 그건 바로 운명의 진실을 안 후 오이디푸스의 행동이다. 그 운명이라는 건 우리가 저항하거나 피할 수 없다. 허나 그때 인간이 할 수 있는 것은 운명에 맞서 직면함으로써 그 운명에 다시 대항하는 것이다. 오이디푸스는 자신과 관련된 모든 참혹한 진실을 깨닫고 바로 자신의 눈을 찔러 광야로 떠났다.</p>
+          <p>오늘 얘기할 작품은 우리에게 드니 빌뇌브의 감독 영화 〈그을린 사랑〉(2011)이라는 제목으로 먼저 알려졌다. 영화의 원작은 레바논계 캐나다인 작가 와즈디 무아와드(Wajdi Mouawad)의 희곡 〈화염 Incendies〉(이하 화염)이다. 〈화염〉은 〈오이디푸스 왕〉의 모티프로 쓰여진 작품이다. 〈화염〉의 이야기는 일관 침묵을 지키던 엄마의 유언장으로 시작된다. 엄마 ‘나왈’은 쌍둥이 자녀 ‘시몽’과 ‘잔느’에게 각각 편지를 남긴다. ‘잔느’는 죽은 줄 알았던 자신의 아버지를 찾아 가야하고, ‘시몽’은 존재하는지도 몰랐던 형을 찾아가 편지를 전해야한다. 그렇게 잔느와 시몽은 어머니의 흔적을 좇아 엄마의 고향 중동으로 떠난다.</p>
+          <p>무대는 잔느와 시몽이 좇는 ‘현재’와 나왈이 쌍둥이에게 유언을 남길 수밖에 없었던, 즉 나왈이 평생 침묵할 수밖에 없었던 ‘과거’의 장면들이 교차된다. 과거 나왈은 잔느와 시몽을 낳기 전 종족분쟁으로 잃어버린 아들을 찾으려 한다. 하지만 나왈은 15년 이상 지속된 전쟁(레바논 내전)을 마주하고 나왈은 그 과정에서 감옥에 들어가 강간을 당한다. 잔느는 엄마 ‘나왈’의 역사를 거슬러 올라, 전쟁의 폭력과 역사와 마주한다. 그리고 그 안에서 고통을 겪어야 했던 엄마의 기억까지.</p>
+          <p>극의 초반에 대학교에서 수학을 가르치는 잔느는 강의 시간에 그래프 이론에 대해 설명하는 장면이 있다. A부터 E까지 명명된 꼭지점으로 이루어진 다각형 K안에서, 이것을 가족의 평면도라고 치자면, 꼭지점에는 가족 구성원의 이름이 들어간다. 가령 할머니, 아버지, 어머니, 딸 아들. 이 평면도에서 꼭지점들이 보고 닿을 수 있는 점은 한정적이다. 하지만 호를 그려 평면도 위에 가시성 그래프를 그린다면 얘기가 달라질지도 모른다.</p>
+          <p>나왈의 할머니 나지라의 말처럼 나왈이 “읽고 쓰고 셈하고 말하는 걸”을 배웠던 것처럼, 잔느 또한 그랬다. 셈하고 읽고 말할 줄 알았던 잔느는 자신의 삶을 구축해주었던 명확한 기하학으로부터 떨어져 엄마의 과거를 좇는다. 그녀의 엄마가 이끈 다각형의 중심으로 가기 위해서 말이다.</p>
+          <p>겹겹이 쌓였던 진실의 실루엣이 보이기 시작할 때쯤 관객석은 적막했다. 1+1의 결과값이 2가 아닌 1이라는 것이 믿기지 않았기 때문이다. 아무것도 존재하지 않는 빈 무대에선 “이제 우리 함께 있으니 괜찮아질 거야”라는 말이 반복적으로 울려 퍼진다. 나왈은 분노의 흐름을, 자신의 사랑으로서 덮고자 했다. 마치 자신이 침묵으로 진실을 덮었던 것처럼. 이야기의 도착지에서 시몽과 잔느, 그리고 형과 아버지는 다같이 나왈의 마지막 편지를 읽음으로써 다각형의 중심에 도달한다. 침묵은 깨졌다. 침묵은 더 큰 앎을 끌어오고, 사랑으로 인해 침묵보다 더 큰 앎이 무대 위에 드리운다. 최종 도착지에선 존재론적인 질문만이 남는다. 우리는 어느 다각형에, 어디에, 어떻게 존재하는가.</p>
+          <p class="source">📌 fake magazine 웹진 기고</p>
+        </div>
+      </details>
+
+      <details class="entry">
+        <summary>
+          <span class="meta">아티클</span>
+          <span class="title">빛나는 기억들로 마주한 오늘의 나</span>
+        </summary>
+        <div class="body">
+          <p style="color:var(--muted); font-size:14px;">Letters to the unknown — 미술의 하영·영화의 현수를 통과하여, 너머의 누군가에게</p>
+          <p>우리가 11월 8일 을지로에서 만났던 걸 기억하시나요? 우리는 셋이 함께 하게 된 새로운 컨텐츠에 대해 얘기했습니다. 취향, 지식 등이 오고가는 유의미하면서 무의미한 대화였던 듯 하네요. 그때 우리는 함께 가까운 미래, 곧 마주하게 될 일상을 상상했습니다. 우리가 각자의 방에서의 줌 화면이 아니라 직접 얼굴을 보게 된 것도 그때 했던 상상의 전조 현상이었으니까요.</p>
+          <p>2주 동안 하영과 현수 씨의 글들은 아주 흥미로웠습니다. 현수 씨가 글 말단에 언급해주신 대로 ‘얼굴 없는 대면’과 ‘얼굴만 있는 비대면’이라는 모순적인 지점들이 특히. 저는 사실 ‘마주하기’라는 키워드를 정한 순간부터 연극만이 할 수 있는 얘기를 쓰고 싶었습니다. 지켜보는 공간에서, 지켜보는 자가 바로 앞에서 행위하는 자의 호흡을 느끼며, 함께 시간을 보내는 것과 관련된.</p>
+          <p>하지만 지난주 금요일(글이 쓰인 시점으로부터. 날짜는 12월 17일) 〈내게 빛나는 모든 것〉이라는 연극을 보게 되었고, 저 작품은 제가 기존에 써놓았던 글을 지우게 만들었죠. 제목부터 어딘가 난로를 쬔 듯 따뜻함이 느껴지지 않나요. 저 연극은 실제로도 따뜻했습니다. 제가 공연을 보러 간 날은 굉장히 추웠는데(영하 9도) 극장과 제 마음만큼은 뜨거웠습니다.</p>
+          <p>〈내게 빛나는 모든 것〉은 1인극으로, 이름이 없는 한 나레이터(화자)가 우울증을 겪고 있던 자신의 어머니를 위해 7살 때부터 ‘세상에서 빛나는 것들’에 대한 리스트를 작성하는 데서 이야기가 시작합니다. 아무것도 존재하지 않는 무대는 사 면의 객석 형태로 서로 마주보는 관객들에 둘러싸여 있었어요. 제가 입장했을 때 한 명의 배우(이형훈 분)는 아직 입장하지 않은 관객의 자리에 앉기도 하고, 돌아다니며 관객들에게 말을 걸고 있었습니다. 그러곤 1번 아이스크림부터, 물싸움, 밤에 몰래 TV보기, 노란색, 줄무늬 양말, 롤러코스터, 길가다 누군가 넘어졌을 때… 미리 배우에게 부탁 받은 관객들과 배우가 “함께” 리스트를 읽으며 공연이 시작됐습니다.</p>
+          <p>나레이터는 유쾌하게 자신의 얘기를 하기 시작해요. 삶의 궤적을 좇으며 리스트와 관련된 과거의 것들을 소환시키기도 합니다. 관객과 함께 말입니다. 관객들은 화자의 아빠, 수의사, 할머니, 심리 상담가 선생님의 양말 강아지, 교수님, 연인 등의 역할을 맡습니다. 실제로 무대 공간에 가기도 하고, 배우가 던진 ‘행복이 무엇이냐’라는 질문에 답하기도 합니다. 그렇게 화자는 관객과 함께 잊혀졌던 ‘빛나는 것’들에 대한 목록을 다시 채워갑니다.</p>
+          <p>공연을 보면서 저는 제 리스트에 무엇이 써질지 상기시키고 있었습니다. 내게 빛났던, 빛나고 있는, 빛날 물건들이나 기억들에 대해서 생각했습니다. 그것들은 중요하지만 깨지기 쉬운 것들이기도, 제게 삼켜지지 못한 것들이기도 했고, 그저 사소한 일상의 행복이기도 했습니다. 화자는 담담하게 이야기를 이어갔습니다.</p>
+          <p>어느새 화자는 엄마의 슬픔을 위해 써왔던 82만개의 포스트잇이 결국 자신을 위한 것이었음을 시사하며 연극은 끝납니다. 저는 오랜만에 연극이 제 삶에 깊숙이 들어왔다고 생각했습니다. 무슨 기분이었는진 모르겠지만, 위로 뭐 그런 걸 받았던 것 같아요. 우리는 모두 진공 상태에 있지 않고, 때론 슬프고 때론 기쁘기도 한 입체적인 사람이니까, 전 조금 더 살아봐도 괜찮겠다고, 내가 우주의 먼지에 불과할지라도 이렇게 빛나는 것들이 내게 있다면 그걸로 충분하지 않을까,라고 생각했습니다.</p>
+          <p>저도 이 공연을 따라 실제로 제 리스트를 작성 중에 있습니다. ‘내게 빛나는 것들’에 대한 리스트를 작성하며 내 이야기를 내가 다시 써보고 싶었거든요. 문득 궁금해집니다. 삶에서 우리는 몇 개의 리스트들을 채우게 될까요? 어차피 이 연극처럼 관객이 존재하지 않는 한 미완이 될 이 서사는 결국 각자의 이야기가 미완이란 점과 맞닿아 있지 않을까요? 하영과 현수 그리고 이 글을 읽고 있을 누군가도 연말연시 기념으로 당신에게 빛나는 것들에 대해 써보시는 건 어때요?</p>
+          <p class="source">📌 fake magazine 웹진 기고</p>
+        </div>
+      </details>
+
+      <details class="entry">
+        <summary>
+          <span class="meta">평론</span>
+          <span class="title">서로의 고독을 마주할 수 있는 자력</span>
+        </summary>
+        <div class="body">
+          <a class="ext-embed" href="https://www.sfac.or.kr/theater/WZ020400/webzine_view.do?wtIdx=12561" target="_blank" rel="noopener">
+            <span class="ext-label">서울문화재단 웹진 ‘연극in’ 기고</span>
+            <span class="ext-url">https://www.sfac.or.kr/theater/WZ020400/webzine_view.do?wtIdx=12561</span>
+          </a>
+          <p style="color:var(--muted); font-size:14px;">연극 〈연결된 밤, 연결된 방〉 (윤정인멜로디x프로젝트 1인실)</p>
+          <p>객석에 착석하면, 공간을 구획해놓은 듯 바닥에 붙은 흰색 테이프들이 눈에 띈다. 한 치의 삐뚤어짐 없이 정확한 직사각형 모양의 ‘경계선’들. 좁디좁은 직사각형 안에는 세 명의 인물들이 앉아있다. 앞에 각각 다른 세 자리수가 붙은 테이블에 앉아, 개인을 대변하는 오브제들과 함께. 그리고 그들 뒤 경계선의 밖에 존재하는 또 한 명의 인물이 있다. 이내 연극이 시작되면 뚜렷한 흰색 경계선들은 고시원 방 한 칸 벽의 기호임을 알게 된다.</p>
+          <p><b>공적이면서 사적인, 사회적이면서 개인적인, 뒤엉킨 방</b></p>
+          <p>이야기가 시작되기 전에 해설자는 작중 배경이 되는 고시원의 풍경에 대해 묘사한다. 고시원의 “멍처럼 푸르스름한 늦저녁의 복도”에는, 바람처럼 스쳐 지나간 “발자국들”이 자기 자신을 지워놓았다. 그 자리엔 방마다 다른 소리가 울려 퍼지고 있다. 타자를 치는 소리, 유튜브를 시청하는 소리 등. ‘경계 밖’ 내지 ‘경계에 있는’ 인물인 302호 입주자는 문을 나서고 복도에 들어서며 어디선가 들리는 “살려줘”, “살고싶어” “사랑해줘” 라는 목소리에 잠깐 멈춰 선다.</p>
+          <p>이처럼 기본적인 방음조차 안 되는 주거공간인 고시원에서는 개개인의 사생활이 보장되지 않는다. 입주자들은 벽 너머로 서로의 존재를 소리로써만 확인할 뿐 서로에겐 무관심한 모습을 보인다. 딱 방 한 칸 크기만큼의 마음을 갖고 살아가는 것이다. 한 건물 안에 밀도 있게 군집되어 있지만, 오로지 “자기를 지키는 문”안에서만 생활한다. 고시원 내부에서 발화되는 언어는 거의 들리지 않고, 설령 언어가 발화된다 하더라도 다른 이의 귀를 거쳐 죽는 것이 아닌 자신의 방 언저리에서 공중으로 흩어진다. 사회적으로 작용하는 언어가 기능을 잃은 것이다.</p>
+          <p>하지만 그렇다고 이들이 연민과 동정의 대상이 되는 것만은 아니다. 고시원의 사람들은 외부와 단절된 채 각자의 ‘벽’안에서 나름의 사정대로 살아간다. 가령 202호는 방에 책을 가득히 쌓아놓고 웹소설을 쓰느라 방을 나오지 않고, 303호는 사람과 있는 것이 불편해 식물과 “사람보다 100배” 더 나은 햄스터를 키우고, 403호는 SNS로 사람들과 소통해가며 살아간다.</p>
+          <p>그러던 중 세 인물은 고시원 전체에 만연한 불쾌한 냄새의 근원지를 찾다 서로를 마주한다. 벽을 지나 문지방을 넘고 방과 방을 오가면서. 이때 303호는 마침 곱창을 시켰다며 202호와 403호를 자신의 방에 초대해 같이 식사를 제안한다. 그리고 대화를 나누던 중 303호와 403호는 말다툼을 하게 되고, 303호는 고시원은 어떤 이유에서든 “조용해야 한다”라고 말한다. 거기에 202호는 정말로 고시원의 “모두가 조용하길 원하는지” 반문한다. 이는 곧 관객에게 각자의 세계에 존재하는 ‘타인의 여부’에 대해 질문하는 것처럼 느껴졌다.</p>
+          <p>하지만 곧 배달원이라는 경계선 바깥의 화자가 무대공간으로 침입한다. 배달원은 극이 만들어놓은 환상, 즉 흰색 선을 밟고 경계를 깨트린다. 이와 같은 메타-연극적인 방법으로 관객들은 흰색 테이프 밖을 응시하게 된다. 관객은 자신들이 있는 곳이 극장임을 인식되기 시작함과 동시에 극장 밖에 있는 현실의 공간을 성찰하게 된다.</p>
+          <p>고시원이라는 공간은 이처럼 철저히 단절의 공간이 가시화되어 있으면서도, 모든 것들이 뒤엉킨 인간의 관계의 형상을 띈다. 외로움을 느끼는 303호와 403호는 화장실 변기를 통해 한밤중에 소통한다. 어쩌면 이들이 대화를 하는 것처럼 느껴질 수도 있겠지만, 술에 취해 익명성에 기대어 대화하는 모습은 더 큰 공허함을 불러일으킨다. 물리적인 타인의 부재는 곧 타인과의 소통에 대한 열망을 불러일으킨다. 변기라는 매개를 통해 타인과 대화를 하면서도 실은 자기 내면과 대화하게 되는 아이러니함이다.</p>
+          <p><b>벽을 허물고, 선을 밟는 것을 공상하기</b></p>
+          <p>결국 이들은 벽을 뚫는 등의 방법을 고안하는데, 202호는 “괜히 나서서 실패”할 것을 걱정한다. 그러던 중 303호는 냄새의 근원지라 추측되는 302호가 건네던 고요한 안부와 위로를 회상한다. 그러던 중, 403호는 인성 논란으로 SNS로 라이브 방송을 한 후 알약을 가득 입에 넣는다. “살려줘. 살고싶어. 사랑해줘.”라는 외침은 또 다시 반복되고, 벽을 너머 문과 문, 벽과 벽을 오가면서, 202호와 303호는 403호의 죽음을 목도한다.</p>
+          <p>이들은 모두 각자의 자기장에서 자력을 행사하는 행성과도 같았다. 때로는 끌어당기거나 때로는 밀어내기도 하며, 각자의 궤도 속에서 공전하는 듯 했다. 그 궤도 속에서 점증적으로 외로움을 느껴 분출하는 모습은 포개어지는 발자국, 곧 나의 궤적을 따라가게 했다. 방향성 없이 갈팡질팡 하고 있는.</p>
+          <p>고시원 바닥엔 첫 장면처럼 “방향 없는 발자국”들이 찍히고, 그 발자국들끼리 포개어지며 미미한 빛이 다시 방안으로 들어온다. 마지막엔 202호와 303호가 각자 자신의 방에서 조명의 모양새도, 켜는 방식도, 빛의 조도도 다른 조명을 함께 켜는 것이 아니라, 403호에서 자연광을 맞이하며 끝난다. 이는 그들이 단절, 고립된 개인이었을 때는 밤의 공간이었다면, 함께 하기 시작한 순간 혹 서로가 서로를 인식하기 시작한 순간, 부터는 낮의 공간임을 알려주는 것 같았다. 마지막 장면은 202호와 303호는 하얀색 경계선을 넘고 있었다.</p>
+          <p>각자도생, 혼밥 등의 용어가 판치는 우리는 격조의 시대를 겪고 있다. 설상가상 역병으로 인해 방에 갇힌 현실에, 더욱더 고립되어 가고 있다. 어쩌면 이 역병으로부터 인간의 구원은 불가능할지도 모른다. 하지만 무용하지 않은 현실은 분명 있다고, 언젠가 우리는 만날 수 있다고 이 작품은 작은 한 마디를 건네는 것 같다. 인간이 인간에 의해 치유받을, 함께 한파를 뚫고 따스한 햇빛을 맞을 날을 공상해본다.</p>
+          <p class="source">📌 서울문화재단 웹진 ‘연극in’ 기고</p>
+        </div>
+      </details>
+
+      <details class="entry">
+        <summary>
+          <span class="meta">아티클</span>
+          <span class="title">봄의 전주, 여성 영화의 만개</span>
+        </summary>
+        <div class="body">
+          <p style="color:var(--muted); font-size:14px;">제22회 전주국제영화제 상영작 리뷰</p>
+          <p>지난 8일 폐막한 전주국제영화제는 ‘코로나 시대의 영화제 개최’라는 면에서 새로운 가능성을 보여주었다. 철저한 방역과 온오프라인 병행 프로그램 등은 팬데믹 상황에서도 예술이 계속 될 수 있음을 보여주기 충분했다.</p>
+          <p>이번 전주국제영화제에서 ‘스페셜 포커스’ 섹션 또한 기억할만한 부분이다. ‘스페셜 포커스’는 해마다 중요한 화두를 따라 그와 관련된 영화를 선보인다. 올해 스페셜 포커스 부문에선 코로나19와 여성이라는 키워드에 주목했다. 현재 우리에게 가장 중요하고 유효한 화두를 영화로써 성찰하는 것이다. 이번 스페셜 포커스 부문은 총 두 개의 섹션으로, ‘스페셜 포커스: 코로나, 뉴노멀’과 ‘스페셜 포커스: 인디펜던트 우먼’라는 제목을 내세웠다.</p>
+          <p>영화제가 주목한 키워드만큼 눈에 띄는 건, 늘어난 여성 감독의 작품이다. 전체 상영작에서 여성 감독의 작품은 약 41%였다. 줄곧 남성들의 전유물이었던 영화사에서 오늘날 다시 여성 감독을 조명할 수 있는 기회였다. 따라서 이번 글은 제22회 전주국제영화제의 상영작 중 주목해봐도 좋을, 여성 감독들의 영화 세 편의 리뷰를 준비했다.</p>
+          <p><b>‘국제경쟁’ — 〈저항의 풍경〉 / 마르타 포피보다 (2021)</b></p>
+          <p>전쟁사에서 여성의 목소리는 잊힌 지 오래다. 〈저항의 풍경〉은 전쟁을 여성의 관점으로, 생존이 곧 투쟁이 되는, 몸의 감각들로 소급해내는 전쟁 다큐멘터리다. 이야기의 주인공 97세 소냐는 아우슈비츠 생존자이자, 레지스탕스 운동을 이끈 유고슬라비아 최초의 여성 파르티잔이자, 반파시스트 운동가였다. 생애에 걸친 소냐의 투쟁은 감각에 관한 것이기에 재현하기 어렵다. 마르타 포피보다 감독은 이를 소냐의 몸에 새겨진 풍경으로 전쟁을 증언-재현해낸다. 영화에선 이런 가사의 노래가 들려온다. “우리는 들판을 덮고 있는 붉은 양귀비꽃” 본래 붉은 양귀비꽃은 전쟁과 기억에 관련된 것이었다.</p>
+          <p><b>‘한국경쟁’ — 〈성적표의 김민영〉 / 이재은·임지선 (2021)</b></p>
+          <p>관계가 유지된다는 건 누군가가 ‘우리’를 위해 노력하고 있다는 뜻이 아닐까. 〈성적표의 김민영〉은 청주의 한 여고 삼행시 모임에서 친해진 단짝 친구들 간의 이야기다. 대학에 가지 않고 고향에서 테니스장 아르바이트를 하는 정희는 어느 날 군대 간 서울 오빠 집에 머물게 되었다는 민영의 초대에 서울로 놀러 간다. 하지만 민영은 정희와 시간을 보내지 않고, 학점 정정 메일을 보내는 데에 매진한다.</p>
+          <p>마지막 장면에서 정희는 민영에게 성적표를 남기고 떠난다. 민영과 관련된 과목들에 성적이 매겨있다. 마지막은 ‘한국인의 삶’ 과목, 성적은 F. “너가 한국인에 대해서 얘기했던 게 생각나. 남의 눈치를 보고 안정된 사람을 쫒는 사람들. (중략) 앞으로 뭘하든 그때 우리 같았으면 좋겠어. 아무도 한심하다고 덜 절실하다고는 말할 수 없다고 생각해. 그래서 말인데 넌 한국인이 아니라 혼혈이었으면 해. 그런 의미에서 F를 줄게.” 우리는 친구이기에, 현재 너무 다른 상황에 처해있어도 나는 우리의 다름을 — 너의 무례를 포용하겠다, 로 받아들여졌다.</p>
+          <p><b>스페셜 포커스: 인디펜던트 우먼 — 〈워터멜론 우먼〉 / 셰럴 두녜이 (1996)</b></p>
+          <p>〈워터멜론 우먼〉의 감독이자 주인공인 셰럴은 아무도 제작하지 않았던 흑인 여성 배우에 대한 영화 프로젝트를 하기로 결심한다. 갖가지 아카이빙 기록들로써 1930-40년대에 희화화된 인물로 그려졌던 흑인 여배우들의 역사를 좇는다. 그중 ‘워터멜론 우먼’ 페이 리처드의 기록을 찾는다. 페이 리처드에 대한 조사를 하던 중 그녀가 레즈비언임을 알게 되고, 셰릴과 페이 리처드는 여성, 흑인, 레즈비언 등 정체성이 데칼코마니처럼 겹쳐진다. 보여지는 대상에서 말하는 대상으로서의 전환. 셰럴 두네이 감독은 모큐멘터리 형식으로 허구와 진실을 넘나들며 “때로는 자신만의 역사를 만들어야”함을 역설한다. 우리의 언어, 이야기, 역사는 시작되었다.</p>
+          <p class="source">📌 fake magazine 웹진 기고</p>
+        </div>
+      </details>
+
+      <details class="entry">
+        <summary>
+          <span class="meta">아티클</span>
+          <span class="title">‘지금 여기 전주’에서 영화에 대해 다시 얘기하는 경험</span>
+        </summary>
+        <div class="body">
+          <p style="color:var(--muted); font-size:14px;">제22회 전주국제영화제 단상</p>
+          <p>4월 29일부터 시작된 제22회 전주국제영화제(JIFF)가 지난 주말 5월 8일에 막을 내렸다. 코로나로 인해 황폐해진 예술계의 풍경을 고려해본다면, 전주국제영화제 개최는 양가적인 감정이 든다. 우리는 이제 ‘show must go on’이 얼마나 유효하지 않은 말인지 알기 때문에. 그렇기에 이번 전주국제영화제의 슬로건 ‘Film Goes on’이 눈에 띈다. ‘계속되어야 한다’가 아닌 ‘계속 된다’라는 방점.</p>
+          <p>전주 객사길 도처마다 보이는 이 문구는 다시금 전주국제영화제의 축제라는 의미를 곱씹게 했다. 뭐랄까, 사실 ‘축제’가 그렇다. 예전부터 축제는 질서를 지키기 위한 의도적인 장치였다. 일상으로부터의 해방. 축제를 통해 억압과 금기의 감정들이 배출되면 다시 삶으로 돌아올 힘을 얻게 되는 것이다. 이러한 축제의 속성을 현재 상황에 대입해본다면, 팬데믹 상황에서 허용되지 않는 것들을 함으로써 우리 일상 복귀의 가능성을 엿보는 것이다.</p>
+          <p><b>사람, 극장, 환대</b></p>
+          <p>전주에 있으면서 가장 행복했던 건 서울이라는 익숙한 울타리를 벗어났다는 점이었다. 객지에 있음에도 나는 편안함을 느꼈는데, 매일매일 오로지 영화만 보고, 글을 쓰고, 예술에 대해 생각하며, 새로운 사람들을 만나고, 맛있는 음식과 술을 즐겼기 때문이었다. 극장에 입장할 때마다 QR 체크를 하는 등의 반복적인 행동이 쉽지는 않았지만 많은 사람들이 노력하고 있었다.</p>
+          <p>영화관의 냄새와 분위기, 영사기가 돌아가기 시작하면 조용해지는 사람들의 숨소리. 극장이란 공간에서 내 온 감각이 살아 숨쉼을 느꼈다. 커다란 스크린의 안과 밖에서 꿈틀대는 삶의 조각들을 보고 있노라 하면, 행복감에 벅차오를 때도 있었다. 어두컴컴한 공간 안에서 나는 자유로워질 수 있었다.</p>
+          <p>또, 극장에 옹기종기 모인 사람들을 보며 순수하게 무언가를 좋아하는 마음이 참 애틋하다고 느꼈다. 이번 전주국제영화제에서는 전주 현장에서 영화를 즐길 수 없더라도, OTT 서비스 플랫폼 웨이브를 통해 영화가 상영되었다. 손쉽게 원하는 장소에서 영화를 즐길 수 있는 OTT 시대 도래 후, 현대 관객들을 고려한 지점이다. 특히 코로나 시대의 극장상황과도 상통한다.</p>
+          <p>하지만 전주에서 영화는 늘 계속되었다. 극장 1층의 상영시간표에는 sold out 스티커가 즐비하게 붙어있었다. 극장에 가면 매일 새로운 영화가 나를 기다렸고, 날마다 다른 영화와 조우했다. 매번 다른 영화적 세계 안에서 허우적 대기를 일삼았다. 하루는 내가 보냈던 10대에서, 다른 하루는 내가 여성으로서의 정체성을 고민했던 날들에서, 4월의 제주에서, 베케트의 전언들에서 등 시간의 실체를 잊을 수밖에 없었다.</p>
+          <p><b>다시, 만남을 위한 기폭제로서 축제</b></p>
+          <p>다시 축제 얘기로 돌아와보자. 예술이라는 건 하나의 문화다. 사람들이 만나고, 질문하고, 각기 충돌하고, 상호작용하게 되기 때문이다. 극장에서 공동체를 형성하고 인간으로서의 연대가 가능해진다. 이번 전주국제영화제는 많은 점들을 시사한다. 전염병 시대의 예술과 만남이라는 것. 다시 말해 관객과 창작자들이 위기의 시간을 편승하며 예술-영화에 대해 다시 얘기할 수 있다는 것, 정해진 시간과 장소에 극장에 가는 것, 같이 영화를 보는 것. 이러한 경험들이 더더욱 소중하게 느껴진다.</p>
+          <p>그럼에도 영화 — 더 넓게 예술의 장을 만들어주신, 전주국제영화제를 위해 힘써주신 분들께 감사하단 말을 전하고 싶다. 전주의 곳곳에서 환대와 열정을 느낄 수 있었다. 우리가 다시 만날 때 비로소 새로운 이야기 — 영화가 시작된다.</p>
+          <p class="source">📌 fake magazine 웹진 기고</p>
+        </div>
+      </details>
+
+      <details class="entry">
+        <summary>
+          <span class="meta">아티클</span>
+          <span class="title">영혼 올라잇!</span>
+        </summary>
+        <div class="body">
+          <p style="color:var(--muted); font-size:14px;">그림책 〈잃어버린 영혼〉을 연극으로 재창작하며</p>
+          <p>바쁘게 일상을 살다보면 이따금 수렁에 빠진 기분이 들 때가 있다. 쳇바퀴를 도는 것 같기도 하고, 뭔가 벗어날 수 없는 공간에서의 갑갑함이 느껴진다. 내 세상이 온통 회색으로 칠해진 것만 같다. 권태로운 나날 속에서 자극을 원할 뿐이다. 애꿎은 알고리즘은 늘 나를 새로운 자극으로 이끌고, 내 행동은 다시 같은 수레바퀴를 순환하게 된다. 오늘 소개하고자 하는 〈잃어버린 영혼〉은 일상의 궤도에서 영혼을 찾으려하는 한 사람의 이야기다.</p>
+          <p>그림책은 이런 내용이다. “일을 아주 많이, 빨리” 하던 어떤 사람이 출장길 호텔방에 머무르던 중, 잠에서 깨어 자신이 누구인지 기억하지 못한다. 숨이 턱 막히는 듯 하고, “몸속에 이미 어떤 사람이 없는”듯한 기분을 느낀다. 그는 욕실의 거울을 통해 자신이 연기처럼 뿌옇게 변해있음을 깨닫는다. 다음날 그가 찾아간 현명한 의사는 그에게 ‘영혼을 잃어버렸다’고 진단한다. 그리고 의사는 나름의 처방을 내준다. 영혼의 시간은 아주 느려서, 편안한 장소를 찾아 영혼을 기다려야 한다고. 그리하여 그 사람은 도시 변두리의 작은 집에서 영혼을 기다리게 된다.</p>
+          <p>필자는 친구들과 함께, 지난 3월 〈잃어버린 영혼〉을 연극으로 재창작하였다. 공연을 준비하면서, 사실 이 책의 전언은 너무 빠른 세상의 속도에서 자신의 속도를 찾는 것, 즉 진정한 자신의 모습을 조우하는 것이 아닐까 생각했다. 자신이 좋아하고 싫어하는 게 뭔지 재고하고, 그것을 토대로 선택하는 것. 자신이 생각하는 실체와 같은 사람이 되고자 하는 것이다. 그래서 우리는 우리만의 언어로 연극 〈잃어버린 영혼〉을 ‘자신만의 방(공간)을 찾는 것’이라 정의했다. 연극은 단 한 명만의 관객을 위한 것이었다. 온전히 자신만의 공간에서, 기다림의 순간을 기다리며, 시간을 음미하기 위해서 말이다.</p>
+          <p>마지막으로 영혼을 잃어버리지 않을 방법은 무엇일까. 그것은 온전히 자신의 몫이다. 우리가 권태로워 하고 지루함을 느끼는 것은 일상에서 자신이 지워졌기 때문은 아닐까. 시간은 계속 진보하고 우리는 자기 자신에 대해 살필 겨를이 없다. 자신이 좋아하는 것들로 공간을 꾸미든, 카페에 가서 좋아하는 소설책을 읽든, 각자만의 느긋한 시간을 보낼 수 있다면 영혼은 되돌아오지 않을까?</p>
+          <p>원작 책에서 영혼과 사람이 대면하는 마지막 장면에서, 흑백 배경에 색채가 번진다. 연극 〈잃어버린 영혼〉의 본무대에 세웠던 집도 극장의 다양한 조명과 사운드에 따라, 우리가 삶에서 사계절을 겪는 것처럼, 봄, 여름, 가을, 겨울을 찬찬히 경유했다. 무기력한 봄을 지나 생기로운 여름으로 진입하는 이 시점에서, 나는 삶에서 가장 소중한 것은 나 자신과 안정감이라는 말을 전하고 싶다.</p>
+          <p style="font-style:italic; color:var(--muted);">“누군가 위에서 우리를 내려다본다면, 세상은 땀 흘리고 지치고 바쁘게 뛰어다니는 사람들로, 그리고 그들을 놓친 영혼들로 가득 차 보일 거예요...”</p>
+          <p class="source">📌 fake magazine 웹진 기고</p>
+        </div>
+      </details>
+
+      <details class="entry">
+        <summary>
+          <span class="meta">평론</span>
+          <span class="title">극장에 부유하는 서러운 자들의 노래</span>
+        </summary>
+        <div class="body">
+          <p style="color:var(--muted); font-size:14px;">연극 〈양갈래머리와 아이엠에프〉</p>
+          <p>땅콩회항, 아파트 경비원의 극단적 선택, 유명 연예인의 갑질 등. 그간 ‘갑질’이라는 키워드는 큰 화두였다. 현재진행형인 우리 사회에 만연한 이른바 ‘갑질 문화’는 고질적인 문제이다. 갑이 있다면 응당 을도 존재할 것. ‘을 중의 을’에 대해 유쾌하게 조명하고 있는 연극이 여기 있다.</p>
+          <p>극작가 윤미현은 2012년 데뷔 이래로 꾸준히 회색지대에 있는 자들의 이야기를 써왔다. 가령 “노령화 사회의 노인, 가진 것 없는 서민, 이민자” 등. 구조적으로 소외됐던 서민들에 대한 이야기, 다른 말로 ‘이도저도’ 아닌 상태에 머무를 수밖에 없는 사람들에 대한 주목인 것.</p>
+          <p>연극 〈양갈래머리와 아이엠에프〉는 아파트 주민들로부터 갑질을 밥 먹듯이 당하는 경비원 김아무개 씨(이하 김씨)와 그 주변사람들의 이야기다. 김씨는 주민들의 외제차를 닦고, 먹던 바나나를 받는 등 부당한 일을 겪는다. 연극의 첫 장면에서, 기자는 갑질을 고발하는 기사를 쓰기 위해 김씨를 설득한다. “양심”있고 “정의”로운 사회를 위한 것이라며. 하지만 김씨는 기자의 요구를 거절하고 기자는 몰래 김씨의 사진을 찍어 뉴스에 보도한다.</p>
+          <p>사실 김씨가 기자의 요구를 거절한 데에는 이유가 있다. 김씨는 IMF(1997년부터 유행했던 외환위기)로 실직한 이후 생계유지를 위해 횟집, 정육점, 슈퍼, 찜닭집, 치킨집까지 온갖 장사를 전전해왔기 때문이다. 실패의 격랑을 경험했던 김씨는 서러울지언정 경비원이라는 “비교적” 안정적인 직업을 더욱더 포기할 수 없었을 것이다. 김씨의 서사 외에도 끊임없이 일을 해야 했던 김씨 가족들의 이야기가 나온다. 김씨의 아내는 콜라텍 주방에서 20년 가까이 일을 하고 치매를 겪게 된다. 그리곤 자신이 가장 행복했던 중학생 시절 머리인 양갈래로 묶기 시작한다.</p>
+          <p>전반적으로 다소 무겁고 어두운 이야기이지만, 재치 있는 노래의 등장으로 인해 연극의 분위기는 유쾌해졌다. 담백한 가사와 무대 하수에서 들리는 기타 소리는 ‘장기하 밴드’를 떠오르게 했다. 배우들은 대개 말하듯이 노래했다. 아무리 삶이 퍽퍽해도 노래만큼은 담담하게. 음악은 그런 힘이 있는 것 같다. 부동의 마음을 두드리며 유하게 만들 수 있는 힘. 음악이 관객의 상한 몸과 마음을 위로하고, 공감을 이끌어냈다.</p>
+          <p>이 작품은 단순히 주류에 속하지 못한 사람들을 수면위로 드러내는 데 그치지 않는다. 노래가 각자의 일상에 끼어들고, 벽이 허물어지고, 마침내 관객들은 음악의 원리에 동조하게 된다. 음악이 계속되는 것처럼 삶도 그렇게 계속되라는 응원인 걸까? 아마 그런 응원과도 같은 음악은 이 작품이 저널리즘이 아닌 ‘연극’이 될 수 있는 이유일 것이다.</p>
+          <p class="source">📌 fake magazine 웹진 기고</p>
+        </div>
+      </details>
+
+      <details class="entry">
+        <summary>
+          <span class="meta">평론</span>
+          <span class="title">아주 익숙하면서도 생경한 것</span>
+        </summary>
+        <div class="body">
+          <p style="color:var(--muted); font-size:14px;">연극 〈언캐니 밸리〉 (독일 극단 리미니 프로토콜)</p>
+          <p style="font-style:italic; color:var(--muted);">“나는 아무것도 아니다, 그렇지만 모든 것은 이 ‘무’를 중심으로 공전한다.”</p>
+          <p>4차 산업혁명의 도래. 인공지능, 빅데이터, IoT, 등 이미 삶에 만연한 기술들. 그리고 팬데믹. 우리는 이른바 격변의 시대에 살고 있다. 가끔은 기계없이 사는 내 모습을 상상할 수 없다. 이제 살아 있지 않은 “로봇”도 연극을 한단다. 고민한다, 이런 세상에서 나는 어떻게 땅을 딛고 서있어야 할까? 또 어떻게 앞으로 발을 내딛어야 할까? 연극 〈언캐니 밸리〉는 이와 관련된 새로운 사유를 열어줄 작품이다.</p>
+          <p>연극을 보고 있다고 상상해보자. 당신은 어디선가 앉아서, 무대 공간에서 행위하는 자를 지켜보고 있을 것이다. 이 지점에서 가장 중요한 게 있다. 바로 관객과 배우. 모든 기교나 장치를 제외하고 연극의 본질적인 두 요소 ‘배우(행위하는 자)’와 ‘관객(지켜보는 자)’없이 연극은 존재할 수 없다. 연극은 ‘행위’하고 ‘지켜보는’ 두 그룹의 행동과 반응이 고리를 만들어 상호작용하는 체계를 가졌다.</p>
+          <p>여타 예술과는 달리, 연극 매체는 현실적인 배우가 관객 앞에서 움직이고, 말하고, “살아있게” 되는 지극히 “인간적인” 예술이다. 하지만 살아있지 않은 것이 연극을 하고 있다면 그것은 연극이라고 할 수 있을까? 그중 극단적으로 인간과 아주 닮은 것, 바로 로봇이 연극을 한다면? 이러한 생각의 연장선에서, 독일 극단 리미니 프로토콜의 연극 〈언캐니 밸리〉는 인간과 로봇의 경계를 지운다.</p>
+          <p>우선 연극의 제목은 일본 로봇공학자 모시 마사히로가 전개한 ‘불쾌한 골짜기(uncanny valley) 현상’으로부터 따왔다. ‘언캐니 밸리’는 로봇이나 인간이 아닌 것들에 대해 인간과 비슷하기에 호감을 느끼다 갑자기 공포감, 거부감을 느끼게 된다는 이론이다.</p>
+          <p>〈언캐니 밸리〉가 시작하면 가장 눈에 띄는 건 무대 중간에 앉아있는 독일 베스트셀러 작가 토마스 멜레와 똑같이 생긴 로봇이다. 연극은 로봇(토마스 멜레)이 ‘불안정성의 문제’에 관한 주제를 강연하는 식으로 진행된다. 로봇은 토마스 멜레의 자전적인 이야기, 특히 그가 자신을 통제할 수 없던 원인인 조울증에 관한 이야기를 한다. 멜레는 문학, 즉 글쓰기를 통해 자신을 규정하길 바랐다. 그렇지만 그는 통제될 수 있는 완전한 존재인 로봇을 관객 앞에 내세웠다.</p>
+          <p>다음으론 멜레가 자신의 작품의 소재로 삼고자 했던 앨런 튜링의 이야기가 나온다. 멜레는 그가 “일종의 아주 비극적인 컴퓨터”라고 말한다. 현대 컴퓨터의 알고리즘 시초를 발명한 앨런 튜링은 자신이 만든 이미테이션 게임에 역으로 공격당해 죽었기 때문이다. 이들은 공통적으로 기계와 기술을 통해 자신을 더 나은 존재로 만들었다. 그것이 타의이든 자의이든, 나를 나라고 자기 지시를 위해, 더 온전한 존재가 되기 위해.</p>
+          <p>토마스 멜레를 복제한 로봇의 생김새와 몸짓은 아주 익숙하게 느껴진다. 동시에 그 풍경은 아주 이질적이다. 화면은 종종 수많은 선들로 연결되어 있는 로봇의 후면을 비추고, 이러한 생경한(uncanny) 교차로 인해 관객들은 끊임없이 사유하게 된다. 로봇과 우리가 다른 것은 무엇인가? 로봇이 복제품이고 인간이 원본이라면 그것을 구분 짓는 것은 무엇인가? 우리가 인간인 건 오로지 “불규칙성” 때문인가? 일에 매몰되어 기계화되어 살고 있지는 않나? 효율성과 생산성만 따지며 인간성을 잃지는 않았나? 이러한 질문들은 결국 하나로 귀결된다. 궁극적으로 나는 누구인가?</p>
+          <p>결국 연극의 중심은 ‘인간’이다. 연극의 주제, 연극을 하는 주체, 연극의 대상은 모두 인간이다. 다시 말해 인간의, 인간에 의한, 인간을 위한 예술이라는 것이다. 사실 우리는 다 불완전한 존재이다. 많은 사람들이 영겁의 시간동안 연극-예술을 통해 인간을 알고 싶어 했다. 하지만 여전히 인간을 정의하기에는 망설여진다. 연극 〈언캐니 밸리〉는 생경한 감각으로써 다방면을 사유할 수 있는 공연이다. 우리는 이미 세상에 던져졌다. 이제는 당신이 스스로 답할 차례. 짙어진 비대면의 문명 속에서 당신은 어떠한 인간이길 선택할 것인가?</p>
+          <p class="source">📌 fake magazine 웹진 기고</p>
+        </div>
+      </details>
+
+      <details class="entry">
+        <summary>
+          <span class="meta">평론</span>
+          <span class="title">형언될 수 없는 관계의 지독함</span>
+        </summary>
+        <div class="body">
+          <p style="color:var(--muted); font-size:14px;">연극 〈아웃 오브 러브〉</p>
+          <p>연초부터 가장 친한 친구 A와 싸웠다. 그동안 잡음을 만들지 않기 위해 꾹꾹 눌러왔던 감정들이 터졌다. 우리는 모진 생각을 압축하여, 그래도 개중에 조금은 정제된 말들을 메신저 앱을 통해 주고 받았다. 나는 A가 듣기 싫어하는 말을 잘 알았다. 물론 A도 매한가지였을 것이다. 상황은 몇 시간 동안 지속됐고 잠에 들기 전까지 두 볼은 내내 뜨거웠다. 너 말고도 친구 많아, 라고 말하며 연락하지말자고 선언하고 싶은 맘이 굴뚝같았다. 하지만 우리는 다음 날 화해했다. 화해 후 각자 상대가 본인을 얼마나 화나게 했는지 웃으며 연신 털어 놓았다. 나는 A가 왜 이렇게 얄밉고 싫었을까. 그럼에도 불구하고 우리는 왜 또 다시 친구가 되었을까.</p>
+          <p>연극 〈아웃 오브 러브〉에도 나와 A처럼 “지독”한 관계의 로나(김신록 분)와 그레이스(성수연 분)가 등장한다. 둘은 옆집에 살고, 같은 학교에 다니며 함께 많은 시간을 할애한다. 그래서 서로 어떤 취향을 가졌는지, 어떤 남자를 만나는지, 가족사가 어떠한지 등 서로에 대한 모든 것을 꿰뚫고 있다. 그레이스와 로나는 여느 사춘기 여자아이들처럼 가족, 친구, 이성으로 갈등을 겪으며 함께 성장했다. 하지만 알다시피 우정의 요소엔 애틋하고 아름다운 것만 있진 않다. 이성과 성에 대한 호기심을 경유하여, 로나와 그레이스는 갖가지 이유로 시기, 질투, 집착하기도 한다. 우정, 사랑, 의지, 유대, 애증, 집착 등의 단어로 다양하게 번역될 수 있는 풍경을 〈아웃 오브 러브〉는 로나와 그레이스를 통해 그려냈다.</p>
+          <p>이 작품은 전통적인 드라마 구조가 아닌 에피소드식으로 구성되어 있다. 30여년 동안의 로나와 그레이스의 이야기는 일률적으로 전개되지 않고 다양한 시간대가 얽히고 설킨다. 극적 공간이 리드미컬하게 집, 버스정류장, 클럽, 거리 등으로 변하며, 수십년의 시공간은 무대 위에서 뒤엉키고 맞물리고 겹쳐진다. 이러한 파편적인 장면 구성은 극이 전개될수록 다른 장면에 대한 정보를 전달하고 뒷받침 하였다.</p>
+          <p>나는 이러한 형식 자체가 우리의 내면 세계가 연대기적으로 흘러가는 시간의 법칙대로 흐르지 않는다는 걸 보여주는 것처럼 느껴졌다. 우리 내면의 시간은 상식적인 시간관과 다르게 하나의 방향으로 흘러가지 않고, 각자의 방식으로 과거, 현재, 미래를 넘나들며 유영하게 되니까. 배우들은 물 흘러가듯 자유자재로 바뀌는 장면들에 적응했다. 목재로 된 미니멀한 무대 세트에 조명, 음향을 활용하며 일종의 극적 약속을 만들고, 빠르게 장면 전환에 맞춰 캐릭터를 변화시켰다.</p>
+          <p>하지만 시간이 지날수록 로나와 그레이스는 자연스럽게 멀어진다. 둘은 너무도 다른 환경에서 자랐고, 다른 성향을 지녔으며 그러기에 각자의 다른 선택을 하게 되었다. 로나는 대도시 런던으로 가게 되고, 그레이스는 딸 마사를 낳아 고향에 남아 있게 된다. 그레이스와 로나가 먼 훗날 마주했을 때 로나는 그레이스에게 “머문 사람이 나였어야” 한다고 말한다. 그러다 로나와 그레이스가 마주보는데, 이 장면에서 조명이 무대 하수에서부터 중앙, 상수까지 차례대로 바뀐다. 그 순간 그 동안의 둘의 서사가, 시간이, 감정이 가시적으로 현현되는 것 같았다. 형언될 수 없는 무언가가 공기 중에서 일렁이는 것이 느껴졌다.</p>
+          <p>로나에게 그레이스는 “집같은 냄새”가 나는 사람이었다. 로나의 엄마 아빠가 싸울 때 그레이스는 로나를 자신의 방으로 몰래 들어오게 해주었다. 로나와 그레이스처럼 서로가 서로의 집이었다. 이렇듯 이 연극에서 서사의 모든 것은 로나와 그레이스의 관계성을 비추고 있다. 나는 극장에 나와서 세상 어디나 여성들의 우정, 그리고 욕망과 선택은 비슷할지도 모른다고 생각했다.</p>
+          <p>어느 순간부터 객석에서 훌쩍거리는 소리가 들리기 시작했고, 조각난 감정과 시간의 파편들을 좇다보니 어느새 나는 A를 떠올리고 있었다. A부터 과거에 스쳐간 친구들까지 많은 친구들을 떠올렸다. 우리는 서로 너무 많은 영향을 주고받고, 함께여서 반짝반짝한 시간을 만들 수 있었던 것 같다. 그들은 지금의 나를 구성할 수 있게 해주었다. 멀어진 현재는 각자의 속도대로 발걸음을 옮기고 있을 뿐이다.</p>
+          <p>이건 너무나도 평범하지만 특별한 이야기. 그 어떤 언어로도 수렴되지 않는 로나와 그레이스 사이의 지독한 무언가는 형언될 수 없다. 그럼에도 제목 ‘out of love’처럼 나는 그 지독한 무언가를 설명하기에 가장 가까운 단어는 사랑이라고 생각한다.</p>
+          <p class="source">📌 서울문화재단 웹진 ‘연극in’ 기고</p>
+        </div>
+      </details>
+
+      <details class="entry">
+        <summary>
+          <span class="meta">평론</span>
+          <span class="title">세월이 지나도 쓴 차의 맛에 대해</span>
+        </summary>
+        <div class="body">
+          <p style="color:var(--muted); font-size:14px;">연극 〈왕서개 이야기〉</p>
+          <p>2020년, 종전이 된 지 75년이 지났다. 하지만 폭력이 일상화된 요즘, 전쟁에 대해 막연한 질문이 떠오른다. 전쟁은 정말로 끝난 것인가? 지난 전쟁의 상흔이 아직 산재해있지는 않은가? 감히 예상해보건대 전쟁으로 인해 피해를 입은 자들의 내면은 아직 전쟁 중일 것이다. 그리고 여기 다시 한 번 ‘전쟁’과 ‘전범’에 대해 다루는 연극이 있다. 이 연극은 〈왕서개 이야기〉라는 제목처럼 왕서개라는 인물을 중심으로 시간이 지나도 소멸되지 않는 전쟁의 상흔에 대해서 얘기하는 작품이다.</p>
+          <p>연극 〈왕서개 이야기〉는 2018년 ‘초고를 부탁해’에서 발굴된 작품이다. 작품의 초고는 김도영 작가와 이준우 연출이 함께 한 〈무순 6년〉이라는 작품의 극중극 이야기에서 발췌되어 다시 써졌다. 그리고 2019년 ‘서치라이트(Searchwright)’에서 낭독공연 후, 공동제작 공모제작 공모에 선정되어 2020 남산예술센터 시즌 프로그램으로 공연되었다. 김도영 작가와 이준우 연출은 극단 배다의 작품을 통해 근대 동아시아 역사 속에서 가해와 피해의 역사를 고찰해왔다. 역사가 단순히 과거의 것이 아니라고 생각하며 과거와 현재의 연결고리를 찾는 작업을 지향한다. 그런 고민의 연장선상에서 〈왕서개 이야기〉는 “피해를 입은 생존자에 대한 세밀한 관찰이 더해진 작품”이다.</p>
+          <p>주인공 왕서개는 전쟁으로 모든 것을 잃은 인물이다. 그는 1930년대 만주 동북평전에서 일본인의 학살에 의해 가족을 잃고, 종전 후 일본으로 건너가 장사꾼이 된다. 그 과정에서 국적과 이름을 모두 바꾸고 일상을 살아간다. 그러던 어느 날 왕서개의 고객인 일본인 ‘이치고’가 왕서개의 오래된 궤짝에 대해서 묻는다. 그의 한 마디에 왕서개는 21년이라는 오랜 시간 동안 기다린 진실을 묻는다. 자신의 가족들을 어디에 묻었는지, 그들을 왜 죽였는지. 왕서개는 이치고에게 ‘자백서’를 받아내 21년 전 동북평전에서 다섯 필의 말을 탔던 일본인들을 찾아간다.</p>
+          <p>극은 전반적으로 전쟁과 얽힌 ‘기억’의 차이에 대해서 이야기한다. 극은 21년 전 ‘과거’와 왕서개가 진실을 찾으려는 ‘현재’의 간격을 보여주기 위해 옴니버스 형식으로 밀도있게 전개된다. “정말 오랫동안 궁금했”던 왕서개, 그리고 왜곡된 기억 속에서 왕서개와 네 명의 일본인들의 기억 차이가 명확히 드러난다. 그들은 기억하려 하지 않거나, 심지어 전범을 자랑스러워 하는 모습 등을 보인다.</p>
+          <p>또한, 인물들의 감정과 삶의 차이는 무대위에서 은유적으로 가시화 된다. 가령, 왕서개가 찾아간 일본인들의 의상과 모습은 꽤나 근대적이거나, 화려하거나, 일상적이다. 그리고 광활한 빈 무대는 만주의 동북평전을 연상시키고 허무한 느낌을 준다. 몇 없는 목재 오브제들은 견고히 버텨온 왕서개의 지난 세월을 대신 말해주는 것 같다. 예를 들어 왕서개가 항상 들고다니는 오래된 궤짝은 낡았지만 단단한 느낌을 주어 지난 시간 버텨온 왕서개의 삶처럼 보인다.</p>
+          <p>이 작품은 1930년대에서 1950년대에 이르는 세계사적 아픔을 담고 있다. 내재화된 폭력. 시간이 지나면 괜찮아질 것이라 믿었던 암묵적인 약속들. 그 사이에서 왕서개는 오랫동안 질문을 던져왔다. 연극에서 한 일본인은 왕서개에게 말한다. “거꾸로 가지 말고 앞으로 가.” 다른 장면에서 왕서개는 말한다. “아무것도 안된다고 아무것도 안하면 아무것도 아닌 게 되니까.”</p>
+          <p>왕서개는 마지막 한 명을 찾아가지 않은 채로 동북평전에서 매를 돌보았던 날을 회상하며 극은 끝난다. 오늘날 잊힌 전쟁의 기억 속에서 누군가에겐 지워지지 않는 기억과 말들을 다시, 지금 여기 극장으로 불러들이는 것은 의미있는 작업임이 자명하다. 마지막으로, 극장을 나와서 왕서개가 일본인들에게 권했던 자스민 차가 생각났다. 차는 오래 우리면 맛이 쓰다. 하지만 식으면 괜찮아진다는데 과연 그 쓴맛도 괜찮아지는 걸까?</p>
+        </div>
+      </details>
+
+      <details class="entry">
+        <summary>
+          <span class="meta">평론</span>
+          <span class="title">삶에, 삶의 흩어진 것들에 이름 붙이기</span>
+        </summary>
+        <div class="body">
+          <p style="color:var(--muted); font-size:14px;">연극 〈악어 시〉</p>
+          <p>당신은 당신에게 소중한 물건에 이름을 붙여본 경험이 있는가. 설령 그런 경험이 없다하더라도 남에겐 중요하지 않지만 내게는 중요했던 무언가가 있었을 것이다. 특정되지 않은 산발적인, ‘소중’하고 ‘중요’한 무언가는 나를 ‘특별’하게 만들어줄 것이라 기대하게 한다. 이것은 누구나 으레 갖는 희망이라는 감정이다. 연극 〈악어 시〉는 그러한 희망의 한 종류에서 시작한 작품이다.</p>
+          <p>〈악어 시〉의 작가이자 연출인 신해연은 2018년 서울시극단의 창작플랫폼 사업의 올해의 작가로 선정되었다. 이 작품은 1년에 걸친 두 번의 낭독회 후 올해 4월 공연으로 관객과 만날 수 있었지만 코로나19 여파로 그러지 못하였다. 팬데믹 상황에서, 희망과 절망이 끊임없이 오고가는 혼재 속에서, 많은 사람들은 고민했다. 내가 지금 하고 싶은 것 내지는 하고 있는 것이 ‘생존’을 위한 것인지. 정말 지금 쓸모 있는 것이 맞는지. 〈악어 시〉에도 생존을 위한 것과 생존에 필요하지 않은 소중한 것 둘 사이에서 고민하는 사람들이 등장한다.</p>
+          <p>먼저, 어쩌다 악어를 키우게 된 시인이 나온다. 알바로 변변찮게 생계를 유지해가고 있는 그는 어느 날 건강식품으로 팔릴 뻔한 새끼 악어를 공동주택에 사온다. 그리고 시인은 사물에 이름을 붙이는 사람이라며 구스타프라는 이름도 붙여준다. 하지만 공통주택에서 악어는 생존에 필요하지 않은 것, 즉 쓸모없는 것으로 치부된다. 같은 공동주택에 사는 소녀는 차라리 먹거나 가죽을 벗겨 명품으로 만드는 것이 낫겠다고 생각한다.</p>
+          <p>이 소녀는 “새로운 세계”를 꿈꾸며 매일 파파고와 영어 공부를 한다. 하지만 소녀에겐 보살펴야 할 아픈 할아버지가 있고 할아버지는 극중 화초로 표현된다. 또, 시인의 여자친구는 인터넷 방송을 하며 익명의 네티즌들에게 신체 노출을 요구 받는다. 그는 불쾌해하지만 계속되는 요구에 옷을 벗을지 말지 고민한다. 세 인물 모두 자신이 욕망하는 가치와 사회적인 가치에서 고민한다.</p>
+          <p>이처럼 시인이 가져온 ‘악어’처럼 남들에게는 괄시 받지만 인물들은 자신의 믿음을 지켜가며 살아간다. 희망에 대한 믿음은 존재 자체를 추동한다. 가령 극에서 시인이 악어를 키우며 시를 쓰고, 소녀는 현재의 일상에서 벗어나 외국을 가기 위해 끊임없이 영어 공부를 하며, 또 헬륨가스가 잔뜩 든 풍선이 있는 놀이공원에 가는 것처럼 말이다. 희망의 이면이 비참할지라도 그들은 그들의 삶에 희망이라는 이름을 붙이려 한다.</p>
+          <p>코로나 앞에서 우리는 〈악어 시〉에 나오는 인물들과 같은 경험을 반복하면서 비참해지는 경우를 자주 목격했다. 나날이 늘어가는 변수 속에서 기대하지 않고, 내가 나로서 흔들리지 않는 것만이 초연해질 수 있게 했다. 마치 첫 장면에서 시인이 원하지 않는 상황에서 발기를 하고, 마지막 장면에서 피그말리온처럼 악어가 사람이 되어 찾아오는 것처럼, 삶은 해석될 수 없다는 불확정성은 자명한 것 같다.</p>
+        </div>
+      </details>
+
+      <details class="entry">
+        <summary>
+          <span class="meta">평론</span>
+          <span class="title">각자의 1인분</span>
+        </summary>
+        <div class="body">
+          <p style="color:var(--muted); font-size:14px;">연극 〈1인용 식탁〉 — 두산인문극장 2020:푸드</p>
+          <p>코로나19의 여파로 우리는 집에 수감되었고, 극장은 문이 닫혔다. 배우와 관객이 있음으로써 존재하는 공간인 극장은 존재의 의미를 잃었다. 하지만 두산아트센터는 올해 프로그램 〈두산인문극장 2020:푸드〉에서 진행되는 연극 3편 ‘전 회차 무료 전환’이라는 파격적인 제안과 함께 극장의 문을 열었다.</p>
+          <p>〈1인용 식탁〉은 이제 막 신입사원 딱지를 뗀 인용이 회사에 밥 먹을 사람이 없어 습관처럼 “혼밥”하는 이야기다. 그러다 인용은 혼밥을 체화시키기 위해 혼밥 학원을 등록한다. 혼밥 학원에서는 타인의 시선을 대항할 강약중강약 리듬을 알려준다. 인용에게, 혼자 먹는 식사는 한판의 복싱 경기이다. 외로워 보이지 않으려 타인의 시선에 대항해 흐름을 놓치지 않고 맞서 싸우려 한다. 강약중강약 리듬을 유지한 채 인용은 밥먹는 연습을 한다.</p>
+          <p>무대는 지나가다가 봤을 법한 프렌차이즈의 상호명이 무대장치로서 기둥과 벽면에 써있다. 따라서 무대 공간은 링 위였다가, 인용이 혼밥을 하는 식당이거나, 혼밥을 한 식당 등 다양한 공간으로 재전유 된다. 80분 동안 관객은 인용의 스파링을 지켜본다. 한 방 날리고 가드 올리고 또 한 방 날리고.</p>
+          <p>극에서의 사건은 인용이 자신의 부유하는 외로움을 딛고 ‘혼밥마스터’가 되려 하는 것일까? 그렇다면 극적 행동은 결국 인용이 자신의 박자를 인식하고 인정하는 것으로 귀결된다. 타인의 시선을 넘어 자신의 행위를 지속하게 된다. ‘나의’ 식사이든 ‘남의’ 식사이든, ‘산수’와 ‘홀수’가 나를 혼자로 만들든, ‘세상의 축’이 무엇이든. 그 무엇도 인용의 식사에 중요하지 않다. 오로지 자신의 몸을 위해 잘 먹는 것이 중요할 뿐이다.</p>
+          <p>공허로 가득했던 무대는 어느새 배우들의 신체적인 에너지로 흡수되어 있다. 리드미컬하고 위트 있는 음향들은 인용의 삶을 한껏 활기차게 해주는 듯 하다. 나는 각자에게 주어진 보폭이 있다는 말을 믿는다. 그러니 자신의 ‘속도(내지는 리듬)’로, 자신이 먹을 수 있는 ‘1인분의 양’만큼 밥 잘 챙겨 드세요. 저도 “잘 먹겠습니다.”</p>
+        </div>
+      </details>
+
+      <details class="entry">
+        <summary>
+          <span class="meta">발제문</span>
+          <span class="title">삶을 위한 도돌이표 — 사무엘 베케트 〈해피 데이스〉</span>
+        </summary>
+        <div class="body">
+          <p style="color:var(--muted); font-size:14px;">고려대 예술비평연구회 세미나 발제문 / 한예종 드라마터지1 케이스북</p>
+          <p><b>1. 들어가며 — Billie Whitelaw와 베케트</b></p>
+          <p>베케트는 1960년 10월 희곡 〈해피 데이스〉를 집필하기 시작했다. 그리고 이듬해인 1961년에 영어로 출간하고, 1963년에 미뉘 출판사에서 “Oh les beaux jours”(오 아름다운 날들)이라는 제목으로 다시 프랑스어로 발표했다. 베케트는 1962년 영국 초연에서 배우 Brenda Bruce에게 자신의 연출 의도를 다음과 같이 말했다.</p>
+          <p style="font-style:italic; color:var(--muted);">“나는 누구에게나 일어날 수 있는 가장 끔찍한 일이란 잠이 허락되지 않는 상황일 수 있다고 생각했습니다. 그래서 문득 잠이 들면 바로 ‘땡’하고 울리는 종소리에 당신이 깨어나게 되는 겁니다. 당신은 땅에 산 채로 잠기고 있고 거기에는 개미들이 들끓어요. 그리고 태양이 밤낮 하염없이 내리비추는 데 나무는 한 그루도 없죠…. 그림자도 없고, 아무것도 없어요. 그리고 종소리는 줄곧 당신을 깨우고 당신이 가진 것이라곤 평생을 두고 당신을 보여주는 약간의 물건 꾸러미가 전부인 겁니다. 나는 그것을 감당하면서 노래 부르며 가라앉을 수 있는 사람, 오직 한 여성을 생각했습니다.”</p>
+          <p>사무엘 베케트(Samuel Beckett, 1906-1989)는 부조리극의 대표적인 극작가이다. 부조리극은 현대문명 속을 살아가는 현대 인간의 존재와 삶의 문제들이 무질서하고 부조리하다는 것을 소재로 삼은 연극 사조이다. 실존주의와 초현실주의 사상을 배경으로 제2차 세계대전 뒤 프랑스를 중심으로 일어났다. 기존의 사실주의와 자연주의 전통에서 크게 벗어났다는 점에서 반反연극(anti-theatre)이라는 이름으로 불리어졌던 부조리극은 모든 인간의 삶과 그들의 존재 자체를 근본적으로 부조리하다고 가정하며 기본적으로 인간의 언어는 그들의 의사를 전달하는 수단으로 부적합하다고 생각한다.</p>
+          <p>본고는 베케트 작품 중 유일하게 여성이 등장하여 여성의 상처뿐만 아니라 인간 보편의 상처에 대해서 얘기하고 있는 작품 〈해피 데이스〉(Happy Days)를 다루어 보고자 한다.</p>
+          <p><b>2. 미래와 과거가 금지된 땅에 갇힌 위니의 ‘행복한’ 의식</b></p>
+          <p>베케트는 자신의 작품을 통해서 끊임없이 삶의 본질을 탐구했다. 그는 물질에 가치를 두고 외형적 껍질에 묻혀 왜곡된 삶의 실체를 파헤치기 위해 인간의 실존적 모습을 다양한 실험을 통해서 보여주고자 했다. 아무것도 없는 광야의 언덕에 이유없이 허리춤까지 파묻혀 있는 〈해피 데이스〉의 위니가 그러한 생각이 잘 반영된 인물이다.</p>
+          <p>실존주의의 영향을 받은 베케트는 작품 속에서 전반적으로 인간 존재와 삶에 대한 무가치함을 보여주고 있는데, 이는 인간의 정체성 소멸로 이어진다. 베케트 극에 등장하는 인물들은 모든 것이 무(nothingness)에 근접한 불확실한 상황에서도 무대 위의 현존재로서 존재해야만 하는 그들의 존재 조건을 보여주고 있다. 그들은 운명에 맞서 이겨내려고 하지만, 자신들의 무기력함을 깨닫고 좌절하며 자신을 구원해주고 도와줄 수 있는 구세주와 같은 누군가를 기다리고 의지하려고 한다. 마치 위니가 자신의 남편 윌리를 끊임없이 부르며 찾고 말을 거는 것과 같은 행동을 통해서 말이다.</p>
+          <p>〈해피 데이스〉의 1막 1장에서 위니는 날카로운 종소리에 일어난다. 적절한 제스처를 취하면서 기도를 하며 스스로 하루를 시작한다. 그리곤 부지런히 자신의 왼편에 있는 가방에서 자신의 “오래된” 물건들을 꺼낸다. 치약을 짜서 칫솔질을 하고, 거울을 보고, 안경집에서 안경을 꺼내서 안경을 쓴다. 동시에 이 장면에서 위니와 윌리의 상황 차이가 처음으로 제시된다. 위니의 오른편 뒤에서, 윌리는 종소리에 깬 위니와 달리 자고 있다.</p>
+          <p>위니는 끊임없이 자신의 순간들을 자신만의 ‘일상적인 의식’들로 채우려 한다. 행동과 행동 사이, 대사와 대사 사이에는 그녀의 변함없는 낙관주의로 점철되어 있다. 지문에도 드러나듯이 기계적으로 내지는 강박적으로 보이는 그녀의 행동은 모두 그녀가 자신의 하루를 보내려는 방법인 것이 드러난다. 또한 위니는 축축한 손을 살피고 나서 자신의 세상이 정지상태임을 암시한다. 낙관주의로 가득한 그녀의 세상은 결코 변하지 않는 것이다.</p>
+          <p>1막 8장은 위니의 삶의 슬픔이 극에 달하는 장면이다. 위니는 “브라우닝”이라는 총이 있기에 위안을 느낀다. 그렇기에 그녀는 총을 윌리에게 치워달라 했던 예전과 다르게, 직접 가방에서 총을 꺼내 오른쪽 땅에 빼놓는다. 그녀는 양산을 들고 있는 것을 힘들어, 비록 그녀가 움직이고 있다면 그렇게 하지 않겠지만 그녀는 그것을 내려놓지 못한다. 환상으로나마 위니는 직접 변화를 만든다. 하지만 그 변화는 아무 의미도 없다. 양산이 내일 다시 같은 자리에 생길 것을 위니도 알기 때문에. 태양의 열기가 매 시간 뜨거워지면서 그녀도 언젠가는 타버릴 것이라는 생각이 문득 든다.</p>
+          <p><b>죽음의 접근을 경험하는 위니</b></p>
+          <p>2막에서 위니가 허리에서 목까지 파묻힌다. 여기서 우리가 주목해야 할 점은 위니의 시간이 지체되고 있다는 것이다. 긴 사이를 통한 위니의 침묵은 극장에서 더 길게 느껴질 것이다. 그녀가 목까지 파묻히게 된 것처럼 시간이 흐를수록 위니에게 죽음은 다가오고 있다. 위니는 말로써 외로움을 극복하려는 노력을 덜 하게 된다.</p>
+          <p>2막 2장에서 위니는 네다섯 살인 밀드레드라는 소녀 이야기를 한다. 밀드레드가 어린 소녀로서 위니인지 아니면 단지 그녀가 꾸며내고 있는 또 다른 환상인지는 확실하지 않다. 하지만 위니가 이야기를 하는 힘은 언어가 그녀를 과거로 돌아오게 하는 또 다른 방법이고, 아니면 적어도 그녀의 일상을 벗어나게 하는 것이다. 하지만 위니는 밀드레드와 다르게 자신을 구하러 올 사람이 아무도 없고, 이미 너무 “늦은” 일이란 것을 안다. 그래서 그녀는 비명을 지르기까지 한다.</p>
+          <p>2막 4장은 윌리가 일어나서 그 자체로 중요한 장면이다. 계속 잠만 자던 윌리는 왜 일어났는가? 또한 그는 왜 위니를 향해 오는가? 극의 마지막은 극 전반으로 윌리에게 의존했던 위니와 윌리가 재회하는 것이다. 사이는 길고, 하루의 시작과 끝을 알리는 종은 또 다시 울리며 끝을 맺는데 위니가 파묻히기 전의 일상으로 복귀할 수 있는지 등에 대한 의문은 풀리지 않는다. 여전히 윌리는 위니를 구해줄 수 없다. 위니는 사랑의 노래를 부르고 그들은 서로를 쳐다보며 영원한 침묵으로 되돌아간다. 마지막 장면이 시사하듯 위니의 “행복한 날”이 희망인지 절망인지는 각자의 몫으로 남겨둔다.</p>
+          <p><b>3. 시작을 위한 되풀이</b></p>
+          <p>전통적인 극 형식과 구조를 따르지 않는 베케트의 극에선 모든 행동이 분절되어 있다. 인물은 논리적으로 행동을 이끌어가지 않기에 원인을 찾는 것조차 무의미해 보인다. 위니가 하는 행동은 대체로 의미 없어 보이고, 무의미는 아무 의미를 갖지 않는다는 동시에 기존 의미로 환원되지 않기에 모든 것을 새롭게 만들 수 있다. 죽음, 사회적 존재의 언어, 타자와의 관계는 시간이 지나도 소진되지 않는 문제이기 때문에, 관객은 상황의 설득력을 얻을 수 있다.</p>
+          <p>베케트가 바라본 세계는 이상하고 생소한 것이 기준이다. 그것이 베케트만의 ‘리얼리즘’일 것이다. 사실 ‘삶을 위한 도돌이표’와 ‘시작을 위한 되풀이’는 같은 뜻이라고 볼 수 있다. 위니의 삶이 희망적이지는 않지만, 이 작품을 통해 계속해서 이상한 세계에서 자신의 삶을 유지하려는 동력은 긍정해볼 수도 있다. 따라서 코로나로 인해 우리는 위니처럼 무언가에 묶여있는 상태지만, 살아있는 한 우리는 “행복한 날이 올 거”라고, “행복한 날이라고” 외칠 수 있지 않을까.</p>
+          <p class="source">📚 사뮈엘 베케트, 『해피 데이스』, 김두리 옮김, 문학동네, 2020</p>
+        </div>
+      </details>
+
+      <details class="entry">
+        <summary>
+          <span class="meta">리뷰</span>
+          <span class="title">침입하는 소리, 틈입의 죽음</span>
+        </summary>
+        <div class="body">
+          <p style="color:var(--muted); font-size:14px;">희곡 모리스 마테를링크 〈틈입자 The Intruder〉</p>
+          <p>우리는 희곡을 읽기 전, 맨 첫 단계로 제목을 통해 작품과 커뮤니케이션을 한다. 이 작품의 제목인 ‘틈입자’라는 말은 내게 생소한 단어였다. 그래서 원제인 “The Intruder”로써 ‘침입자’, ‘불청객’ — 원치 않는 불허가의 존재 — 라는 이미지를 처음 접한다. 제목은 작가가 극 안에 던져놓은 하나의 이미지이기 때문이다.</p>
+          <p>단편적인 심상을 가지고 그리 길지 않은 극을 찬찬히 읽어 내려간다. 작가 모리스 마테를링크는 죽음과 운명을 주소재로 다룬다. 대표적인 상징파 작가로 불리기도 한다. 대상을 직접적으로 묘사하지 않고 침묵이나 여타 매개물을 통해 대상을 연상시킨다 것. 별 사건이 없는 작품을 쓴 안톤 체홉처럼 연극이 거대한 사건이 되는 것을 배격했다는데, 이 작품 또한 그렇다. 그저 등장인물의 대사와 반복적인 몇 개의 소음들로만 극이 이루어져 있다.</p>
+          <p>이 극은 여타 연극과 다르게 사건을 중심으로 전개되지 않는다. 연극에서 ‘사건’이라면 인물의 행동을 결정하는 것인데 사건이 부재하기에 인물의 행동 또한 모호하게 느껴진다. 극을 추진력 있게 끌어가는 사건이 없다고 할 수 있는 이 작품에서 가장 중요한 것은 무엇일까? 바로 ‘소리’와 ‘인물들’이다. 소리와 인물들의 뭉텅이가 그저 하나의 에피소드로서 여겨지고, 분위기가 극을 이끈다.</p>
+          <p>이 작품 내에선 많은 소리들이 등장한다. 어멈의 소리, 나이팅게일이 우는 소리, 정원사가 낫을 가는 소리, 정각마다 치는 시계 소리, 누군가 오는 소리, 램프 불이 흔들리는 소리, 마지막으로 아기방에서 들리는 두려움의 울음소리까지. 극 중 다른 인물들은 할아버지를 미친 사람 취급한다. 이는 할아버지의 상황과 불안한 심리 등과 밀접한 관련이 있다. 할아버지는 눈이 보이지 않기 때문에 상대적으로 귀가 예민하고, 아픈 자신의 딸 때문에 계속 불안한 심리를 가지고 있다.</p>
+          <p>실제로 극을 이루는 많은 소리들 중 사람이 오는 소리가 대부분이다. 인물들은 고모를 기다리고 있기에 사소한 소리들까지 고모의 소리로 착각한다. 인물들이 원하는 것이 해소되지 않기에, 관객은 끊임없이 의심하고 긴장의 끈을 놓치지 않게 된다. 어둠속에서 형체를 알 수 없는 사람이 끊임없이 침입하기 때문이다. 결국 고모는 오지 않고, 정말 무엇이 왔는지는 확신할 수 없다.</p>
+          <p>정녕 침입자는 누구인가. 바로 죽음이 아닐까. 죽음은 사람처럼 출입하는 것을 눈으로 볼 수는 없지만 늘 우리 곁에 있는 것이다. 할아버지의 강박처럼 불시에 내면 안에서 자라나는 것 — 밤새 불안을 자양분 삼아 우리에 침입하는 것. 죽음은 늘 그렇듯 우리 삶(생)을 침입하고 넘나든다. 이 작품에서 신경증적인 소리들은 인물들의 죽음에 대한 공포를 직조한다. 극에서 정각을 알리는 벽시계 소리처럼 우리는 죽음을 자각해야 한다. 하이데거가 말했듯 역설적이게도 우린 죽음을 자각해야만 더 자유로운 존재가 될 수 있을 것이다.</p>
+          <p class="source">📌 fake magazine 웹진 기고</p>
+        </div>
+      </details>
+
+      <details class="entry">
+        <summary>
+          <span class="meta">평론</span>
+          <span class="title">인간답게 살고 싶은 상자, 인간답게 살고 싶은 우리</span>
+        </summary>
+        <div class="body">
+          <p style="color:var(--muted); font-size:14px;">연극 〈낙타상자〉 (2019, 서울연극제 출품작)</p>
+          <p>연극 〈낙타상자〉는 제40회 서울연극제에 초연된 후 2019 서울국제공연예술제에 선정되어 2019년 10월 17일부터 20일까지 4일간 대학로예술극장 대극장에서 공연되었다. 〈낙타상자〉는 중국 근대 문학사의 대표적인 민중 작가 라오서가 1937년 발표한 장편소설로, 고선웅 연출이 중원농의 경극본을 각색하여 무대에 올렸다. 고선웅 연출은 한국에 비교적 잘 알려지지 않은 중국 고전 문학을 이번에도 성공적으로 수면 위로 올렸다.</p>
+          <p>이번에 연극 〈낙타상자〉는 휴머니스트 작가로 저명한 라오서의 작품이었다. 우리나라 문학 시장에서 중국 희곡뿐 아니라 중국 문학의 입지가 확립되지 못한 상황에서 고선웅은 어떠한 매력을 느꼈던 것일까? 근대 대표 작가인 루쉰과 라오서가 글을 쓰던 당대 중국에선 5·4 신문화운동, 중일전쟁 등이 일어났다. 중국은 사회·정치면에서 대내외적으로 격변기였다. 하지만 그러한 환경에서 루쉰은 ‘아큐’, 라오서는 ‘샹즈’라는 인물을 그려냈다. 아큐와 샹즈는 모두 시대가 만들어놓은 틀 속에서 끝내 벗어나지 못하고, 자신과 관계없이 돌아가는 세상의 수레바퀴 아래서 짓눌리고 밟히던 인물들이다. 두 작품 모두 한 인물의 비참한 삶을 조명해 시대를 날카롭게 바라본 작품으로 평가된다.</p>
+          <p>고선웅은 아큐와는 다르게 끊임없이 짓눌리고 밟히지만 자신에게 끝까지 충실했던 ‘샹즈’를 보고 “감동을 느꼈다”고 한다. 그리고 “시대를 조명하다”라는 2019년 SPAF의 표어처럼, 고선웅 특유의 재치와 연출로 본래 시대 비판적 성격이 짙은 원작 《낙타샹즈》를 시간과 국경을 초월해 인간의 삶에 대해 묻는 작품으로 탈바꿈시켰다.</p>
+          <p><b>휴머니즘을 믿는</b></p>
+          <p>연극 〈낙타상자〉는 건장한 신체 하나만 가지고 도시로 온 가난한 농촌 출신 인력거꾼 상자에 관한 이야기다. 상자는 아무것도 가진 게 없고, 가진 것이라곤 몸뚱아리와 착한 심성, 그리고 돈을 모아 자신의 인력거를 장만하겠다는 꿈뿐이다. 이 꿈을 위해 상자는 먹고 마실 것조차 아끼면서 악착같이 돈을 번다. 하지만 전쟁통에 인력거를 빼앗기고 대신 탈영하다가 끌고 온 낙타 세 마리 때문에 ‘낙타상자’라는 별명을 얻게 된다. 낙타 세 마리를 팔아 다시 인력거꾼으로 재개하고, 그러던 중 조선생 집의 인력거꾼으로 들어가 돈을 벌지만 부패한 형사에게 돈을 모조리 빼앗기고, 자신을 좋아하는 인화인력거회사의 딸 호호에게 속아 결혼한다. 하지만 자신의 아내 호호조차 출산 과정에서 죽게 되고, 상자는 마지막으로 인생의 의미를 걸고 옛사랑 복자를 찾으러 간 사창가에서 그녀의 자살 소식을 듣게 된다.</p>
+          <p>이렇듯 상자는 운명의 덫에서 아무것도 할 수 없는 무력한 인간의 모습을 대변한다. 상자의 숙명적 격랑을 통해 우리는 공포와 연민을 느낀다. 상자라는 피사체 너머로 투영된 세계 속에 피투된 우리 존재의 모습을 보기 때문이다. 끝없이 밀려오는 운명적 불행과 비극 속에서, 그리고 억압적인 사회 구조 속에서, 상자는 점차 삶의 꿈과 희망을 잃어간다. 비관적일 수밖에 없는 굴레 앞에서 상자는 좌절한다. 그리고 상자는 자신이 추구하던 삶의 가치를 다 상실한 채 마지막 대사처럼 “썩기를 기다리는, 연고 없는 무덤으로 향하는 쓸데없는 몸뚱아리만” 남는다.</p>
+          <p>하지만 절망적 상황 속에서 분투하는 상자의 모습은 마치 ‘초인’ 같다. 현실은 매순간 이루어지지 않을 세계로 인간을 유혹하고 결국 인간을 절망하게 만들지만, 그러한 삶의 현실을 있는 그대로 받아들이는 ‘초인’의 등장을 니체는 예언했다. 상자는 삶의 고난과 역경들의 경험으로 인해 “다른 모습으로 변해” “완전히 다른 사람이 되었다.” 시골에서 도시 북평으로 처음 왔을 땐 커다란 꿈이 있던 상자였다. 하지만 상자도 결국 여느 인력거꾼처럼 인력거꾼의 사회 안에서 소장파에서 노약파로 전락했고, 우리는 살아있는 그의 삶을 관조함으로써 충분히 삶에 대해 긍정해볼 가능성이 있다.</p>
+          <p>연극 〈낙타상자〉가 2019년에 살아가는 우리의 공감을 얻을 수 있다면, 그것은 ‘연극’이기 때문이다. 아리스토텔레스는 《시학》에서 예술의 본질은 ‘모방’(고대 그리스어로 미메시스)라고 하였다. 연극은 모방의 대상과 모방의 매체가 모두 인간이므로, 무대 위에 형상화된 실재를 통해 우리는 파토스에 휩싸인다. 더 나아가 자신의 삶을 반성하고 돌이켜보는 경험을 하게 된다.</p>
+          <p><b>연극적 장치들</b></p>
+          <p>고선웅은 서사가 갖는 힘뿐 아니라 다양한 연극적 장치들을 사용함으로써 관객과의 화합점을 만들어 냈다. 우선 배우들의 움직임과 대사를 양식화 하였다. 일명 ‘밀어치기 화법’과 아크로바틱적 움직임은 비극적인 서사 안에서 희극적인 요소로 작동해 연극에 재미를 더했다. 고선웅의 ‘밀어치는 화법’은 동일한 음표로 빠르게 밀어쳐 인물의 정서와 어투를 지웠다. 따라서 관객들은 눈 앞에서 배우들이 직접 소리치고 움직이는 모습을 보며 그들의 에너지와 생생함을 부여받고, 극장에 울려 퍼지는 배우의 고성과 톤의 리듬감은 이내 은유와 상징이 되어 무대 위에서 다양한 의미들로 환기되었다.</p>
+          <p>무대는 비어 있었다. 연극적 약속을 통해 빈 무대 공간은 자연스레 다른 극 공간으로 환유되었다. 또한 허망하고 덧없는 상자의 인생이 무대 세트로 표현되었다. 잘 세워져 있지만 언젠가 무너질 것 같은 느낌을 주는 목조 세트는 상자의 허무한 인생을 떠올리게 하였다. 또 다른 관점에서 목조로 된 무대는 ‘빈티지’함을 느끼게 했다. 그리고 상자가 운명에 직면해 자신의 삶을 개척해나갈 때마다 나오는 음향은 관객의 감정을 더욱더 끌어 올렸고, 마지막에 상자가 상여꾼이 되어 만장이 흩날리는 미장센은 관객에게 더욱 큰 울림과 여운을 주었다.</p>
+          <p><b>아쉬운 점들</b></p>
+          <p>하지만 다방면으로 뛰어났던 이 공연에서도 아쉬움은 남았다. 우선 상자라는 캐릭터는 매우 낭만적이고 이상적인 인물로 그려졌다. 예컨대 상자는 매사에 근면한 성품을 지녔고 자신의 인력거를 장만하는 것이 인생에서 생각하는 가장 큰 꿈인 인물이었다. 이러한 점은 보는 사람으로 하여금 상자를 감상적으로 바라보게 만들었는데, 이로 인해 상자가 사회로부터 받는 폭력이 안일한 시선으로 보여질 소지가 있었다.</p>
+          <p>다른 아쉬운 점은 극 전반에 만연해 있는 남성주의적 시각이다. 극에 등장하는 여성 인물은 호호, 복자, 조선생 집의 착실한 아줌마였던 고씨네, 홍등가 여인인 춘자 4명밖에 되지 않는다. 이 인물들은 모두 평면적으로 그려졌으며, 상자의 처절한 삶을 더 극대화하기 위해 소모적으로 등장한다. 예를 들어, 복자는 원작 소설에서는 첫사랑으로 그려지지 않지만 중원농의 각색본에서부터 상자에게 중요한 역할로 등장했다. 하지만 이러한 복자 캐릭터는 자살함으로써 상자의 비극성을 고취시키는 데 기여했다. 또한 복자는 자신의 아버지에 의해 두 차례나 팔려가고, “몸뚱아리라도 팔아라”라는 말까지 듣는다.</p>
+          <p>언제나 여성은 가정과 사회에서 상하좌우의 폭력 구조 안에서 남성의 보조적인 인물로서 극에서 소비된다. 극에서 주체로서 온전히 존재하지 못하는 여성의 삶의 조건의 끝에는 무조건 죽음뿐이다. 여성 캐릭터에게 죽지 않는 여지란 없다. 휴머니즘은 모든 인간이 평등하다고 주장한다. 하지만 이 말처럼 남성과 여성이 평등하다면 이 극에서 여성이 받는 성차에 의한 차별은 지워지게 된다. 여성은 휴머니즘(humanism)에서 말하는 휴먼(human)의 범주에 포함될 수 없는 폭력성이 발생하는 것이다. 휴머니즘은 한없이 낙관적이고 이는 폭력을 낳는다. 고선웅에게 휴머니즘이란 무엇일까. 젠더 이슈가 화두인 연극계의 상황에서 연극은 다양한 이들의 목소리를 들어 함께 소통할 수 있는 장이 되어야 한다.</p>
+          <p>그럼에도 불구하고 찬란히 한 순간 빛나다가 사라지는 만장의 하이얀 빛처럼, 무대 공간을 밝혀주던 조명도 서서히 꺼져 갔다. 극장을 나서기 위해 마지막으로 쳐다 본 무대 위에는 흩뿌려진 만장만이 남아 있었다. 연극의 발단부터 대단원까지 끊임없이 달리던 상자의 인력거와 손님을 태우기 위해 소리치던 상자의 목소리가 울려 퍼져 활기로 가득했던 무대는 공허만이 남았다. 활기로 가득 차다가 한 순간에 공허만 남는 것이 인생일까, 라는 생각에 암울한 기분을 가지고 극장 밖을 향했다.</p>
+          <p>어떤 삶을 살든 부조리의 그늘에서 벗어날 수는 없을 것이다. 하지만 우리는 시지푸스처럼 시도는 할 수 있다. 올지 안 올지, 온다고 해서 뭔가 해결될지 장담할 수 없는 고도를 기다리는 것보다 내 눈 앞에 있는 것을 더 의미 있는 것으로 만들기 위해 노력하는 것이 더 의미있다. 고선웅 연출은 어떠한 인터뷰에서 연극 〈낙타상자〉를 설명하며 이런 말을 했다. “추락하는 중은 아직 추락한 것이 아니죠. 끝까지 희망의 끈을 놓치 말아야 한다고 생각합니다.” 우리 모두가 세계 속에 피투되어서 겪는 운명의 딜레마를 고선웅은 좀 더 희망과 화해의 시선으로 바라보았다.</p>
+          <p>약 100분 넘는 러닝타임 동안에 우리는 상자의 삶에 숨죽였다. 상자의 삶은 우리의 뇌리에 박혔고, 현실로 돌아온 우리는 언젠가 한번쯤 바쁜 삶에서 인간답게 살고 싶다 생각할 것이다. 그리고 상자가 떠오르겠지. 연극 〈낙타상자〉는 그렇게 혜화동의 플라타너스가 붉고 노랗게 물들고 이내 생기를 잃어가던 10월 어느 날에 관객에게 무언가를 물들였다.</p>
+        </div>
+      </details>
+      </div><!-- end #writings -->
+
+      <div id="theatre" class="sub-section cv">
+        <div class="sub-head">
+          <h3>Theatre</h3>
+        </div>
+
+      <details class="entry">
+        <summary>
+          <span class="meta">2025</span>
+          <span class="title">〈atopos project: 시적 언어〉 — 연출 정다현</span>
+        </summary>
+        <div class="body">
+          <p><b>Atopos Project</b>는 공연예술을 중심으로 시각예술, 사운드, 문학 등 다양한 장르와 매체가 교차하는 지점을 탐색하며, 창작의 경계를 재구성하는 협업 프로젝트다.</p>
+          <p>‘장소(topos)가 없다(a-)’는 뜻의 그리스어에서 파생된 이름처럼, Atopos Project는 기존의 정형화된 형식 안에서 포착되거나 설명되지 못하는 감각, 정동, 언어의 잔여를 탐구한다. 이를 위해 연극, 시각예술, 사운드, 문학 등 서로 다른 작업 세계를 지닌 창작자들이 위계 없는 관계 속에서 하나의 공간을 함께 구성하는 다성적 창작 방법론을 실험한다.</p>
+          <p>Atopos Project는 특정 장르나 매체에 귀속되지 않는 예술적 실천을 지향한다. 무대는 완결된 서사를 재현하는 장소라기보다, 서로 다른 감각과 언어가 충돌하고 번역되며 다시 어긋나는 임시적 장소로 기능한다. 이 프로젝트는 기존의 규범과 형식을 넘어, 아직 이름 붙여지지 않은 감각과 관계의 가능성을 함께 만들어갈 창작자들과의 협업을 모색한다.</p>
+          <p>2025년 3월 트라이아웃이자 프로토타입인 《atopos project: 시적 언어의 미분》을 거쳐, 첫 번째 프로젝트 《atopos project: 시적 언어》를 상연했다.</p>
+          <a href="https://youtu.be/dt_EwJPsU9s" target="_blank" rel="noopener" style="position:relative; display:block; width:100%; padding-top:56.25%; background:#000; overflow:hidden; margin-bottom:20px; text-decoration:none;">
+            <img src="images/theatre/yt-시적언어.jpg" alt="atopos project: 시적 언어 하이라이트" loading="lazy" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover;" />
+            <span style="position:absolute; inset:0; display:flex; align-items:center; justify-content:center;">
+              <span style="display:flex; align-items:center; justify-content:center; width:72px; height:72px; border-radius:50%; background:rgba(0,0,0,0.65); color:#fff; font-size:28px; line-height:1; padding-left:6px;">▶</span>
+            </span>
+            <span style="position:absolute; bottom:12px; right:14px; color:#fff; font-size:12px; background:rgba(0,0,0,0.55); padding:4px 8px; border-radius:2px;">YouTube에서 보기 ↗</span>
+          </a>
+          <figure style="margin:0 0 20px;">
+            <img src="images/theatre/01-atopos-language.jpg" alt="atopos project: 시적 언어 포스터" loading="lazy" style="display:block; max-width:100%; height:auto; max-height:560px; margin:0 auto;" />
+          </figure>
+          <p><b>2025 서울문화재단 청년예술지원사업 선정작</b> · 하이라이트 편집본 · 문래예술공장 박스씨어터</p>
+          <figure style="margin:0 0 12px;">
+            <img src="images/theatre/atopos/sa-01.jpg" alt="시적 언어 공연 사진" loading="lazy" style="display:block; max-width:100%; height:auto; margin:0 auto;" />
+          </figure>
+          <figure style="margin:0 0 12px;">
+            <img src="images/theatre/atopos/sa-02.jpg" alt="시적 언어 공연 사진" loading="lazy" style="display:block; max-width:100%; height:auto; margin:0 auto;" />
+          </figure>
+          <figure style="margin:0 0 12px;">
+            <img src="images/theatre/atopos/sa-03.jpg" alt="시적 언어 공연 사진" loading="lazy" style="display:block; max-width:100%; height:auto; margin:0 auto;" />
+          </figure>
+          <figure style="margin:0 0 12px;">
+            <img src="images/theatre/atopos/sa-04.jpg" alt="시적 언어 공연 사진" loading="lazy" style="display:block; max-width:100%; height:auto; margin:0 auto;" />
+          </figure>
+          <figure style="margin:0 0 20px;">
+            <img src="images/theatre/atopos/sa-05.jpg" alt="시적 언어 공연 사진" loading="lazy" style="display:block; max-width:100%; height:auto; margin:0 auto;" />
+          </figure>
+          <p><b>본공 리플렛</b></p>
+          <figure style="margin:0 0 12px;">
+            <img src="images/theatre/atopos/leaflet-1.jpg" alt="시적 언어 본공 리플렛 1" loading="lazy" style="display:block; max-width:100%; height:auto; margin:0 auto; border:1px solid var(--line);" />
+          </figure>
+          <figure style="margin:0 0 24px;">
+            <img src="images/theatre/atopos/leaflet-2.jpg" alt="시적 언어 본공 리플렛 2" loading="lazy" style="display:block; max-width:100%; height:auto; margin:0 auto; border:1px solid var(--line);" />
+          </figure>
+          <p><b>크레딧</b><br>
+            연출 | 정다현<br>
+            텍스트 | 오수아, 이가은<br>
+            드라마터그 | 오수아<br>
+            기획 | 박진서<br>
+            퍼포머 | 이가은<br>
+            무대 디자인 | 222<br>
+            조명 디자인 | 고민주<br>
+            사운드 디자인 | 이솔엽<br>
+            영상 디자인 | 김정환<br>
+            그래픽 디자인 | 민한슬<br>
+            조연출 | 박승찬<br>
+            무대감독 | 곡수인<br>
+            주최·주관 | 정다현<br>
+            후원 | 서울특별시, 서울문화재단</p>
+        </div>
+      </details>
+
+      <details class="entry">
+        <summary>
+          <span class="meta">2025</span>
+          <span class="title">〈atopos project: 시적 언어의 미분〉 — 구성·연출 정다현</span>
+        </summary>
+        <div class="body">
+          <p><b>Atopos Project</b>는 공연예술을 중심으로 시각예술, 사운드, 문학 등 다양한 장르와 매체가 교차하는 지점을 탐색하며, 창작의 경계를 재구성하는 협업 프로젝트다.</p>
+          <p>‘장소(topos)가 없다(a-)’는 뜻의 그리스어에서 파생된 이름처럼, Atopos Project는 기존의 정형화된 형식 안에서 포착되거나 설명되지 못하는 감각, 정동, 언어의 잔여를 탐구한다. 이를 위해 연극, 시각예술, 사운드, 문학 등 서로 다른 작업 세계를 지닌 창작자들이 위계 없는 관계 속에서 하나의 공간을 함께 구성하는 다성적 창작 방법론을 실험한다.</p>
+          <p>Atopos Project는 특정 장르나 매체에 귀속되지 않는 예술적 실천을 지향한다. 무대는 완결된 서사를 재현하는 장소라기보다, 서로 다른 감각과 언어가 충돌하고 번역되며 다시 어긋나는 임시적 장소로 기능한다. 이 프로젝트는 기존의 규범과 형식을 넘어, 아직 이름 붙여지지 않은 감각과 관계의 가능성을 함께 만들어갈 창작자들과의 협업을 모색한다.</p>
+          <p>2025년 3월 트라이아웃이자 프로토타입인 《atopos project: 시적 언어의 미분》을 거쳐, 첫 번째 프로젝트 《atopos project: 시적 언어》를 상연했다.</p>
+          <figure style="margin:0 0 20px;">
+            <img src="images/theatre/02-atopos-derivative.jpg" alt="시적 언어의 미분 포스터" loading="lazy" style="display:block; max-width:100%; height:auto; max-height:560px; margin:0 auto;" />
+          </figure>
+          <p style="font-style:italic; color:var(--muted);">거울 속에서 나는 한 얼굴을 본다 — 익숙하면서도 낯선. 그것은 정말 내 것이었을까?</p>
+          <p>아토포스 프로젝트의 첫 번째 작업, 〈atopos project: 시적 언어〉에 대한 트라이아웃. 수행적 글쓰기를 통해 구성된 텍스트를 기반으로, 창작자들의 서로 다른 매체를 하나의 공간 안에서 다성적으로 구현하는 공간적 실험을 시도한다. (인천아트플랫폼 C동 공연장)</p>
+          <figure style="margin:0 0 12px;">
+            <img src="images/theatre/atopos/dr-01.jpg" alt="시적 언어의 미분 공연 사진" loading="lazy" style="display:block; max-width:100%; height:auto; margin:0 auto;" />
+          </figure>
+          <figure style="margin:0 0 12px;">
+            <img src="images/theatre/atopos/dr-02.jpg" alt="시적 언어의 미분 공연 사진" loading="lazy" style="display:block; max-width:100%; height:auto; margin:0 auto;" />
+          </figure>
+          <figure style="margin:0 0 12px;">
+            <img src="images/theatre/atopos/dr-03.jpg" alt="시적 언어의 미분 공연 사진" loading="lazy" style="display:block; max-width:100%; height:auto; margin:0 auto;" />
+          </figure>
+          <figure style="margin:0 0 12px;">
+            <img src="images/theatre/atopos/dr-04.jpg" alt="시적 언어의 미분 공연 사진" loading="lazy" style="display:block; max-width:100%; height:auto; margin:0 auto;" />
+          </figure>
+          <figure style="margin:0 0 20px;">
+            <img src="images/theatre/atopos/dr-05.jpg" alt="시적 언어의 미분 공연 사진" loading="lazy" style="display:block; max-width:100%; height:auto; margin:0 auto;" />
+          </figure>
+          <p><b>공개 대본</b> <span style="color:var(--muted); font-size:13px;">(2025.03.05 수정본)</span></p>
+          <figure style="margin:0 0 12px;">
+            <img src="images/theatre/atopos/script-1.jpg" alt="시적 언어의 미분 공개 대본 1쪽" loading="lazy" style="display:block; max-width:100%; height:auto; margin:0 auto; border:1px solid var(--line);" />
+          </figure>
+          <figure style="margin:0 0 12px;">
+            <img src="images/theatre/atopos/script-2.jpg" alt="시적 언어의 미분 공개 대본 2쪽" loading="lazy" style="display:block; max-width:100%; height:auto; margin:0 auto; border:1px solid var(--line);" />
+          </figure>
+          <figure style="margin:0 0 12px;">
+            <img src="images/theatre/atopos/script-3.jpg" alt="시적 언어의 미분 공개 대본 3쪽" loading="lazy" style="display:block; max-width:100%; height:auto; margin:0 auto; border:1px solid var(--line);" />
+          </figure>
+          <figure style="margin:0 0 24px;">
+            <img src="images/theatre/atopos/script-4.jpg" alt="시적 언어의 미분 공개 대본 4쪽" loading="lazy" style="display:block; max-width:100%; height:auto; margin:0 auto; border:1px solid var(--line);" />
+          </figure>
+          <p><b>크레딧</b><br>
+            구성/연출 | 정다현<br>
+            텍스트/드라마터그 | 오수아<br>
+            기획 | 박진서<br>
+            퍼포머 | 이가은<br>
+            시노그라피 | 이동현<br>
+            사운드 | 이솔엽<br>
+            영상 | 김정환<br>
+            과정기록 | 이기원<br>
+            그래픽디자인 | 민한슬<br>
+            무대감독 | 박지원, 이서영<br>
+            사진기록 | 이승민<br>
+            리서치 | 김민서<br>
+            주최/주관 | 아토포스 프로젝트</p>
+        </div>
+      </details>
+
+      <details class="entry">
+        <summary>
+          <span class="meta">2024.08</span>
+          <span class="title">〈애써-보기〉 — 드라마터그</span>
+        </summary>
+        <div class="body">
+          <figure style="margin:0 0 20px;">
+            <img src="images/theatre/03-애써보기.jpg" alt="애써-보기 포스터" loading="lazy" style="display:block; max-width:100%; height:auto; max-height:560px; margin:0 auto;" />
+          </figure>
+          <p><b>공연 개요</b><br>
+            제목 | 〈애써-보기〉<br>
+            단체 | 씨어터 임포에틱<br>
+            장소 | 뉴페이즈 (New Phase)<br>
+            일시 | 2024.08.09 20:00 / 2024.08.10 20:00<br>
+            러닝타임 | 약 60분 · 관람연령 | 15세 이상 · 장르 | 연극<br>
+            서울프린지페스티벌 자유참가작</p>
+          <p><b>만드는 사람들</b><br>
+            박승찬 (작/연출)<br>
+            정다현 (드라마터그)<br>
+            강준 · 김성혁 · 박효진 · 이채연 (배우)<br>
+            민한슬 (그래픽디자이너)</p>
+          <p><b>예술가 소개</b></p>
+          <p>우리는 극장 너머 세상을 바라보기 위해 연극합니다. 비로소 나는 우리와 연극을 통해 세상과 연결됩니다. We make plays to look at the world beyond the theatre. Finally, I connect with the world through play with us.</p>
+          <p><b>프린지에서 새롭게 시도해보고 싶은 것</b></p>
+          <p>사회에서 쉽게 목격되지 않으나 분명 실재하는 사람들에 대해 말하고 싶다. 현실은 실재하는 사람들의 집합이다. 이야기는 현실을 이해하고 받아들이기 위해 만들어진다. 연극은 이야기에 몸과 말을 더한다. 실재하는 사람들은 연극을 만든다. 그런데 연극 안에는… 실재하는 사람이 없다. 〈애써-보기〉는 극장에 실재하는 사람들을 통해 사회에 실재하는 사람들에게로 시선을 확장하고자 한다.</p>
+          <p><b>작품 소개</b></p>
+          <p>어느 겨울의 늦은 밤. 동부간선도로를 달리던 택시의 타이어가 터진다. 택시 기사는 회사에 도움을 요청하지만, 그 누구도 도와주지 않는다. 옆 차선의 자동차들은 달려 나간다. 아무도 택시 기사를 보지 못한다. ‘나’는 혼자 타이어를 갈아 끼우는 택시 기사를 애써-본다. ‘나’는 택시 기사에게 다가가려고 애써-본다.</p>
+          <p><b>어떤 사람들이 이 작품을 봐주었으면 하나요?</b></p>
+          <p>마음을 열어주세요.</p>
+        </div>
+      </details>
+
+      <details class="entry">
+        <summary>
+          <span class="meta">2024.05</span>
+          <span class="title">〈_ 있었던 자리〉 — 드라마터그</span>
+        </summary>
+        <div class="body">
+          <figure style="margin:0 0 20px;">
+            <img src="images/theatre/04-있었던자리.jpg" alt="_ 있었던 자리 포스터" loading="lazy" style="display:block; max-width:100%; height:auto; max-height:560px; margin:0 auto;" />
+          </figure>
+          <p><b>공연 개요</b><br>
+            제목 | 〈_ 있었던 자리〉<br>
+            일시 | 2024년 5월 16일(목) ~ 5월 18일(토)<br>
+            장소 | 한국예술종합학교 연극원 실험무대<br>
+            제작 | 한국예술종합학교 연극원<br>
+            2024-1 한예종 연극원 전문사 스튜디오 Ⅰ</p>
+          <p><b>줄거리</b></p>
+          <p>솔은 매일 같은 꿈을 꾼다. 파란 오토바이 헬멧을 쓴(혹은 어딘가 놓여있는) 사람이 등장하는 꿈. 반복적인 꿈 탓에 깊이 잠들지 못하는 솔. 늘 피곤한 얼굴로 마른 세수를 한다. 솔은 엄마의 삶이 얼마 남지 않았음을 알게 되고 오래전 죽은 친구 상순을 떠올린다. 생전 아픈 이로 괴로워했던 상순의 모습, 함께 했던 순간들. 지나간 시간들과 기억들이 한데 섞인 채 계속해서 솔의 곁을 스쳐 지나간다. 어느 날 솔은 횡단보도에서 우연히 오토바이 한 대가 차에 치이는 것을 목격하게 되고 문득 잊고 있었던 과거의 기억이 떠오른다. 며칠 뒤 단짝 친구였던 웅과 오랜만에 마주하며 솔은 웅에게 상순의 죽음 당시에 관한 물음을 건넨다. 오랜 사이 끝에 웅이 입을 연다. 솔이 어딘가를 향해 달리고 계속해서 달린다.</p>
+          <p><b>드라마터그의 글 — 저마다 근육이 생기는 자리에 대해</b></p>
+          <p><b>나는</b></p>
+          <p>긴 꿈을 꾸었다. 꿈속 나는 다시 고등학생이었고, 부옇게 안개 낀 공간을 걸으며 한참을 헤매고 있었다. 어딜 향하는지도 모른 채, 꽤 걸었다. 난 지쳐있었다. 얼마나 걸었을까? 그때 꿈속 세계에선 마치 신의 목소리 같은 소리가 울려 퍼졌다. “이제 다 잊어버리는 거야. 희미하게. 그러다 완전히.” 그리고 비로소 꿈에서 깼다. 꿈에서 들었던 말은 〈_ 있었던 자리〉의 한 대사다. 혼자 작품을 읽을 때나, 연습실에서 배우들의 목소리를 통해 발화된 대사를 들었을 때나… 알지 못했다. 내겐 그 말이 여실히 필요했다는 걸. 생생했던 그때의 기억들은 시간이 흘러 서서히 풍화되며 잊혔다. 그래서 나도 모르는 새 괜찮아진 줄 알았다. 응당 시간이 약이라고들 하니까. 근데 ‘_’가 있었던 자리는 비어 있었다.</p>
+          <p><b>있었던</b></p>
+          <p>〈_ 있었던 자리〉는 ‘솔’이라는 인물을 중심으로 전개되는 연극이다. 솔이 청소년기에 겪었던 상실과, 그 기억으로 인해 소급된 시간들로 장면들은 나아간다. 그들은 현재의 솔이 어젯밤 꾼 일 수도, 10년 전 청소년기 솔의 일 수도, 혹 현재의 솔 그 자체일 수도 있다. 작품은 여러 층위의 시간들이 혼동돼있다. 희곡은 갈등이 명확한 구조, 즉 전통적인 극작법에 입각하여 쓰인 작품이 아니기에 유영하듯 솔의 내면을 좇게 한다.</p>
+          <p>파편화된 시간-장면들마다 솔은 여러 인물들을 만난다. 인물들은 서로를 이해하지 못하고, 불통하며 동상이몽 그 자체다. 인물들은 솔을 떠나지만, 무대 한편에 이따금 솔의 곁에 있는다.</p>
+          <p><b>그 자리에 서서</b></p>
+          <p>근육은 상처를 남으로써 커지고, 단단해지고, 자리 잡는다. 내게 아픔을 주었던 무언가가 내가 더 나은 존재가 되게끔 한다는 건 정말 아이러니하다. 솔에게 ‘파란색 오토바이 헬멧’도 그러했을까. 희곡 속 상징들에 의해 벌어진 틈 사이로 그때의 나를 집어넣고 ‘_’를 상기시킨다. 이제는 아득한 얼굴들을 떠올리며, 이미 도착한 희곡과 오지 않은 공연 사이에서 관객들과 만날 순간을 기다린다. 관객들 각자의 삶이 이 작품과 깊게 만나는 시간이 되었으면 좋겠다. 그리고 문득 희미한 옛사랑의 그림자를 떠올리기도 하면 좋겠다. 마지막으로 잊지 말 것. 지독히 날 괴롭혔지만 결국 나를 성장시키고 보호해주는 것들 한가운데 늘 ‘지금-여기’ 겹겹이 쌓인 시간들의 근육으로 무장된 내가 있다는 것을.</p>
+          <p><b>크레딧</b><br>
+            작 | 장지혜<br>
+            연출 | 신진호<br>
+            드라마터그 | 정다현<br>
+            무대감독 | 박지원<br>
+            조연출 | 석지윤<br>
+            기획 | 정유진, 조현진<br>
+            출연 | 김혜령, 이은정, 이정은, 이호, 최이레<br>
+            무대 디자인 | Shine-Od<br>
+            조명 디자인 | 이동현<br>
+            그래픽 디자인 | 박민서<br>
+            음향 디자인 | 손서정<br>
+            영상 디자인 | 임정은<br>
+            특별 출연 | 이수인, 이현송<br>
+            지도교수 | 김재엽<br>
+            연기지도 | 황은후<br>
+            기술감독 | 임건수<br>
+            조명감독 | 홍선화<br>
+            음향감독 | 고태현<br>
+            제작주임 | 송기선<br>
+            제작감독 | 박혜지, 이은혜<br>
+            제작 | 한국예술종합학교 연극원</p>
+        </div>
+      </details>
+
+      <details class="entry">
+        <summary>
+          <span class="meta">2023.06</span>
+          <span class="title">〈목자의 고백〉 — 드라마터그</span>
+        </summary>
+        <div class="body">
+          <figure style="margin:0 0 20px;">
+            <img src="images/theatre/05-목자의고백.jpg" alt="목자의 고백 포스터" loading="lazy" style="display:block; max-width:100%; height:auto; max-height:560px; margin:0 auto;" />
+          </figure>
+          <p><b>공연 개요</b><br>
+            제목 | 〈목자의 고백〉<br>
+            일시 | 2023년 6월 15일 ~ 18일<br>
+            장소 | 주예소 스페이스<br>
+            제작 | 씨어터 임포에틱<br>
+            2023 K-Arts On-Road</p>
+          <p><b>시놉시스</b></p>
+          <p>1. 옛날에 양치기 소년이 있었습니다. 양치기 소년은 산에 올라, 늑대가 나타났다고 마을 사람들에게 거짓말을 했습니다.<br>
+            2. 여기에 한 남자가 있습니다. 남자는 어릴 적에 학교를 다녀오고 나서 별일 없었다고 엄마에게 거짓말을 했습니다.<br>
+            3. 양치기 소년은 산에 늑대가 산다는 것을 증명해야만 했습니다.<br>
+            4. 남자는 양치기 소년의 거짓말을 좇고 있습니다.</p>
+          <p><b>연출의 글</b></p>
+          <p>언젠가 사람들에게 “난 괜찮아”라는 거짓말을 아무렇지도 않게 내뱉는 제 모습을 발견했습니다. 근데 전 정말 안 괜찮았거든요? 사람들은 왜 거짓말을 하는지 궁금해졌습니다. 거짓말은 속는 사람의 현실을 속이는 사람이 원하는 방향으로 바꾼다고 합니다. 그래서 나쁜 거래요. 그럼 자기기만 — 나에게 하는 거짓말은요? 아, 그건 내 현실이 바뀌기를 바라는 것이겠군요. 뭐라도 믿어야 살 만하니까 그런 거라고 생각했습니다. 그러니까 우리는 서로에게 거짓말을 끊임없이 반복하며 사는 거겠죠. 거짓말이 나쁘다는 것도 알면서요. 이걸 알면서도 말하지 않으려니까, 내 속이 다 곪는 것 같았습니다. 그래서 저는 거짓말에 대한 공연을 만들기 시작했습니다.</p>
+          <p><b>작품 이해 돕기 — 1. 거짓과 진실에 대하여</b></p>
+          <p>무언가가 거짓임을 증명하는 것, 즉 거짓말로 인해 숨겨진 진실을 드러내는 것은 쉽지 않은 일입니다. 왜냐하면 거짓과 진실은 일대일로 대응하지 않기 때문입니다. 하나의 거짓말은 수많은 진실의 가능성들을 은폐합니다. 따라서 외부에서 거짓말을 증명하는 것은 쉽지 않습니다. 따라서 학자들은 고백과 증언의 중요성을 제시합니다. 거짓말을 한 당사자가 고백하거나, 거짓말을 목격한 자의 증언만이 거짓말을 증명해낼 수 있다는 것이죠. 따라서 무언가를 고백하거나 증언하는 행위는, 거짓에 의해 숨겨진 가능성들을 드러내는 일이 될 수 있습니다.</p>
+          <p><b>드라마터그의 글 — 〈목자의 고백〉, 우리의 고백</b></p>
+          <p>1. 연극은 거짓말을 할 수 있는가. 위 문장은 이상한 문장입니다. 연극은 거짓‘말’을 할 수 없기 때문이죠.</p>
+          <p>2. 우리는 〈목자의 고백〉을 통해 거짓말을 할 수 있는가. 1번의 문장을 올바르고 우리의 상황에 대입해보았습니다. 문장은 우리에게 수많은 질문을 남깁니다. 우리는 질문에 대한 해답을 찾는 데 집중하는 것이 아닌, 질문을 또 다른 질문으로 바꿔 생각하는 철학적인 사고에 집중하였습니다. 우리가 〈목자의 고백〉을 통해 한 진술들이 어떻게 하여 거짓말이 되고, 그래서 우리가 〈목자의 고백〉이라는 연극을 통해 거짓말을 한다는 게 어떤 함의를 가지는지.</p>
+          <p>3. 〈목자의 고백〉은 거짓말에 대한, 거짓말에 의한, 거짓말의 공연입니다. “내 삶을 지키는”, 거짓말 위에 세워진 삶을 그리고 있습니다.</p>
+          <p>4. 기실 〈목자의 고백〉은 지어낸 이야기일 뿐 어떤 것도 단언하거나 긍정하지 않습니다. 진릿값을 가지지 못하고, 이 말은 즉 참/거짓을 가릴 수 없다는 것이죠. 따라서 거짓말을 할 수 없습니다. 하지만 우리는 〈목자의 고백〉을 통해 말하고자 했습니다. 설령 그게 불가능한 일이고, 누군가는 그게 거짓말이라고 주장할지라도. 우리가 거쳐 온 과정처럼 여러분들도 수많은 질문들이 남길 바랍니다.</p>
+          <p><b>크레딧</b><br>
+            작·연출 | 박승찬<br>
+            조연출 | 방가람<br>
+            드라마터그 | 정다현<br>
+            배우 | 강준, 김선영, 이창민<br>
+            기획 | 김의진<br>
+            그래픽디자인 | 민한슬<br>
+            제작 | 씨어터 임포에틱 (@theatre_impoetic)<br>
+            주최/주관 | 한국예술종합학교<br>
+            제작지원 | 한국예술종합학교 공연전시센터</p>
+        </div>
+      </details>
+
+      <details class="entry">
+        <summary>
+          <span class="meta">2022.03</span>
+          <span class="title">〈무언극: 말하는 법은 던져진 곳에서 나가는 데에 도움이 되지 않았〉 — 드라마터그</span>
+        </summary>
+        <div class="body">
+          <figure style="margin:0 0 20px;">
+            <img src="images/theatre/06-무언극.jpg" alt="무언극 포스터" loading="lazy" style="display:block; max-width:100%; height:auto; max-height:560px; margin:0 auto;" />
+          </figure>
+          <p><b>공연 개요</b><br>
+            제목 | 〈무언극: 말하는 법은 던져진 곳에서 나가는 데에 도움이 되지 않았〉<br>
+            일시 | 2022년 3월 24일(목) ~ 25일(금) 19:30 / 26일(토) 15:00, 19:00<br>
+            장소 | 한국예술종합학교 실험무대<br>
+            제작 | 한국예술종합학교 연극원<br>
+            2022-1 한예종 연극원 스튜디오 Ⅱ</p>
+          <p><b>원작 — 〈무언극 I〉</b></p>
+          <p>사내가 사막에 내던져진다. 그는 사막을 벗어날 수 없다. 그는 벗어나려고 애쓰지만, 다시금 사막으로 내던져질 뿐이다. 천장에서 내려온 나무 한 그루가 그늘을 만들고 있다. 사내는 햇볕을 피하기 위해 나무 그늘 안에 들어가 앉는다. 가위도 천장에서 내려온다. 사내는 가위를 들고 손톱을 다듬는다. 하지만 나무의 잎이 접히고, 그늘이 사라진다.</p>
+          <p>사내는 천장에서 내려온 물병을 발견한다. 그러나 물병이 손에 닿지 않는다. 사내는 천장에서 내려온 상자를 쌓고, 그 위에 올라 물병을 향해 손을 뻗는다. 하지만 상자가 무너지며 사내는 나동그라진다. 천장에서 밧줄이 내려오고, 사내는 밧줄을 타고 오른다. 하지만 밧줄이 축 늘어져 사내를 땅에 내려놓는다. 사내는 가위로 밧줄을 잘라 물병을 낚아챌 올가미를 만든다. 그러나 물병은 천장 위로 사라지고 없다. 사내는 더이상 움직이지 않는다.</p>
+          <p><b>원작 — 〈무언극 II〉</b></p>
+          <p>무대 오른쪽에 두 개의 침낭이 놓여 있다. 그 속에는 A와 B 각각 두 사람이 들어 있다. 주변에는 자그마한 옷더미가 놓여 있다. 막대기가 나타나 A를 찌른다. A가 침낭으로부터 천천히 기어 나온다.</p>
+          <p><b>창작의도</b></p>
+          <p>베케트의 무언극을 재료로 삼아, 우리가 생각하는 내던져진 인간에 대한 이야기를 새롭게 써내려 갔습니다. 우리는 극이 제시하는 공간을 ‘어느 방’으로 가져옵니다. 편안하고 익숙한 방에서 마주하는 부조리를 드러내기 위함입니다. 나를 짓누르는 무거운 압박, 내 뜻대로 행동할 수 없는 무력함, 침묵을 둘러싼 수많은 소음 같은 것들.</p>
+          <p>〈무언극 I〉의 사내는 살아내기 위해 분투하지만, 뭣 하나 뜻대로 이뤄지는 게 없습니다. 〈무언극 II〉의 A와 B는 주어진 행동을 끊임없이 반복하고 있습니다. 언제 시작됐는지, 언제 끝날지도 알 수 없습니다. 내던져진 존재의 의미와 이유는 없습니다. 그들은 선택해야만 합니다. 내던져진 곳에 영원히 머무를지, 자리를 박차고 나가 탈주할지를.</p>
+          <p><b>드라마터그의 글 — 말을 할 수 없거나, 할 수 있는 말이 없거나</b></p>
+          <p><b>무언의 방</b></p>
+          <p>전통적인 연극에선 논리와 이성의 세계를 담당한 구술적 언어의 세계만이 존재했다. 〈무언극: 말하는 법은 던져진 곳에서 나가는 데에 도움이 되지 않았〉은 침묵의 자리에 몸짓 언어를 대체해 극을 이끌어 간다. 말의 현혹, 즉 말에 진실이 가려지던 시대에 베케트는 본질적으로 모든 것을 비워냄으로써 모든 것을 드러냈는데, 우리는 베케트가 그려낸 세계를 현재 2022년에 우리의 방식으로 답습했다. 상징과 은유로 가득 찬 원작의 사막이라는 공간을 ‘어떤 방’으로 치환했다. 그리고 우리가 방이란 공간 안에서 느끼는 ‘감각들’로 채워나갔다.</p>
+          <p><b>존재의 긍정</b></p>
+          <p>〈무언극 I, II〉에서 행동이 반복됨에 따라 배우의 몸, 현전이 드러난다. 전통적인 연극에서처럼 허구적 인물을 재현하지 않고 우연적인 순간을 수행해낸다. 우리는 내던져진 인간의 행동에 대한 명민한 관찰이 필요했다. 단어 너머에 허무, 좌절, 부조리, 의미 없는 진전이 아닌 상태에서의 각성. 부동하는 존재의 움직임에 대한 고찰. 우리는 허무주의가 아닌 희망으로 접근해 존재의 움직임을 살폈다. 시지프스의 약동처럼.</p>
+          <p><b>나가는 법에 도움이 되지 않더라도</b></p>
+          <p>배우들은 방에 내던져졌다. 고립과 두려움의 공간. 친숙한 공간인지 낯선 공간인지 알 수조차 없는 방. 마치 악몽과도 같고, 섬같은 공간. 〈무언극 I〉에선 공간을 벗어나지 못하고 통제할 수 없는 타인의 존재가 나를 압박해온다. 지옥인 타인을 피하지 못해 사내는 탈피하고 또 다른 나를 창조해낸다. 이어지는 〈무언극 II〉에서 A와 B는 공간의 압박을 이기지 못해 각자의 방식으로 극적 약속을 어긴다.</p>
+          <p><b>관객을 기다리며</b></p>
+          <p>알랭 바디우는 『베케트에 대하여』에서 “우리는 아마도 고도가 ‘누구’인지는 알지 못할 것이지만, 그가 무언가가 도래하기를 갈망하는 모든 이들의 고집에 대한 표정인 것으로 충분”할지도 모른다고 했다. 우리는 사내, A, B가 치열하게 움직이듯 삶을 영위해나가는 중일지도 모른다. 여러분과 이 극이 불통하지 않길. 펼쳐놓고 열어놓은 것들을 체현하고 감각하시길. 결국 연극은 제목처럼 미완의 상태에서 매순간에 새롭게 생성될 것이다.</p>
+          <p><b>크레딧</b><br>
+            원작 | 사무엘 베케트<br>
+            연출 | 박승찬<br>
+            조연출 | 이혜림<br>
+            드라마터그 | 정다현<br>
+            무대감독 | 유승민<br>
+            출연 | 강준, 박준형, 최윤제<br>
+            무대디자인 | 정성근<br>
+            조명디자인 | 김예인<br>
+            의상디자인 | 하유미<br>
+            그래픽디자인 | 민한슬<br>
+            사운드디자인 | 김시마<br>
+            프로필 촬영 | 진여름<br>
+            공연 영상·사진 촬영 | 김하영<br>
+            기획 | 하지수<br>
+            지도교수 | 최준호, 이두성<br>
+            제작 | 한국예술종합학교 연극원</p>
+        </div>
+      </details>
+
+      <details class="entry">
+        <summary>
+          <span class="meta">2021.03</span>
+          <span class="title">〈잃어버린 영혼〉 — 드라마터그</span>
+        </summary>
+        <div class="body">
+          <figure style="margin:0 0 20px;">
+            <img src="images/theatre/07-잃어버린영혼.jpg" alt="잃어버린 영혼" loading="lazy" style="display:block; max-width:100%; height:auto; max-height:560px; margin:0 auto;" />
+          </figure>
+          <p><b>공연 개요</b><br>
+            제목 | 〈잃어버린 영혼〉<br>
+            일시 | 2021년 3월 25일(목) ~ 26일(금) 12~21시 (한 타임 관객 한 명)<br>
+            장소 | 한국예술종합학교 연극원 실험무대<br>
+            제작 | 한국예술종합학교 연극원<br>
+            2021-1 한예종 연극원 스튜디오 Ⅰ</p>
+          <p><b>작품 소개</b></p>
+          <p>〈잃어버린 영혼〉은 올가 토카르추크 작가의 동화를 연극으로 각색한 공연입니다. 너무나도 바쁘게 살아온 나머지 영혼을 잃어버린 한 사람의 이야기입니다. 이야기 속 영혼은 사람의 몸보다 속도가 느립니다. 그래서 영혼과 함께 가기 위해서는 잠시 멈춰서 영혼을 기다려 주어야 합니다. 사람은 도시 밖의 작은 집에 가서 자신의 영혼을 기다립니다. 이 공연에서 관객은 주인공이 되어 이야기 속 사건들을 직접 경험하게 됩니다. 바쁘고, 잃어버리고, 기다립니다.</p>
+          <p><b>드라마터그의 글 — 지금 여기에서 당신의 기다림을 기다리며</b></p>
+          <p>영혼이란 무엇일까. 영혼이 존재하긴 한 걸까. 생경하고 관념적으로 느껴지는 ‘영혼’은 오랜 세월동안 늘 우리 가까이 존재해왔던 것처럼, 당연히 우리 안에 내재돼있는 것처럼 논의되어 왔습니다. 즉 인간에게 필수불가결한 요소로 여겨져 왔던 것이죠. 하지만 너무 빠른 세상의 속도로 어쩌면 우리는 영혼을 잃어버리진 않았을까요? 영혼을 잃어버렸다면 우리의 영혼은 어디에 있는 것이고, 어떻게 영혼을 찾아야 하는 것일까요?</p>
+          <p>연극 〈잃어버린 영혼〉은 한 명의 관객의, 관객에 의한, 관객을 위한 공연입니다. 극세계 안에서 관객은 영혼을 잃어버린 주인공 ‘얀’이 됩니다. 이 공연은 ‘이머시브 시어터’라는 형식으로, 관객은 마치 게임을 하는 것처럼 미션을 하나씩 수행해갑니다. 기존 연극에서 지켜보는 존재에 불과했던 관객이 “직접 사건을 겪고”, “직접 행동을 하고”, 본인이 공연에 끼치는 영향을 즉각적으로 느끼며 상호작용합니다. 보는 것뿐만 아닌 몸으로 그 순간을 감각하고 자신만의 내러티브를 써내려가는 것입니다. 극장의 다양한 공간-장면을 경유함으로써 관객은, 극 세계 안에 존재하며, 본인만의 시간을 음미하고, 마침내 기다림의 순간을 맞닥뜨리게 됩니다. 온전히 자신의 영혼을 위한 시간을요.</p>
+          <p>팀원들과 〈잃어버린 영혼〉을 준비하며 게임을 하고, 잃어버린 영혼과 관련된 게임을 만들기도 했습니다. 추운 겨울부터 봄까지 관객분들을 상상하며 만나길 기다리고 또 기다리면서요. 어느새 창밖의 풍경은 색채가 생겼습니다. 원작 동화책에서 얀이 자신의 영혼을 기다리다가 만나게 된 순간처럼요. 빼앗긴 들에도 봄은 찾아오길. 극장 문을 열고 나가서도 당신의 ‘진짜 기다림-시간’이 지속되길 바랍니다. 마지막으로, 관객으로 시작되고 완성될 수 있는 이 공연을, 만남이 금기시된 오늘날에 기꺼이 보러 극장에 찾아와주신 관객분들께 감사드립니다.</p>
+          <p><b>크레딧</b><br>
+            원작 | 올가 토카르추크<br>
+            번역 | 이지원<br>
+            구성 | 김민정, 김소울, 김아현, 김종운, 김효민, 민한슬, 박소희, 박승찬, 이윤진, 전석희, 정성근, 정다현, 하지수<br>
+            퍼포머 | 김소울, 김파나현<br>
+            연출 | 전석희<br>
+            드라마터그 | 정다현<br>
+            조연출 | 김아현<br>
+            무대감독 | 박승찬<br>
+            기획 | 하지수<br>
+            의상디자인 | 이윤진<br>
+            무대디자인 | 김종은<br>
+            무대디자인 보조 | 김민정<br>
+            조명디자인 | 김효민, 정성근<br>
+            그래픽디자인 | 민한슬<br>
+            사운드디자인 | 박소희<br>
+            사진기록 | 윤관희<br>
+            영상기록 | 윤수진<br>
+            지도교수 | 김영주, 최원<br>
+            제작 | 한국예술종합학교 연극원</p>
+        </div>
+      </details>
+
+      <details class="entry">
+        <summary>
+          <span class="meta">2020.11</span>
+          <span class="title">〈8ROUNDS: 김명순에 관한 고찰〉 — 드라마터그</span>
+        </summary>
+        <div class="body">
+          <figure style="margin:0 0 20px;">
+            <img src="images/theatre/08-8rounds.jpg" alt="8ROUNDS" loading="lazy" style="display:block; max-width:100%; height:auto; max-height:560px; margin:0 auto;" />
+          </figure>
+          <p><b>공연 개요</b><br>
+            제목 | 〈8ROUNDS: 김명순에 관한 고찰〉<br>
+            일시 | 2020년 10월 28일(수) ~ 30일(금) 19시<br>
+            장소 | 한국예술종합학교 예술소극장<br>
+            제작 | 한국예술종합학교 연극원<br>
+            2020-2 한예종 정기 레퍼토리 공연</p>
+          <p><b>드라마터지 — 언어의, 언어를 위한, 언어에 의한 고찰에 대한 연극</b></p>
+          <p>2018년, 더 이상 성범죄를 묵과하지 않겠다는 맥락에서 미투운동이 시작돼 연극계에서도 큰 파장을 불러일으켰다. 한 배우를 시작으로 연극계의 거장들에 대한 가해가 줄줄이 폭로되었다. 많은 관객들과 창작자들은 가해자 비판과 처벌을 촉구하고, 서로 응원하고 지지했다. 이를 계기로 그동안 심연 어딘가에 존재하던 이야기들을 무대 위로 올리려는 시도가 연극계에서 활발히 지속되고 있다.</p>
+          <p>〈8ROUNDS: 김명순에 관한 고찰〉도 같은 문제의식의 연장선에 있다. 우리는 ‘시대와 문단이 지우려했던 작가 김명순’에 대한 질문으로부터 출발하였다. 연애 스캔들의 주인공으로만 소비되거나 전형적인 여성혐오적인 맥락에서 폄하되고 지워졌던 김명순 작가와 그의 작품을 재조명하기 위함이었다. 그래서 우리는 그동안 주목되어왔던 김명순의 삶보다 김명순의 언어(작품) 자체에 집중하고, 그에 대한 우리의 언어를 덧대기 위해 메타연극적인 토론의 형식으로 접근하였다.</p>
+          <p>대본은 동시대적인 문제제기를 위해 모든 프로덕션 구성원들이 참여해 공동창작 되었다. 김명순의 작품 중 희곡 두 편 〈의붓자식〉 〈두 애인〉, 소설 세 편 〈의심의 소녀〉 〈나는 사랑한다〉 〈탄실이와 주영이〉 총 다섯 작품을 일차적인 텍스트로 삼았다. 이 주요 다섯 작품을 프리 프로덕션 과정에서 함께 읽고, 각자의 언어로 생각과 질문, 명확하지 않은 감정 등을 나누었다. 이러한 과정을 기초적인 자료로 삼아 리허설 과정에서 벌인 토론을 토대로 하여 대본이 구성되었다.</p>
+          <p>드라마트루기 작업은 대본 구성 과정에서 핵심적인 역할을 했다. 김명순의 작품에서 다양한 논쟁거리(화두)를 뽑아냈다. 화두는 양시론적인 것이 아닌 의견이 상반되는 것이어야 했다. 그리곤 프로덕션 멤버들끼리 각 논지를 놓고 어느 쪽이 설득력 있었는지 투표를 진행했다. 이렇게 논지를 정해 변론을 해가는 과정에서, 배우들은 자신의 입장을 세워 남들을 설득하는 연습을 하였다.</p>
+          <p>김명순 작품의 인물들은 현대의 관점에서 보아도 논란의 여지가 다분하다. 우리는 그들의 행위의 당위성을 묻고, 의미, 작품의 해석에 대해 치열하게 파고들었다. 우리는 분석에 부딪히고, 때로는 충동에 부딪히기도 했다. 모든 논지에 대한 근거는 김명순의 작품 안을 들여다봐야 나오는 것. 그래서 토론 내용에 대한 관객의 이해를 위해 주재료 5편의 인용구를 적절히 대본 내에 배치했다.</p>
+          <p>김명순은 ‘글쓰기’ 통해 끝없이 자신을 이야기하고, 기록하려 했다. 비록 그곳이 허구의 공간일지라도 김명순에게는 자유로운 공간이 아니었을까. 그렇기에 100년이 지난 지금 여기에서 김명순의 글쓰기는 유효하다. “가장 개인적인 것이 가장 정치적”이라는 테제처럼, 가장 개인적인 나의 이야기를 할 수 있는 데서 동시대성을 얻을 수 있다. 〈8ROUNDS: 김명순에 관한 고찰〉의 중요한 전제는 김명순의 일생이 문자로만 국한되었다는 것이다. 하지만 우리는 김명순의 전기를 통해 김명순을 고찰하는 것이 아닌 그의 언어를 2020년을 살아가고 있는 ‘배우’의 ‘발화하는 언어’로 재전유 한다. 과거의 목소리에 동시대의 목소리가 덧입혀지고, 김명순이 활동했던 1920-30년대 과거와 2020년 현재가 교차된다.</p>
+          <p>말의 해일이 밀려든다. 그러다 어느 순간 무대 위는 침묵으로 가득 찬다. 모든 말들이 사라져버린다. 내 몸 앞에서. 우리는 ‘문자’에 버금가는 ‘언어’를 불러와 소통의 영역을 확장해야 한다. 우리가 살아가는 사회에서도 여전히 살아 숨쉬고 있을 것이다. 배우들의 목소리-소리의 파동이 여러분의 마음에까지 가닿아 울리기를, 그 파동이 삶의 균열을 일으키기를 바란다. 우리는 “단지 더 잘 살기 위하여” 자신의 글쓰기를 통해 세상의 모순을 외쳤던 김명순과 그의 활자들을 기억해야 한다.</p>
+          <p style="color:var(--muted); font-size:13.5px;">공연 영상은 ‘한국예술종합학교 미디어콘텐츠’ 채널에서 관람 가능 (youtu.be/e72QRykwgAg)</p>
+          <p><b>크레딧</b><br>
+            작 | 김명순, 김민정, 김서우, 김현빈, 김홍진, 박진서, 송지우, 심상윤, 윤영민, 이건희, 이승민, 이주협, 이혜원, 장예지, 장진웅, 정다현<br>
+            연출 | 김민정<br>
+            협력교수 | 강민재, 김미희<br>
+            출연 | 김서우, 김현빈, 김홍진, 송지우, 심상윤, 윤영민, 이건희, 이승민, 이주협, 이혜원<br>
+            드라마터그 | 정다현<br>
+            연출부 | 장진웅<br>
+            기획 | 박진서, 장예지<br>
+            조명 | 김지우, 오세이<br>
+            의상 | 이경선<br>
+            영상 | 이수경<br>
+            영상프로그래머 | 김태우<br>
+            음악 | 이진욱<br>
+            수어지도 | 박준빈<br>
+            촬영 | 김은혜, 박서혜, 한국예술종합학교 융합예술센터 A&amp;T랩<br>
+            제작 | 한국예술종합학교 연극원</p>
+        </div>
+      </details>
+
+      <details class="entry">
+        <summary>
+          <span class="meta">2019.08</span>
+          <span class="title">〈Speaking in Tongues〉 — 드라마터그</span>
+        </summary>
+        <div class="body">
+          <figure style="margin:0 0 20px;">
+            <img src="images/theatre/09-speakingintongues.jpg" alt="Speaking in Tongues" loading="lazy" style="display:block; max-width:100%; height:auto; max-height:560px; margin:0 auto;" />
+          </figure>
+          <p><b>공연 개요</b><br>
+            제목 | 〈스피킹 인 텅스 / Speaking in Tongues〉<br>
+            일시 | 2019년 7월 31일(수) ~ 8월 2일(금)<br>
+            장소 | 한국예술종합학교 예술극장 제작소 뒷편<br>
+            2019 Off-야합 플레이 프로젝트</p>
+          <p><b>줄거리 — 1막</b></p>
+          <p>피트와 제인, 레온과 소냐는 부부이다. 피트와 소냐, 제인과 레온은 동시적 불륜관계이다. 모든 불륜 사실이 밝혀지고, 피트와 소냐는 집을 떠난다. 제인은 피트가 떠나간 동안 앞 집 남자(닉)가 검은색 에나멜 구두를 화단에 던지는 것을 목격한다. 레온은 소냐가 떠나간 동안 갈색 브로그를 신은 남자(닐)가 신발만 남기고 사라진 것을 목격한다. 이들은 각자가 목격한 이야기들에서 부부 관계의 문제를 확인한다. 레온과 소냐는 해결 되지만, 피트와 제인은 해결되지 않는다.</p>
+          <p><b>2막</b></p>
+          <p>닐과 사라는 결혼을 약속했던 옛 연인 관계다. 사라는 아무 말 없이 닐을 떠났다. 닐은 사라를 잊지 못하고 편지를 쓴다. (닐은 갈색 브로그를 신은 남자다.) 사라는 닐의 편지를 읽고, 상담사인 발레리를 찾아간다. 발레리는 한밤 중 외딴 길가에서 차가 고장난다. 발레리는 공중전화로 남편 존에게 전화를 건다. 닉은 차를 타고 가다가 발레리를 발견하고 그녀를 집까지 태워주려고 한다. 그러나 생소한 지름길에서 발레리는 닉을 믿지 못하여 차에서 뛰어내린다. 발레리는 집에 돌아가지 못한다.</p>
+          <p><b>3막</b></p>
+          <p>경찰인 레온은 아내가 실종되었다는 존의 신고를 받고 존의 집으로 찾아온다. 사라와 발레리의 상담이 다시 한 번 반복된다. 그러나 숨겨져있던 사실이 드러난다.</p>
+          <p><b>창작의도 — 연출 전석희</b></p>
+          <p>서로 진심으로 관계를 맺으며 살아가는 것이 어느때보다도 힘들어진 요즘입니다. 그러나 어느 때 만큼이나 우리는 진심어린 관계를 찾습니다. 관계 맺는다는 게 무엇이길래 우리가 서로의 주위를 그토록 아프게 돌고 있는 건지, 극에 드러난 다양한 양상의 관계를 통해 살펴보고자 합니다. SNS와 같은 다양한 온라인 커뮤니티는 우리를 쉴 새 없이 관계의 장으로 이끌고 있다. 혼자 있더라도 혼자 있지 않는 것 같은 기분. 외로움을 피하기 위해 선택한 공간에서, 우린 극도로 외로움을 인식함과 동시에 외로움에서 벗어나기 위해, 타인의 세계를 침범하고 흐트러놓게 된다. 21세기, 관계의 폭력성 앞에서 보호받을 수 있는 성역이란 존재할까?</p>
+          <p><b>드라마터그의 글 — 정다현</b></p>
+          <p>우리는 살아가면서 계획을 세우고, 목표를 위해 노력한다. 하지만 인생은 그 계획대로 돌아가지 않거나 나의 노력은 무의미하게 되는 일이 빈번하다. 계획대로 살아질 수 있는 인생이 아니기 때문이다. 우리가 노력해도 닿을 수 없는 영역. 나는 그것이 감정의 영역이라고 본다. 감정의 영역은 곧 관계와도 연관된다. 관계는 잡힐 듯 말 듯 우리의 손아귀를 벗어난다. 늘 계획의 범주에서 벗어나는 관계에 대해서 얘기한다. 또 우리는 그것을 탐구한다.</p>
+          <p>언어는 인간에 있어 의사전달의 최고 수단이다. 하지만 우리는 언어로 모든 것을 표현해내거나 전달할 수는 없다. 극의 원제인 〈Speaking in Tongues〉의 의미도 그렇다. 끊임없이 무엇을 발화하지만 그 누구도 알아들을 수 없다. 이러한 점은 우리가 맺는 다양한 관계들과도 비슷하다. 우리는 관계를 위해 끊임없이 노력해도 때때로 사랑하는 사람을 배신하거나, 당하거나, 혹 그들을 잃거나 한다. 우리의 모든 것들은 공감받을 수 없다. 마치 ‘방언’과도 같이, 타인에게 닿을 수 없는 것처럼 말이다.</p>
+          <p><b>크레딧</b><br>
+            작 | 앤드류 보벨 (Andrew Bovell)<br>
+            출연 | 강준, 양준하, 이주원, 조성은<br>
+            연출 | 유승민, 전석희<br>
+            드라마터그 | 정다현<br>
+            무대감독 | 권나현<br>
+            무대 디자이너 | 김종은<br>
+            조명 디자이너 | 김효민<br>
+            오브제 디자이너 | 윤승비<br>
+            그래픽 디자이너 | 정수리<br>
+            사운드 디자이너 | 강한결<br>
+            움직임 디자이너 | 김온<br>
+            촬영감독 | 박하민<br>
+            오퍼레이터 | 박승찬<br>
+            기획부 | 장예지, 이지우</p>
+        </div>
+      </details>
+
+      <div class="sub-head" style="margin-top:64px; padding-top:32px; border-top:1px solid var(--line);">
+        <h3>OTHER</h3>
+      </div>
+
+      <details class="entry">
+        <summary>
+          <span class="meta">2026</span>
+          <span class="title">영화 〈잔인한 낙관〉 — 드라마터그</span>
+        </summary>
+        <div class="body">
+          <a href="https://youtu.be/-P_SycNzCKY" target="_blank" rel="noopener" style="position:relative; display:block; width:100%; padding-top:56.25%; background:#000; overflow:hidden; margin-bottom:20px; text-decoration:none;">
+            <img src="images/theatre/yt-잔인한낙관.jpg" alt="잔인한 낙관 트레일러" loading="lazy" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover;" />
+            <span style="position:absolute; inset:0; display:flex; align-items:center; justify-content:center;">
+              <span style="display:flex; align-items:center; justify-content:center; width:72px; height:72px; border-radius:50%; background:rgba(0,0,0,0.65); color:#fff; font-size:28px; line-height:1; padding-left:6px;">▶</span>
+            </span>
+            <span style="position:absolute; bottom:12px; right:14px; color:#fff; font-size:12px; background:rgba(0,0,0,0.55); padding:4px 8px; border-radius:2px;">YouTube에서 보기 ↗</span>
+          </a>
+          <p><b>제27회 전주국제영화제 (2026) 한국경쟁 상영작</b></p>
+          <p>감독 | 신목야</p>
+          <p><b>시놉시스</b></p>
+          <p>메인스트림 데뷔를 앞둔 미술 작가의 개인전 준비를 배경으로, 갤러리 관장, 미술 기획자, 미데뷔 작가, 미술대 학생 등 미술계 안에서 각기 다른 위치를 점한 인물들의 이야기를 조망한다.</p>
+          <a class="ext-embed" href="https://www.jeonjufest.kr/db/movieView.asp?idx=43690A82D80A41C8B&amp;listGubun=MOVIELIST&amp;sType=&amp;sText=&amp;sEP_NUM=27&amp;reUrl=%2Fdb%2FmovieList%2Easp%3FkeywordList%3D%2523%25ED%258F%2589%25EB%25A1%25A0%2523" target="_blank" rel="noopener">
+            <span class="ext-label">제27회 전주국제영화제 작품 페이지</span>
+            <span class="ext-url">jeonjufest.kr / 잔인한 낙관</span>
+          </a>
+        </div>
+      </details>
+      </div><!-- end #theatre -->
+
+      <div id="photos" class="sub-section photos">
+        <div class="sub-head">
+          <h3>Photos</h3>
+          <span class="ko">사진</span>
+        </div>
+
+      <p style="max-width:680px; margin:0 0 28px; color:var(--muted); font-size:14px;">
+        필름 카메라로 기록한 순간들. 일상에서 포착해내는 극적인 순간들.
+      </p>
+
+      <div class="grid">
+        <figure>
+          <img src="images/notion/busan-01.jpg" alt="" loading="lazy" />
+        </figure>
+        <figure>
+          <img src="images/notion/busan-02.jpg" alt="" loading="lazy" />
+        </figure>
+        <figure>
+          <img src="images/notion/jeju-01.jpg" alt="" loading="lazy" />
+        </figure>
+        <figure>
+          <img src="images/notion/jeju-02.jpg" alt="" loading="lazy" />
+        </figure>
+        <figure>
+          <img src="images/notion/light-01.jpg" alt="" loading="lazy" />
+        </figure>
+        <figure>
+          <img src="images/notion/spring-01.jpg" alt="" loading="lazy" />
+        </figure>
+      </div>
+      </div><!-- end #photos -->
+    </section><!-- end #works -->
+
+  </main>
+
+</div>
+
+</body>
+</html>
